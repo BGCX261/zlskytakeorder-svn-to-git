@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>挪威高樂科技公司</title>
+	<meta http-equiv="Content-Language" content="English" />
+	<meta name="Robots" content="index,follow" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+    <script type="text/javascript" language="javascript" src="./js/calendar/calendar.js"></script>
+	<script type="text/javascript" language="javascript" src="./js/datepick/WdatePicker.js"></script>
+</head>
+<body>
+
+<div id="wrap" style="text-align:left;">
+<?smarty:include file=header.html?>	
+	<div id="main">
+
+
+  <div class="feedbacklist_box">
+ 
+    <li>
+    <form action="faqlist.php"  method="post">
+   &nbsp;&nbsp;&nbsp; FAQ信息查詢：&nbsp;&nbsp;&nbsp;
+   <input type="text" value="{$keyword}" size="21px;" name="keyword" />
+    <select name="type">
+        <option value="">請選擇該問題種類</option>
+      <option value="1" <?smarty:if $type==1?>selected='selected'<?smarty:/if?>>諮詢</option>
+      <option value="2" <?smarty:if $type==2?>selected='selected'<?smarty:/if?>>問題</option>
+      <option value="3" <?smarty:if $type==3?>selected='selected'<?smarty:/if?>>建議</option>
+      <option value="4" <?smarty:if $type==4?>selected='selected'<?smarty:/if?>>投訴</option>
+      <option value="5" <?smarty:if $type==5?>selected='selected'<?smarty:/if?>>合作</option>
+      <option value="6" <?smarty:if $type==6?>selected='selected'<?smarty:/if?>>其他</option>
+    </select>&nbsp;&nbsp;&nbsp;
+    <select name="status">
+     <option value="">請選擇該問題狀態</option>
+      <option value="1" <?smarty:if $status==1?>selected='selected'<?smarty:/if?>>待處理</option>
+      <option value="2" <?smarty:if $status==2?>selected='selected'<?smarty:/if?>>已處理</option>
+      <option value="3" <?smarty:if $status==3?>selected='selected'<?smarty:/if?>>已鎖定</option>
+    </select>&nbsp;&nbsp;&nbsp;
+    開始時間:<input type="text" name="begintime"  size="9" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd'})" class="Wdate" value="{$begintime}"/>
+    結束時間:<input type="text" name="endtime" size="9" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd'})" class="Wdate" value="{$endtime}"/>
+<input type="submit" value="提交查詢" name="qsubmit" />
+    </form>
+    </li>
+
+
+   </li>
+        </ul>
+  
+ 
+  <?smarty:foreach from=$list key=k item=list?>
+   <ul class="feedbacklist_item_box">
+          
+
+    <li style="text-align:right">
+         <?smarty: if $right=='admin' and $list.status==1?>
+    <a href="redit.php?k_id={$list.question_no}">點擊回答該問題</a>
+         <?smarty:else?>
+           <!--如果其问题的属于群组里面的文章 只有群组的管理员才能 回答问题 删除 修改-->
+                   <?smarty: if ($privileges =='2' and $is_admin==1 and $list.privileges==2)?>
+                    <a href="redit.php?k_id={$list.question_no}">點擊回答該問題</a>
+                    <?smarty:/if?>
+         <?smarty:/if?> 
+    &nbsp;&nbsp;&nbsp;&nbsp;
+       <?smarty: if $right=='admin' and $list.status==1?>
+    <a href="faqlist.php?action=del&k_id={$list.question_no}">刪除該問題</a>
+       <?smarty:else?>
+               <?smarty: if ($privileges =='2' and $is_admin==1 and $list.privileges==2)?>
+                 <a href="faqlist.php?action=del&k_id={$list.question_no}">刪除該問題</a>
+               <?smarty:/if?>
+        <?smarty:/if?>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+        <?smarty: if $list.status==2?>
+                    <?smarty: if $right=='admin' and $list.status==1?>
+    <a href="aedit.php?k_id={$list.question_no}">修改問題答案</a>
+                     <?smarty:else?>
+                       <!--如果其问题的属于群组里面的文章 只有群组的管理员才能 回答问题-->
+                        <?smarty: if ($privileges =='2' and $is_admin==1 and $list.privileges==2)?>
+                     <a href="aedit.php?k_id={$list.question_no}">修改問題答案</a>
+                        <?smarty:/if?>
+                     <?smarty:/if?>
+        <?smarty:/if?>
+    </li> 
+      
+    <li style="float:left;height:20px;background:url(./images/face1.gif) no-repeat 0 0;padding:0 0 0 25px;">類型：{$list.newtype}&nbsp;&nbsp;&nbsp;&nbsp;聯繫人：{$list.conter}&nbsp;&nbsp;&nbsp;&nbsp;聯繫電話:{$list.conter_tel}&nbsp;&nbsp;&nbsp;&nbsp;
+    電子郵件:{$list.conter_email}
+    </li>
+    <li style="float:right;height:20px;">{$list.question_time}</li>
+    <li class="feedbacklist_item_jiange"></li>
+
+    <li style="padding:5px 10px 5px 10px">{$list.question} </li>
+
+
+      <?smarty: if $list.status==2?>
+    <li class="feedbacklist_item_jiange"></li>
+
+    <li style="float:left;height:20px;background:url(./images/face2.gif) no-repeat 0 0;padding:0 0 0 25px;color:#ff0000">回復：</li>
+    <li style="float:right;height:20px;color:#ff0000"><span id="ctl01_ctl01_Repeater_1_ctl04_Lb_Replay_Time">{$list.answer_time}</span></li>
+    <li class="feedbacklist_item_jiange"></li>
+    <li style="padding:5px 10px 5px 10px">
+   <span id="ctl01_ctl01_Repeater_1_ctl04_Lb_Replay">{$list.answer}</span>
+   </li>
+      <?smarty:/if?>
+  </ul>
+  <?smarty:/foreach?>
+ 
+  
+ 
+  </div>
+  <div style="text-align:center">{$pages}</div>
+
+
+</div>
+<?smarty:include file=footer.html?>		
+</div>
+	
+	
+</body>
+</html>

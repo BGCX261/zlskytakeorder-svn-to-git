@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+<script language="javascript" type="text/javascript">
+$(function(){
+	$(".lv_2").mouseout(function(){
+								 $(this).attr('class','lv_2');
+								 });
+	$(".lv_2").mouseover(function(){
+									$(this).attr('class','onmouseover');
+									});
+	$(".lv_2").click(function(){
+							  //var message=$(this).text();
+							  //alert(message);
+							  $("#station").fadeIn('normal');
+							  });
+	$(".tv_station_close").click(function(){
+										  $("#station").fadeOut('normal');
+										  });
+	
+	//input样式
+	$(":input").mouseover(function(){
+								  $(this).attr('class','input_mouseover');
+								  });
+	$(":input").mouseout(function(){
+								  $(this).attr('class','input');
+								  });
+});
+</script>
+</head>
+
+<body>
+<center>
+
+<div class="main">
+<div class="search">
+	<span><input type="text" name="search" /></span>
+    <span><input type="submit" value="提交" /></span>
+    <span><input type="button" value="音量" /></span>
+    <span><input type="button" value="低音" /></span>
+    <span><input type="button" value="高音" /></span>
+    <span><input type="button" value="亮度" /></span>
+    <span><input type="button" value="对比度" /></span>
+    <span><input type="button" value="色彩度" /></span>
+</div>
+	<div class="lv_1">
+    	<div class="lv_2"><div class="lv_2_content">1.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">1.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">1.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">1.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">1.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">1.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">1.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">1.测试</div></div>
+    </div>
+    
+    <div class="lv_1">
+    	<div class="lv_2"><div class="lv_2_content">2.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">2.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">2.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">2.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">2.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">2.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">2.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">2.测试</div></div>
+    </div>
+    
+    <div class="lv_1">
+    	<div class="lv_2"><div class="lv_2_content">3.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">3.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">3.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">3.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">3.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">3.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">3.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">3.测试</div></div>
+    </div>
+    
+    <div class="lv_1">
+    	<div class="lv_2"><div class="lv_2_content">4.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">4.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">4.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">4.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">4.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">4.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">4.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">4.测试</div></div>
+    </div>
+    
+    <div class="lv_1">
+    	<div class="lv_2"><div class="lv_2_content">5.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">5.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">5.测试
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td align="left">亮度</td>
+              <td align="left">1</td>
+              <td align="left">高音</td>
+              <td align="left">4</td>
+            </tr>
+            <tr>
+              <td align="left">对比度</td>
+              <td align="left">2</td>
+              <td align="left">低音</td>
+              <td align="left">5</td>
+            </tr>
+            <tr>
+              <td align="left">音量</td>
+              <td align="left">3</td>
+              <td align="left">色彩度</td>
+              <td align="left">6</td>
+            </tr>
+          </table>
+      </div></div>
+        <div class="lv_2"><div class="lv_2_content">5.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">5.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">5.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">5.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">5.测试</div></div>
+    </div>
+    
+    <div class="lv_1">
+    	<div class="lv_2"><div class="lv_2_content">6.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">6.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">6.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">6.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">6.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">6.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">6.测试</div></div>
+        <div class="lv_2"><div class="lv_2_content">6.测试</div></div>
+    </div>
+
+</div>
+<div>[首页]&nbsp;[上一页]&nbsp;[1]&nbsp;[2]&nbsp;[3]&nbsp;[4]&nbsp;[5]&nbsp;[6]&nbsp;[7]&nbsp;[8]&nbsp;[下一页]&nbsp;[尾页]</div>
+</center>
+<div id="station" class="station" align="center">
+<div class="tv_station">
+	<div align="right"><a href="javascript:void(0)" class="tv_station_close">[点击关闭]</a></div>
+	<div class="tv_station_intro" align="left">这个电视台的简介</div>
+    <span class="tv_station_parameter">音量&nbsp;&nbsp;&nbsp;：<input type="button" value="+" /><span>184</span><input type="button" value="-" /></span>
+    <span class="tv_station_parameter">低音&nbsp;&nbsp;&nbsp;：<input type="button" value="+" /><span>154</span><input type="button" value="-" /></span>
+    <span class="tv_station_parameter">音量&nbsp;&nbsp;&nbsp;：<input type="button" value="+" /><span>184</span><input type="button" value="-" /></span>
+    <span class="tv_station_parameter">亮度&nbsp;&nbsp;&nbsp;：<input type="button" value="+" /><span>154</span><input type="button" value="-" /></span>
+    <span class="tv_station_parameter">对比度：<input type="button" value="+" /><span>184</span><input type="button" value="-" /></span>
+    <span class="tv_station_parameter">色彩度：<input type="button" value="+" /><span>111</span><input type="button" value="-" /></span>
+</div>
+</div>
+
+</body>
+</html>

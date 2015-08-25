@@ -1,0 +1,26 @@
+﻿
+          <?smarty:foreach from=$list key=k item=list?>
+            <!-- Article -->
+            <div class="article">
+                <h2><span><a href="#">{$list.title}</a></span></h2>
+                <p class="info noprint">
+                    <span class="date">{$list.time}</span><span class="noscreen">,</span>
+         
+                    <span class="user"><a href="#">{$list.name}</a></span><span class="noscreen">,</span>
+                    <span class="comments"><a href="javascript:void(0);" onclick="show('{$list.id}')">回复问题</a></span>
+                </p>
+
+                <p>{$list.context}.</p>
+
+   
+            </div> <!-- /article -->
+       
+        <div class="article" id="show_{$list.id}">
+ 
+        </div> 
+        
+             <?smarty:/foreach?>
+
+      <div align="center">
+            {$pages}
+            </div>

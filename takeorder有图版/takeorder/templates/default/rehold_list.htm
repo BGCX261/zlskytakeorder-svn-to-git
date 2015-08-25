@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="js/ajax.js"></script>
+<link href="css/calculator.css" rel="stylesheet" type="text/css" />
+<link href="css/choseitem.css" rel="stylesheet" type="text/css" />
+<link href="css/remark.css" rel="stylesheet" type="text/css" />
+<link href="css/rehold_list.css" rel="stylesheet" type="text/css" />
+</head>
+<?smarty:strip?>
+<body>
+<div id="showinfo">
+<table border="0" cellspacing="0" cellpadding="0" width="100%" class="food_list_menu">
+  <tr bgcolor="#4897c4">
+    <td align="center">Table_id</td>
+    <td align="center">Auto_id</td>
+    <td align="center">operator</td>
+    <td align="center">change</td>
+  </tr>
+  
+  <!--循环开始-->
+  <?smarty:foreach from=$list key=k item=list?>  
+ 	  <!--样式用--><tr><td height="5" colspan="4" align="center" bgcolor="#4897c4"></td></tr><!--样式结束-->
+      <tr bgcolor="#ffffff">
+        <td align="center">{$list.table_id}</td>
+        <td align="center">{$list.order_no}</td>
+        <td align="center">{$list.operator}</td>
+        <td align="center"><a href="rshow.php?table={$list.order_no}&table_id={$list.table_id}">choose</a></td>
+      </tr>
+  <?smarty:/foreach?>
+  <!--循环结束-->
+</table>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="food_list_menu">
+  <tr bgcolor="#fffff">
+    <td align="center">{$pages}</td>
+  </tr>
+</table>
+</div>
+</body>
+<?smarty:/strip?>
+</html>

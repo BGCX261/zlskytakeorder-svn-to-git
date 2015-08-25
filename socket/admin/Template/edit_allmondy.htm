@@ -1,0 +1,71 @@
+<link href="./Public/css/view.css" rel="stylesheet" type="text/css" />
+<link href="./Public/css/sliders_main.css" rel="stylesheet" type="text/css" />
+<link href="./Public/css/sliders_slider.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="./Public/js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="./Public/js/edit_confirm.js"></script>
+<script language="javascript">
+function allcheckbox()
+{
+	if($(":checkbox").attr("checked")==true){
+		$(":checkbox").attr("checked",false);
+	}else{
+		$(":checkbox").attr("checked",true);
+	}
+}
+
+
+</script>
+        
+ 
+ 
+<div id="station" class="station" align="center">
+<div class="tv_station">
+<fieldset>
+<legend>整体设备设置</legend>
+<form action="<!--{url controller='edit' action='allmondy'}-->" method="post">
+   
+       
+    <!--<div class="tv_station_parameter" align="left">AGC状态：
+          <div style="height:40px;">
+          	开启：<input type="radio" checked="checked" value="O"  name="agcstat" />	
+            关闭：<input type="radio" value="C" name="agcstat" />
+          </div>
+    </div>-->
+    
+    <div class="tv_station_parameter" align="left">音频能级：
+
+    	<select name="gain">
+        	<!--{html_options options=$gainArray selected=0}-->
+        </select>
+
+        
+    </div>
+    <div class="tv_station_parameter" align="left">静音状态：
+      <div style="font-weight:bolder;">
+            开启：<input type="radio" class="edit_radio" value="O" name="mutestat" />	
+            关闭：<input type="radio" class="edit_radio" checked="checked" value="C" name="mutestat" />
+      </div>
+    </div>
+    <div class="tv_station_parameter" align="left">旁通状态：    
+    <div style="font-weight:bolder;">
+    	开启：<input type="radio" class="edit_radio" value="O" name="passstat" />	
+        关闭：<input type="radio" class="edit_radio" checked="checked" value="C" name="passstat" />
+    </div>
+    </div>
+    <div class="tv_station_parameter" style="height:auto">只对这些设备进行设置：
+
+    [<a href="javascript:void(0)" onclick="allcheckbox()" style="color:#F00; font:Verdana, Geneva, sans-serif;">全选</a>]<br />
+
+
+
+    	<!--{foreach from=$dev item=dev}-->
+        	&nbsp;<!--{$dev.devname}-->&nbsp;：&nbsp;<input class="edit_radio" type="checkbox" name="dev[]" value="<!--{$dev.serial}-->" />&nbsp;
+        <!--{/foreach}-->    
+    </div>
+    <div class="tv_station_parameter">
+    <input style="width:auto" type="button" onclick="location.href='<!--{url controller='edit' action='index'}-->'" value="返回上一步" />
+    <input type="submit" name="sub" style="width:40px;" value="提交" />
+    </div>
+    </form>
+</fieldset>
+</div>

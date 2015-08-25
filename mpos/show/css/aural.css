@@ -1,0 +1,46 @@
+BODY {
+	voice-family: paul,male; volume: loud; speech-rate: slow; richness: 90; stress: 20
+}
+H1 {
+	cue-before: url("ping.au")
+}
+H2 {
+	cue-before: url("ping.au")
+}
+H3 {
+	cue-before: url("ping.au")
+}
+H4 {
+	cue-before: url("ping.au")
+}
+H5 {
+	cue-before: url("ping.au")
+}
+P {
+	pause: 50ms
+}
+TABLE {
+	pause: 50ms
+}
+EM {
+	richness: 50; stress: 60; pitch: medium; pitch-range: 60
+}
+Q {
+	richness: 50; stress: 60; pitch: medium; pitch-range: 60
+}
+CITE {
+	richness: 50; stress: 60; pitch: medium; pitch-range: 60
+}
+BLOCKQUOTE {
+	richness: 50; stress: 60; pitch: medium; pitch-range: 60
+}
+STRONG {
+	richness: 90; stress: 90; pitch: medium; pitch-range: 60
+}
+PRE {
+	speak-punctuation: code
+}
+CODE {
+	speak-punctuation: code
+}
+.close_panel{text-align:right; background:#c9e1ef; height:20px; line-height:20px; cursor:pointer;}

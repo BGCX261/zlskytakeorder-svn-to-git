@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Language" content="zh_TW"/>
+<title>MPOS</title>
+<script src="./js/jquery.js" language="javascript" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+function showinfo(id){
+      
+	  var context="context"+id;
+
+	if($("#"+context).css("display")=='none'){
+	     alert("1");
+	     $.get(
+		'showdetail.php',
+		{id:id},
+		function(data){
+
+       $("#"+context).html(data);
+		 $("#"+context).show("slow");
+		}
+	    );
+	}else{
+	      alert("2");
+	  $("#"+context).hide("slow");	
+	}	 	
+	}
+
+
+</script>
+</head><body vlink="#3300FF" alink="#FF0000">
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="760">
+  <tbody><tr>
+    <td width="185"><img width="121" height="119" src="mpos_files/mpos_clip_image002.gif" /></td>
+    <td width="575"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tbody><tr>
+        <td width="318" height="40" align="left"><strong>挪威高樂科技公司</strong> <font size="+2"><strong>MPos Norway </strong></font><strong></strong></td>
+      </tr>
+      <tr>
+        <td height="40"><div align="right"><font size="+2"><strong>餐飲便利、超市、零售　</strong></font></div></td>
+      </tr>
+      <tr>
+        <td  height="40" valign="bottom" align="right"><table width="200" border="0" align="right">
+          <tr>
+            <td width="54" height="26" align="right" valign="bottom">&nbsp;</td>
+            <td width="59" align="left" valign="bottom"><a href="index.html?id=2"><font style="font-size: 16px;">||首頁</font></a></td>
+            <td width="73" align="left" valign="bottom"><a href="index.html?id=2"><font style="font-size: 16px;">||</font></a><a href="callcenter.html?id=2">呼叫系統</a></td>
+          </tr>
+        </table>          <a href="index.html?id=2"></a></td>
+        <td width="56"  height="40" align="right" valign="bottom"><a href="product.html?id=2"><font style="font-size: 16px;">||产品简介</font></a></td>
+		<td width="70"  height="40" align="right" valign="bottom"><a href="favourable.html?id=2"><font style="font-size: 16px;">||開戶優惠</font></a></td>
+		<td width="63"  height="40" align="right" valign="bottom"><a href="service.html?id=2"><font style="font-size: 16px;">||支援計劃</font></a></td>
+		<td width="68"  height="40" align="right" valign="bottom"><a href="index.html?id=2"><font style="font-size: 16px;">||業務聯絡</font></a></td>
+      </tr>
+    </tbody></table></td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><img src="mpos_files/index_bottom_line.gif" width="760" height="15" /></p>
+      <p><img width="759" height="193"  align="top" src="mpos_files/mpos_clip_image003.jpg" /></p></td>
+  </tr>
+   <tr>
+    <td colspan="2"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tbody><tr>
+        
+      </tr>
+    </tbody></table>
+      <p><img src="mpos_files/index_line.gif" width="760" height="8" /></p></td>
+   </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" bgcolor="#FFFFFF"><p><strong><u>業務聯絡</u></strong><strong><u> </u></strong><br />
+      挪威  :  Michael Cheung     (47) 92 60 86 65  <a href="mailto:michael92608665@yahoo.no">michael92608665@yahoo.no</a> <br />
+      中國  :  黎慶禧           (852) 62 78 01 29  <a href="mailto:gzliqingxi@163.com">magic@mpos.cc</a> <br />
+      中國  :  駱志洪           (852) 51 20 89 75 <a href="mailto:luo_zh@21cn.com">luo_zh@21cn.com</a>
+      </td>
+  </tr>
+  <tr>
+    <td colspan="2" height="45"><img src="mpos_files/index_bottom_line.gif" width="760" height="15" /></td>
+  </tr>
+ <?smarty:foreach from=$list key=k item=list?>
+  <tr>
+   <td colspan="1" height="45">{$list.question_no}</td><td colspan="1" height="45"><a href="show.php?question_no={$list.question_no}">{$list.title}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$list.newstatus}&nbsp;&nbsp;<a href="javascript:void(0)" onclick="showinfo('{$list.question_no}')">查看详细内容</a>&nbsp;&nbsp;&nbsp;<a href="list.php?action=deleteinfo&k_id={$list.question_no}">删除</a>&nbsp;&nbsp;&nbsp;<a href="edit.php?k_id={$list.question_no}">修改问题答案</a>
+   </br>   
+   </td>
+  </tr>
+  <tr id="context{$list.question_no}" style="display:none"></tr>
+<?smarty:/foreach?>
+    <tr>
+    <td colspan="2" height="45" style="text-align:center">{$pages}</td>
+  </tr>
+    <tr>
+    <td colspan="2" height="45"><img src="mpos_files/index_bottom_line.gif" width="760" height="15" /></td>
+  </tr>
+</tbody></table>
+
+</body></html>

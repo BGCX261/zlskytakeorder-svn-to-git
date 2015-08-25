@@ -1,0 +1,288 @@
+@charset "utf-8";
+/* CSS Document */
+
+a{text-decoration:none; color:#333;}
+.b1{
+	margin:40px 0 5px 0;
+	width:522px;
+	padding:5px;
+	background:#ffc17f;
+	border:1px #ff6b09 solid;
+	overflow:hidden;
+	}
+
+.b1 .title{
+	height:31px;
+	width:502px;
+	line-height:31px;
+	background:url(../../../img/App/Index/Index/order_list_06.jpg) no-repeat;
+	border-bottom:1px #ff6600 solid;
+	float:left;
+	}
+.b1 .title span{color:#990000; font-weight:bold;}
+.b1 .ltitle{
+	padding-left:10px;
+	float:left;
+	font-family:Verdana;
+	color:#fff;
+	font-weight:bold;
+	text-align:center;
+	}
+.b1 .ltitle a{color:#fff;font-size:16px;	width:95px;
+	height:30px; display:block}
+.b1 .ltitle2{
+	padding-left:30px;
+	float:left;
+	color:#333;
+	}
+.b1 .ltitle3{float:right;font-size:12px;}
+.b1 .ltitle3 a{padding:5px;background:#f90;color:#fff; font-weight:bold}
+.b1 .box{
+	height:185px;
+	overflow:auto;
+	}
+
+.content{
+	background:#fff;
+	width:512px;
+	padding:5px;
+	overflow:hidden;
+	}
+
+
+.b2{
+	margin-top:0px;
+	margin-bottom:5px;
+	line-height:24px;
+	overflow:hidden;
+	width:522px;
+	padding:5px;
+	background:#fcebc5;
+	border:1px #f8c351 solid;
+	text-align:center;
+	}
+.de_btn{
+		overflow:hidden;
+		float:right;
+		width:60px;
+		overflow:hidden;
+		padding-top:5px;
+		}
+.de_btn a.pre{padding-top:73px; padding-left:60px; background:url(../../../img/App/Index/Index/sub_prev.gif) no-repeat; display:block;}
+.de_btn a.next{padding-top:58px; padding-left:60px; background:url(../../../img/App/Index/Index/sub_next.gif) no-repeat;display:block;}
+.b2 .content{
+	width:450px;
+	height:50px;
+	float:left;
+	overflow:hidden;
+	padding:5px;
+	}
+.b2 a{
+	padding:7px;
+	line-height:50px;
+	border:1px #ccc solid;
+	text-decoration:none;
+	display:inline;
+	overflow:hidden;
+	margin-right:8px;
+	margin-top:10px;
+	}
+.b2 a.pre{
+	padding:0;
+	line-height:0px;
+	border:0;
+	height:56px;
+	float:left;
+	width:31px;
+	background:url(../../../img/App/Index/Index/sit_pre.gif) no-repeat;
+	text-decoration:none;
+	display:block;
+	overflow:hidden;
+	margin:0;
+	}
+.b2 a.next{
+	padding:0;
+	line-height:0px;
+	border:0;
+	height:56px;
+	float:right;
+	width:31px;
+	background:url(../../../img/App/Index/Index/sit_next.gif) no-repeat;
+	text-decoration:none;
+	display:block;
+	overflow:hidden;
+	margin:0;
+	}
+.b2 a.sp{margin-right:0px;}
+
+.b2 span{color:#333; font-weight:bold;}
+.b2 span.l1{font-weight:normal;}
+.selected_place{
+	background:#F90;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+.b3{
+	width:532px;
+	background:#fff;
+	height:125px;
+	border:1px #ccc solid;
+	}
+.b3 .tit{
+	height:40px;
+	background:url(../../../img/App/Index/Index/b3_15.jpg) repeat-x top;
+	border-bottom:1px #ccc solid;
+	}
+.b3 .tit .left{color:#ff6600; font-weight:bold; float:left;padding-left:5px; line-height:40px;}
+.b3 .tit .right{ float:right; line-height:40px; padding-right:5px;}
+.b3 .tit .right a{
+	border:1px solid #ccc;
+	padding:8px;
+	font-size:12px;
+	text-decoration:none;
+	margin-left:10px;
+	}
+/*.b3 a{
+	padding:3px 4px;
+	color:#333;
+	border:1px #ccc solid;
+	text-decoration:none;
+	}*/
+.b3 li{float:left; margin-left:4px; margin-bottom:8px; width:80px; text-align:center;height:30px; line-height:30px; text-align:center;border:1px solid #ccc}
+.b3 li a{
+	border:0px;
+	padding:0px;
+	}
+.b3 li a:hover{background:#d7f1f0;width:80px; height:30px; display:block;}
+.b3_btn{float:right; width:45px; margin-right:5px; padding-top:5px;}
+.b3_btn a.next{width:45px; padding-top:58px; background:url(../../../img/App/Index/Index/img_03.jpg) no-repeat; display:block}
+.b3_btn a.pre{width:45px; padding-top:53px; background:url(../../../img/App/Index/Index/img_06.jpg) no-repeat; display:block}
+.b4	{
+	margin-top:5px;
+	width:522px;
+	padding:5px;
+	background:#d7f1f0;
+	border:1px #6fa8d5 solid;
+	z-index:20;
+	overflow:hidden;
+	}
+.b4 .tit{
+	width:462px;
+	border-bottom:1px #ccc solid;
+	height:31px;
+	overflow:hidden;
+	z-index:21;
+	}
+.b4 .tit li{
+	top:1px;
+	position:relative;
+	overflow:hidden;
+	float:left;
+	margin-right:80px;
+	background:url(../../../img/App/Index/Index/list_t_19.jpg) no-repeat;
+	text-align:center;
+	padding:7px 0;
+	font-family:Verdana;
+	width:113px;
+	font-weight:bold;
+	height:17px;
+	}
+.b4 .tit li.l5{
+	margin-right:20px;
+	}
+.b4 .content{
+	background:#fff;
+	width:450px;
+	padding:5px;
+	border:1px #ccc solid;
+	border-width:0 1px 1px 1px;
+	float:left;
+	}
+.b4	.list_btn{float:right; width:60px; text-align:center;}
+.list_btn a.pre{
+	padding:0;
+	line-height:0px;
+	border:0;
+	height:68px;
+	float:left;
+	width:45px;
+	background:url(../../../img/App/Index/Index/list_pre.jpg) no-repeat;
+	text-decoration:none;
+	display:block;
+	overflow:hidden;
+	margin:0;
+	margin-left:5px;
+	margin-top:5px;
+	margin-bottom:10px;
+	}
+.list_btn a.next{
+	padding:0;
+	line-height:0px;
+	border:0;
+	height:68px;
+	float:left;
+	width:45px;
+	background:url(../../../img/App/Index/Index/list_next.jpg) no-repeat;
+	text-decoration:none;
+	display:block;
+	overflow:hidden;
+	margin:0;
+	margin-left:5px;
+	}
+.b4 .content ul li{
+	height:35px;
+	line-height:35px;
+	border-top:1px dashed #ccc;
+	margin-top:-1px;
+	}
+.b4 .content ul li ul li{
+	float:left;
+	border:0px;
+	padding:0 10px;
+	width:95px;
+	text-align:center;
+	}
+
+.b4 .content ul li ul li.s1{text-align:left;}
+.b4 .content ul li ul li.s2{padding-left:35px;}
+.b4 .content ul li ul li .add{
+	margin-top:10px;
+	background:url(../../../img/App/Index/Index/add_23.jpg) no-repeat;
+	height:21px;
+	width:56px;
+	}
+.b5{width:524px; text-align:center; margin-top:10px;}
+.sub0{
+	background:url(../../../img/App/Index/Index/list_sub_27.jpg) no-repeat;
+	height:54px;
+	width:171px;
+	}
+#index_box{
+	height:35px;
+	position:fixed;
+	top:0; left:0;
+	text-align:right;
+	background:#fff;
+	border-bottom:1px #ccc solid;
+	width:100%;
+	z-index:50;
+	}
+#index_box .inner{
+	height:35px;
+	position:absolute;
+	line-height:35px;
+	top:0;
+	left:0;
+	/*margin-left:-267px;*/
+	text-align:center;
+	}
+
+.inner a{	margin:0 10px;
+			font:bold 14px/30px Verdana, Geneva, sans-serif;
+			width:95px;
+			height:30px;
+			background:url(../../../img/App/Index/Index/button_top_03.gif) no-repeat;
+			padding:7px 20px;
+			color:#FFF;
+			}

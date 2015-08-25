@@ -1,0 +1,39 @@
+域名管理:
+	域名管理页面:	http://mydns2.xinnet.com/pagemydns/authpage.php
+	域名:	frsea.cn	密码:	a06e7851
+	域名:	frsea.com	密码:	7983c387
+
+鄢海涛 空间管理:
+	空间管理页面:	http://www.33ip.com/
+	账号:	happylion
+	密码:	360867
+	IP:	202.91.247.130
+        空间商名称： 徐州枫信科技有限公司
+
+kaixin156.cn域名管理地址：
+http://www.zzy.cn/
+happylion/ifroefbnyoc
+
+数据库用户名:a0507094939 数据库密码:24166973 数据库名称:a0507094939
+happylion 网 址 ： http://happylion.w130.dnsfx.cn 
+
+
+FTP地址 ：202.91.247.130 服务器IP ：电信:202.91.247.130
+网通:202.91.237.66 
+
+
+FTP用户名 ：happylion FTP密　码 ：frsea123
+
+
+ecshop演示站已经搭建起来。以下是访问地址。
+后台： http://www.frsea.com/ecshop/admin/ 用户名：admin 密码：frsea123456
+前台： http://www.frsea.com/ecshop/
+
+
+socket项目
+user: admin
+pass: frsea123456
+
+数据采集网址：http://www.ra9988.com/
+user: admin0000
+pass: a22222

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>挪威高樂科技公司</title>
+	<meta http-equiv="Content-Language" content="English" />
+	<meta name="Robots" content="index,follow" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+</head>
+<body>
+
+<div id="wrap" style="text-align:left;">
+<?smarty:include file=header.html?>	
+	<div id="main">
+
+                
+                
+<form method="post"  action="faq.php">
+<div class="feedback_box">
+<ul>
+<li style="float:left;height:20px;text-align:right;width:60px">聯繫人：</li>
+<li style="float:left;"><input type="text" name="fb_truename"  id="fb_truename" maxlength="30" size="15" class="tb"></li>
+
+<li style="float:left;height:20px;text-align:right;width:60px">電話：</li>
+<li style="float:left;"><input type="text" name="fb_tel"   value="+86."  id="fb_tel" maxlength="30" size="15" class="tb" ></li>
+
+<li style="float:left;height:20px;text-align:right;width:60px">E-mail：</li>
+<li style="float:left;"><input type="text"  name="fb_email"  id="fb_email" maxlength="30" size="20" class="tb"></li>
+<li style="clear:both;height:2px;line-height:0px;font-size:1px;"></li>
+
+<li style="float:left;text-align:right;width:55px;height:60px;margin:30px 0 0 0">留言：</li>
+<li style="float:left;padding:5px 0 5px 0">&nbsp;<textarea  id="fb_content"  name="fb_content"  Cols="62" rows="5" style="border:1px solid #cccccc;border-color:#000000 #cccccc #cccccc #000000;"  onblur="if(this.value.length>250)this.value=this.value.substr(0,250)"></textarea> 
+</li>
+<li style="clear:both;height:2px;line-height:0px;font-size:1px;"></li>
+<li style="float:left;height:20px;text-align:right;width:60px">驗證碼：</li>
+<li style="float:left;"><input type='textbox' name='fb_yzm' id='fb_yzm' class="tb"  maxlength='4' size="5">&nbsp;<img src='verify.php?rand=Math.random()' align=absmiddle border=0 id='fb_code' style='cursor:pointer' alt='看不清楚？点击更换' title='看不清楚？点击更换' onclick="javascript:this.src='verify.php?rand=Math.random()'"></li>
+
+<li style="clear:both;height:2px;line-height:0px;font-size:1px;"></li>
+<li style="clear:both;padding:5px 0 5px 55px;">
+<input type="radio" name="fb_type" value="1" checked>諮詢
+<input type="radio" name="fb_type" value="2">問題
+<input type="radio" name="fb_type" value="3">建議
+<input type="radio" name="fb_type" value="4">投訴
+<input type="radio" name="fb_type" value="5">合作
+<input type="radio" name="fb_type" value="6">其他&nbsp;
+<input type="submit" value="提交" class="bt"  name="submitvalue"/>&nbsp;
+<input type="reset" value="重寫" class="bt" /></li>
+</li>
+</ul>
+</div>
+</form>
+
+  <div class="feedbacklist_box">
+ 
+  
+ 
+  <?smarty:foreach from=$list key=k item=list?>
+   <ul class="feedbacklist_item_box">
+              <?smarty: if $right=='admin' and $list.status==1?>
+    <li style="text-align:right"><a href="edit.php?k_id={$list.question_no}">點擊回答該問題</a></li> 
+           <?smarty:else?>
+           <!--如果其问题的属于群组里面的文章 只有群组的管理员才能 回答问题-->
+                    <?smarty: if ($privileges =='2' and $is_admin==1 and $list.privileges==2)?>
+    <li style="text-align:right"><a href="edit.php?k_id={$list.question_no}">點擊回答該問題</a></li> 
+                     <?smarty:/if?>
+           <?smarty:/if?>
+    <li style="float:left;height:20px;background:url(./images/face1.gif) no-repeat 0 0;padding:0 0 0 25px;">類型：{$list.newtype}</li>
+    <li style="float:right;height:20px;">{$list.question_time}</li>
+    <li class="feedbacklist_item_jiange"></li>
+
+    <li style="padding:5px 10px 5px 10px">{$list.question} </li>
+
+
+      <?smarty: if $list.status==2?>
+    <li class="feedbacklist_item_jiange"></li>
+
+    <li style="float:left;height:20px;background:url(./images/face2.gif) no-repeat 0 0;padding:0 0 0 25px;color:#ff0000">回復：</li>
+    <li style="float:right;height:20px;color:#ff0000"><span id="ctl01_ctl01_Repeater_1_ctl04_Lb_Replay_Time">{$list.answer_time}</span></li>
+    <li class="feedbacklist_item_jiange"></li>
+    <li style="padding:5px 10px 5px 10px">
+   <span id="ctl01_ctl01_Repeater_1_ctl04_Lb_Replay">{$list.answer}</span>
+   </li>
+      <?smarty:/if?>
+  </ul>
+  <?smarty:/foreach?>
+ 
+  
+ 
+  </div>
+  <div style="text-align:center">{$pages}</div>
+
+
+</div>
+<?smarty:include file=footer.html?>		
+</div>
+	
+	
+</body>
+</html>

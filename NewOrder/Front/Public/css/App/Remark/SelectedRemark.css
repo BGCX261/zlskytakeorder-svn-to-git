@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+body{background:#fff;}
+.table{
+	width:450px; 
+	font:14px/24px Arial, Helvetica, sans-serif;
+	overflow:hidden
+	}
+.table ul li{
+		float:left;	
+		height:24px;
+		}
+.table ul li.s1{width:222px; padding-left:10px;}
+.table ul li.s2{float:right;padding-left:30px;}
+.table ul li .del{	
+	background:url(../../../img/App/Index/Index/del_11.jpg) 10px 0px no-repeat;
+	height:24px; 
+	width:40px;
+	}
+.table span{color:#ff6000;font-weight:bold;}

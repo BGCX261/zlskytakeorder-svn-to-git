@@ -1,0 +1,95 @@
+<link href="<!--{$__CSS__}-->/App/Remark/Index.css" rel="stylesheet" type="text/css">
+<script language="javascript">
+var thisOptionValue="0";
+function displayItemList(divId)
+{
+	itemList=$("#"+divId).html();
+	itemListRegion=$("#garnishItemList_display");
+	itemListRegion.empty();
+	itemListRegion.html(itemList);
+}
+
+function addRemarkItem(rmkNo,rmkName)
+{
+	selectValue=thisOptionValue;
+	thisOptionValue="0";
+	$.ajax({
+		url:	"<!--{$addRemarkURL}-->",
+		async:	false,
+		cache:		false,
+		data:	{actionLv:selectValue,rmkNo:rmkNo,rmkName:rmkName},
+		type:	"GET"
+	});
+	selectedRemarkURL.location.reload();
+}
+
+function createThisValue(selectElement)
+{
+	thisOptionValue=$(selectElement).val();
+}
+
+function remRemark()
+{
+	
+	//parent.frames[selectedItemMenu].document.location.reload();
+	window.parent.frames[0].document.location.reload();
+	parent.$("#remarkDiv").remove();
+}
+</script>
+<div class="content">
+	<div class="title">
+    	<a href="#" onclick="remRemark();">[ Closed ]</a>
+    </div>
+    <div class="box">
+    	<div class="head">
+        	<span>Banana</span>'s what what
+       </div>
+       <div class="bcontent">
+       		<div class="bo2">
+            	<iframe frameborder="0" width="476px;" height="155px;" src="<!--{$selectedRemarkURL}-->" name="selectedRemarkURL"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <div class="box2">
+    	<div class="head">Ingredients</div>
+        <div class="bo3">
+        	<div class="left">
+                <ul>
+                    <!--{foreach from=$garnishList item=list}-->
+                        <li onclick="displayItemList('groupList_<!--{$list.group_no}-->')" ><!--{$list.group_name}--></li>
+                        
+                        <!--{if $list.itemList}-->
+                            <div style="display:none" id="groupList_<!--{$list.group_no}-->">
+                                <!--{foreach from=$list.itemList item=listItem}-->
+                                    <ul>
+                                        <li class="s2"><span><!--{$listItem.seq_rmk}-->.</span><!--{$listItem.rmk_name}--></li>
+                                        <li>
+                                        	<select onchange="createThisValue(this)" >
+                                            	<!--{html_options options=$optionValue}-->
+                                            </select>
+                                        </li>
+                                        <li class="s1"><button onclick="addRemarkItem('<!--{$listItem.rmk_no}-->','<!--{$listItem.rmk_name}-->')">Increase</button></li>
+                                    </ul>
+                                <!--{foreachelse}-->
+                                <!--{/foreach}-->
+                            </div>	
+                        <!--{/if}-->
+
+                    <!--{foreachelse}-->
+                        <li>No Data</li>
+                    <!--{/foreach}-->
+                </ul>
+            </div>
+            <div class="right" id="garnishItemList_display">
+				
+            </div>
+        </div>
+    	
+    </div>
+    
+    <div class="box3">
+    	<button onclick="remRemark();" class="sub0"></button>
+    </div>
+
+</div>

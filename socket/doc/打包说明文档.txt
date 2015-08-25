@@ -1,0 +1,6 @@
+1.将source.rar放到d盘的根目录下。
+2.在source下有software目录。里面有打包程序的安装包，安装运行。
+3. 在socket.iss为打包的项目文件。 doc目录下有安装说明。image下是图片文件。socket-code为目标文件 software为打包软件 Output为编译后的安装包
+4.运行socket.iss. 里面有句
+Source: "D:\work\setup\socket\source\socket-code\limit\start.vbs"; DestDir: "C:\Documents and Settings\Administrator\「开始」菜单\程序\启动\"; Flags: ignoreversion recursesubdirs createallsubdirs
+如果该机无administrator用户。那要就将Administrator替换为该用户。重新编译后在output目录下有新的安装包.

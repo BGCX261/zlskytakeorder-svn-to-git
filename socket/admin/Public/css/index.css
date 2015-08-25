@@ -1,0 +1,319 @@
+@charset "utf-8";
+/* CSS Document */
+select{
+	padding:2px;
+	border:1px solid #333;
+}
+
+
+body,td,th {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin:auto;
+}
+a:link {
+	color: #000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000;
+}
+a:active {
+	text-decoration: none;
+	color: #000;
+}
+a {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+input{
+	background:#D9F2FF;
+	border:1px solid #0080C0;
+	width:auto;
+	height:auto;
+	font-size:11px;}
+.input_mouseover{
+	background:#0080C0;
+	border:1px solid #000;
+	font-size:11px;}
+.main{
+	padding-top:10px;
+	width:auto;
+	height:520px;
+	background:#D9F2FF}
+.main .lv_1{
+	float:left;
+	margin:5px;
+	width:48%;
+	height:410px;
+	border:2px solid #0080C0;
+	background:#FFF;}
+.lv_1_dv{
+	margin:3px; 
+	background:#09F; 
+	border:1px solid #06F; 
+	color:#333; 
+	padding:2px;
+	}
+.pagedata{
+	margin:5px 10px; 
+	color:#333; 
+	padding:2px;
+	}
+.main .lv_1 .lv_2{
+	float:left;
+	margin:3px;
+	width:48%;
+	height:90px;
+	border:0px solid #009;
+	background:#D9F2FF;
+}
+	
+.lv_2_content{
+	margin:3px;
+}
+.search span{
+	margin:0px 10px;}
+.onmouseover{
+	float:left;
+	margin:3px;
+	width:48%;
+	height:90px;
+	background:#0080C0;
+	cursor:pointer;
+	color:#FFF}
+	
+.onmouseover_search{
+	margin:5px;
+	padding:5px;
+	background:#0080C0;
+	cursor:pointer;
+	color:#FFF}
+/*tv_station*/
+.station{
+	position:absolute;
+	top:100px;
+	width:996px;
+	height:auto;
+	background:#FFF;
+	border:2px solid #0080C0;
+	margin:auto;
+	display:block
+}
+.tv_station{
+	width:900px;
+	height:180px;
+	/*
+	border-left:2px solid #333;
+	border-right:2px solid #333;
+	background:#eee;
+	*/}
+.tv_station .tv_station_parameter{
+	width:400px;
+	height:30px;
+	display:block;
+	float:left;
+	margin:5px;
+}
+.tv_station .tv_station_intro{
+	margin:0px 5px 5px 5px;
+	padding:3px 3px 3px 3px;
+	border:1px solid #D9F2FF;}
+	
+.tv_station .tv_station_close{
+	margin:3px;
+	}
+.tv_station input{
+	width:20px;
+	height:20px;}
+
+
+
+
+/*-----------------------分页 S-----------------------------*/
+ul#pagenav {
+        font-size: 12px;
+        font-weight: bold;
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+}
+
+#pagenav li {
+        list-style: none;
+        background-color: #fff;
+        margin: 0px;
+        display: block;
+        float: left;
+        margin-left: 2px;
+        margin-right: 2px;
+}
+
+#pagenav li.disabled {
+        border: 1px solid #DDDDDD;
+        padding: 2px 6px 2px 6px;
+        color: #ccc;
+}
+
+#pagenav li.current {
+        border: 1px solid #2E6AB1;
+        padding: 2px 6px 2px 6px;
+        background-color: #2E6AB1;
+        color: #fff;
+}
+
+#pagenav li.none {
+        border: 1px none;
+        padding: 2px 6px 2px 6px;
+}
+
+#pagenav li a {
+        border: 1px solid #9AAFE5;
+        padding: 2px 6px 2px 6px;
+        display: block;
+        text-decoration: none;
+        color: #105CB6;
+}
+
+#pagenav li a:hover {
+        border: 1px solid #2E6AB1;
+        color: #000;
+}
+/*-----------------------分页 E-----------------------------*/
+
+
+
+/* 日期 */
+/* Default attributes of table container for entire calendar */
+.table-style {
+	font-family: arial;
+	border-width: 0px;
+	background-color: #5093b4;
+	font-family: arial; 
+	font-size: 11px;
+}
+
+/* Default attributes of DIV containing table container for entire calendar.
+ * You probably don't want to alter this style.
+ */
+.div-style {
+	z-index: +999;
+	position: absolute;
+	visibility: hidden;
+}
+
+/* Default attributes used in calendar title (month and year columns).*/
+.title-style {
+	padding: 1px;
+	font-family: arial; 
+	font-size: 11px;
+	color: #FFFFFF;	
+	border-width: 0px;
+}
+
+/* Default attributes used in calendar title background.*/
+.title-background-style {
+	background: #cee3ef url('../cp_thead.gif');
+}
+
+/* Normal appearance of controls in calendar title. */
+/* Note: The right, left and down icons are images, which must be edited if you need to change them. */
+.title-control-normal-style {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #FFFFFF; 
+	cursor: pointer;
+}
+
+/* Moused-over (selected) appearance of controls in calendar title. */
+.title-control-select-style {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #FFFFFF; 
+	cursor: pointer;
+}
+
+/* Default attributes of drop down lists (month and year). */
+.dropdown-style {
+	font-family: arial; 
+	font-size: 11px; 
+	border-width: 1px; 
+	border-style: solid; 
+	border-color: #a0a0a0;
+	background-color: #cee3ef;
+	cursor: pointer;
+}
+
+/* Default attributes selected (mouse-over) item in drop down lists (month and year). */
+.dropdown-select-style {
+	background-color: #FFFFFF;
+}
+
+/* Default attributes unselected (mouse-off) item in drop down lists (month and year). */
+.dropdown-normal-style {
+}
+
+/* Default attributes of calendar body (weekday titles and numbers). */
+.body-style {
+	padding: 5px;
+	background-color: #f7f7f7;
+	font-family: verdana; 
+	font-size: 10px;
+}
+
+/* Attributes of current day in calendar body. */
+.current-day-style {
+	color: red;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* Attributes of end-of-week days (Sundays) in calendar body. */
+.end-of-weekday-style {
+	color: #909090;
+	text-decoration: none;
+}
+
+/* Attributes of all other days in calendar body. */
+.normal-day-style {
+	color: black;
+	text-decoration: none;
+}
+
+/* Attributes of border around selected day in calendar body. */
+.selected-day-style {
+	border-style: solid;
+	border-width: 1px; 
+	border-color: #a0a0a0;
+}
+
+/* Default attributes of designated holidays. */
+.holiday-style {
+	background-color: #FFDDDD;
+}
+
+/* Attributes of today display at bottom on calendar */
+.today-style {
+	padding: 0px;
+	color: #FFFFFF;
+	background: #cee3ef url('../cp_thead.gif');
+	text-align: center;
+	text-decoration: none;
+}
+
+/* Attributes of week number division (divider.gif) */
+.weeknumber-div-style {
+	background-color: #d0d0d0; 
+	padding: 0px;
+}

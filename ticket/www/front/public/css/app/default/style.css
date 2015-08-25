@@ -1,0 +1,13 @@
+body{
+
+background:url(../../../images/app/default/index_01.jpg) repeat-x;
+margin:0 auto; 
+font-size:12px; 
+font-family:Verdana, Geneva, sans-serif
+}
+.zcontair{width:1003px;margin:0 auto;}
+ul,li,dd,dt,td,tr,p,span,div,br,em{padding:0px;margin:0px;}
+ul,li{list-style:none;}
+.clear{clear:both;}
+.titlefont a{font-size:14px;font-weight:bold;color:#333;text-decoration:none; }
+.titlefont a:hover{color:#f00;}

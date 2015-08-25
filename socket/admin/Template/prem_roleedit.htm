@@ -1,0 +1,26 @@
+<table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_bg">
+<form action='<!--{$_acurl}-->' method="post" name="role_form">
+	  <tr>
+		 <td colspan="2" class="td_title">编辑角色</td>
+	  </tr>
+	<tr>
+	  <td width="" class="td_bg_blue"><strong>角色标识</strong></td>
+      <td width="73%" class="td_bg_white">
+		<input type="text" name="rolename" id="rolename" value="<!--{$DataList.rolename}-->" <!--{if $DataList.role_id}--> readonly<!--{/if}--> />
+	  </td>
+	</tr>
+	<tr>
+	  <td width="" class="td_bg_blue"><strong>角色名</strong></td>
+      <td width="73%" class="td_bg_white"><input type="text" name="roledes" id="roledes" value="<!--{$DataList.roledes}-->"/></td>
+	</tr>
+   <tr align="center">
+	 <td colspan="2" class="td_bg_white" height="35">
+       <input type="submit" name="op" value="提交" class="button_bg">
+	   <!--{if $op=='m'}-->
+       <input name="role_id" type="hidden" id="role_id" value="<!--{$DataList.role_id}-->">
+	   <!--{/if}-->
+	 </td>
+  </tr> 
+  </form>
+</table>
+

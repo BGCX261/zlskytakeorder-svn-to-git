@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+
+ul,li,dl,dd {
+padding:0;
+margin:0;
+list-style-type:none;
+}
+.menu1{
+width:182px;
+border:1px solid #feb951;
+background:#fef4ea;
+padding-top:3px;
+font-size:12px;
+}
+.area li{
+height:22px;
+line-height:22px;
+text-align:left;
+position:relative;
+}
+.area li a {
+display:block;
+padding-left:20px;
+}
+.area li dl {
+width:180px;
+overflow:hidden;
+display:none;
+position:absolute;
+top:-1px;
+right:-182px;
+z-index:35533;
+border:1px solid #feb951;
+background:#fef4ea;
+padding:5px 0;
+}
+.area li dl a:hover {
+border:1px solid #feb951;
+background:#fff;
+margin:0 5px;
+padding-left:14px;
+}
+.area li.lion {
+height:20px;
+line-height:20px;
+text-align:left;
+border-top:1px solid #ffb850;
+border-bottom:1px solid #ffb850;
+background:#ffe7cc;
+}
+.area li.lion dl {display:block;}

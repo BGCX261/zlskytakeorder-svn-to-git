@@ -1,0 +1,1 @@
+alter table operatorlog add opt_type             char(1) not null default '0' comment '0,操作员操作，1.定时器自动操作';

@@ -1,0 +1,21 @@
+<table border="0" width="100%" cellspacing="2" cellpadding="0">
+  <tr>
+    <td align="left" height="20">
+    	<?smarty:if isset($prew)?>
+        {$prew}
+        <?smarty:/if?>
+    </td>
+  </tr>
+    <!--加辣椒，醋动作开始-->
+    <?smarty:foreach from=$list item=list?>
+    	<tr><td align="left" class="zlsky_list"><a href="javascript:void(0);" onclick="add_remark_sort('{$list.name},{$list.remark_no}')">{$list.name}</a></td></tr>
+    <?smarty:/foreach?>
+    <!--加辣椒，醋动作结束-->
+  <tr>
+    <td align="left" height="20">
+    	<?smarty:if isset($next)?>
+        {$next}
+        <?smarty:/if?>
+    </td>
+  </tr>
+</table>

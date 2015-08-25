@@ -1,0 +1,109 @@
+﻿<link href="<!--{$__CSS__}-->/App/index/ordersubmit.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+var totalNum=<!--{$totalNum}-->;
+
+function deleteItem(id){
+	$("#item_"+id).fadeOut("slow",function(){
+		$("#item_"+id).remove();
+		calculateTotalPrice();
+	});
+	
+}
+function calculateTotalPrice(){
+	var alltotalNum=0;
+	for(i=0;i<totalNum;i++){
+		price=parseFloat($("#totalPrice_"+i).html());
+		if(isNaN(price))continue;
+		alltotalNum += price;
+		alltotalNum=parseInt(alltotalNum);
+		$("#allTotalPrice").html(alltotalNum);
+	}
+}
+
+function changeNum(num,key){
+	if(isNaN(num)){
+		alert("<!--{$errorNumMsg}-->");
+		return false;
+	}
+	num=parseInt(num);
+	price=parseFloat($("#price_"+key).html());
+	thisTotalNum=price*num;
+	$("#totalPrice_"+key).html(thisTotalNum);
+	calculateTotalPrice();
+}
+
+function viewRemark(divName)
+{
+	divName=$("#"+divName);
+//	alert(divName.css("display"));
+	if(divName.css("display")=="block"){
+		//divName.fadeOut("fast");
+		divName.css("display","none");
+	}else{
+		divName.fadeIn("fast");
+	}
+	
+}
+
+</script>
+
+<div class="content">
+	<div class="meg">
+    	<!--{$weclomeMsg}-->
+  	</div>
+	
+	<div class="order">
+	<div class="tit">
+	<ul>
+		<li class="long">ItName</li>
+		<li>Price</li>
+		<li>QTY</li>
+		<li>Total</li>
+		<li></li>
+	</ul>
+    <form action="<!--{$submitFormURL}-->" method="post">
+	</div>
+    	<!--{foreach from=$listForm item=list key=key}-->
+		<div class="list" id="item_<!--{$key}-->">
+            <ul>
+                <li class="long"><span><!--{$list.placeNum}-->.</span><!--{$list.itemName|truncate:23}--></li>
+                <li id="price_<!--{$key}-->"><!--{$list.price}--></li>
+                <li>
+                <input type="text" name="num[]" onblur="changeNum(this.value,<!--{$key}-->)" value="<!--{$list.num}-->" />
+                </li>
+                <li><span id="totalPrice_<!--{$key}-->"><!--{$list.totalPrice}--></span></li>
+                <li class="del">
+                	<input type="hidden" name="site_no[]" value="<!--{$list.placeNum}-->" />
+                    <input type="hidden" name="item_no[]" value="<!--{$list.itemNo}-->" />
+                	<button onclick="deleteItem('<!--{$key}-->');return false;">Del</button>
+                    <!--{if $list.remark}-->
+                    <a href="javascript:viewRemark('remark_<!--{$list.placeNum}-->_<!--{$list.itemNo}-->')"></a>
+                    <!--{/if}-->
+                </li>
+            </ul>
+            <!--{if $list.remark}-->
+            <div class="detail" id="remark_<!--{$list.placeNum}-->_<!--{$list.itemNo}-->">
+                <!--{foreach from=$list.remark item=remarkList}-->
+                <ul>
+                	<li> - <!--{$remarkList.rmk_no}--></li>
+                    <li><!--{$remarkList.rmk_name}--></li>
+                    <li><!--{$actionLang[$remarkList.action_lv]}--></li>
+                </ul>
+                <!--{/foreach}-->
+            </div>
+            <!--{/if}-->
+		</div>
+		<!--{foreachelse}-->
+		
+        <div><ul><li><center>No Data</center></li></ul></div>
+        <!--{/foreach}-->
+		<div class="sub1">
+            Total:<span id="allTotalPrice"><!--{$allTotalPrice}--></span><br />
+            <input type="button" onclick="location.href='<!--{$returnOrderURL}-->'" class="sub3" value=" " name="sub" />
+			<input type="submit" class="sub2" value=" " name="sub" />			
+		</div>
+ 	</div>
+    </form>
+</div>
+
+

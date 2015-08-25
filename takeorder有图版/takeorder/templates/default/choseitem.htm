@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" type="text/javascript" src="js/ajax.js"></script>
+
+<title>菜单</title>
+<style type="text/css">
+ul,li,dl,dd {
+padding:0;
+margin:0;
+list-style-type:none;
+}
+.menu1{
+width:182px;
+border:1px solid #feb951;
+background:#fef4ea;
+padding-top:3px;
+font-size:12px;
+}
+.area li{
+height:22px;
+line-height:22px;
+text-align:left;
+position:relative;
+}
+.area li a {
+display:block;
+padding-left:20px;
+}
+.area li dl {
+width:180px;
+overflow:hidden;
+display:none;
+position:absolute;
+top:-1px;
+right:-182px;
+z-index:35533;
+border:1px solid #feb951;
+background:#fef4ea;
+padding:5px 0;
+}
+.area li dl a:hover {
+border:1px solid #feb951;
+background:#fff;
+margin:0 5px;
+padding-left:14px;
+}
+.area li.lion {
+height:20px;
+line-height:20px;
+text-align:left;
+border-top:1px solid #ffb850;
+border-bottom:1px solid #ffb850;
+background:#ffe7cc;
+}
+.area li.lion dl {display:block;}
+</style>
+</head>
+<body>
+<div id="newpalce">
+<div id="rtab2_box" class="menu1">
+<ul id="area" class="area">
+   <?smarty:foreach from=$list key=k item=list?>  
+<li><a href="javascript:void(0);">{$list.name}</a>
+<?smarty:if $list.sub?>
+	
+<dl>
+
+<?smarty:foreach from=$list.sub key=j item=list1?>
+<dd><a href="javascript:sendvalue('{$list1.k_id},{$list1.name}');">{$list1.name}</a></dd>
+  <?smarty:/foreach?>
+</dl>
+<?smarty:/if?>
+</li>
+  <?smarty:/foreach?>
+</ul>
+
+</div>
+<div class="menu1" align="center" id="page"><ul><li>{$pages}</li></ul></div>
+</div>
+<div style="position: absolute; width: 83px; height: 128px; left: 258px; top: 0px" id="layer1" id="selectdiv">
+		<p><select size="6" name="selectall" style="width=180;" multiple id="selectall">
+		<option selected>您已经选择的菜</option>
+		</select></p>
+   </div>
+   <script type=text/javascript>
+function onload() {
+    try{
+var lies = document.getElementById("area").getElementsByTagName("li");
+for (var i=0; i< lies.length; i++) {
+lies[i].onmouseover= function() {
+this.className="lion";
+}
+lies[i].onmouseout= function() {
+this.className="";
+}
+}
+}
+catch(e){}
+}
+onload();
+
+	function sendvalue(flag)
+    {
+	var arr=flag.split(",");
+	var optionText=arr[1];
+	var optionvalue=arr[0];
+					//获得当前被选择的选项的索引
+	var selobj=document.getElementById("selectall");
+	selobj.options[selobj.length] = new Option(optionText,optionvalue);
+	}
+
+    function getinfo(flag){
+     var newname="li"+flag;
+    var lies=document.getElementById("area").getElementsByTagName("li").className;
+   }
+							
+</script>
+</body>
+</html>

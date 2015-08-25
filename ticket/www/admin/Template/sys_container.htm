@@ -1,0 +1,69 @@
+<html>
+<head>
+<link href="<!--{$cssdir}-->main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="javascript" src="<!--{$jsdir}-->jquery.js"></script>
+<script language="javascript" src="<!--{$jsdir}-->main.js"></script>
+<script language="javascript" src="<!--{$jsdir}-->checkdata.js"></script>
+<script language="javascript" src="<!--{$jsdir}-->datepick/WdatePicker.js"></script>
+<!--script language="javascript" src="<{$jsdir}>datepick/calendar.js"></script-->
+<br />
+<!--{if $noview_navigation!=true}-->
+<table width="96%"  border="0" cellspacing="1" cellpadding="1" align="center" class="table_bg">
+  <tr>
+    <td height="25" class="td_bg_blue"><span class="title_color"><b>您现在的位置：</b></span>&nbsp;<!--{$_CurrentlyPlace}--></td>
+  </tr>
+</table>
+<!--{/if}-->
+
+<!--{if $_fu}-->
+<br>
+<table width="96%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_bg">
+  <tr>
+    <td class="td_title">日志功能</td>
+  </tr>
+  <tr>
+    <td class="td_bg_white"><!--{include file=$_fun}--></td>
+  </tr>
+</table>
+<!--{/if}-->
+
+<!--{if $_op}-->
+<br />
+<!--{include file='sys_op.htm'}-->
+<!--{/if}-->
+
+
+
+<!--{if $_ds}-->
+<br />
+<table width="96%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_bg">
+  <tr>
+    <td class="td_title">查询栏</td>
+  </tr>
+  <tr>
+    <td class="td_bg_white"><!--{include file=$_sp}--></td>
+  </tr>
+</table>
+<!--{/if}-->
+
+
+<br />
+<!--{if $_ds}-->
+<table width="96%"  border="0" align="center" cellpadding="0" cellspacing="0">
+ <form method="post" name="dataform">
+  <tr>
+    <td class="td_none"><!--{include file=$_MainFile}--></td>
+  </tr>
+ </form>
+</table>
+<!--{else}-->
+<table width="96%"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="td_none"><!--{include file=$_MainFile}--></td>
+  </tr>
+</table>
+<!--{/if}-->
+</body>
+</html>

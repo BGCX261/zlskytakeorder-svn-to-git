@@ -1,0 +1,31 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/smain.css" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/sbase.css" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/smenu.css" />
+
+<!-- ×Ü±í  -->
+<table width='100%' align='center' border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<form action="customer.php" method="post" name="form1">
+<table width="300px;" border="0" cellspacing="0" cellpadding="0" class="table_tr_bgcolor">
+
+  <?smarty:foreach from=$itemselflist key=k item=itemselflist?>
+  <tr class="td_style_mouse" width="30px;">
+  <td width="130"><font color="#666666"><input type='button' value='{$sortlist.sortname}' style="WIDTH: 60px;height:30px;" onclick="checkitem({$itemselflist.id})"></font></td>  
+  </tr>
+  <?smarty:/foreach?>
+  <tr>
+  <td align="center">{$selfpages}</td>
+  </tr>
+  </table>
+  </form>
+</td>
+
+</tr>
+</table>
+
+<script language="javascript">
+ajax_get('itemself.php?id={$sortlist[0].id}','itemself');	
+</script>

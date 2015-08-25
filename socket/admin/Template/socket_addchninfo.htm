@@ -1,0 +1,28 @@
+<form method="post" action="<!--{$_acurl}-->" name="socket_form">
+<table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_bg">
+            <tr><td colspan="2" class="td_title">频道编辑</td></tr>
+        	<tr>
+            	<td class="td_bg_blue"><b>通道号</b></td>
+                <td class="td_bg_white"><input type="text" value="" name="chn"  /></td>
+            </tr>
+            <tr>
+            	<td class="td_bg_blue"><b>设备名称</b></td>
+                <td class="td_bg_white"><input type="text" value="新增频道" name="prgname"  /></td>
+            </tr>
+            <tr>
+            	<td class="td_bg_blue"><b>简称</b></td>
+                <td class="td_bg_white"><input type="text" value="NEW CHN" name="chnshort"  /></td>
+            </tr>
+            <tr>
+            	<td class="td_bg_blue"><b>音频apid</b></td>
+                <td class="td_bg_white">
+                	<input type="text" value="8901" name="apid"  />
+                </td>
+            </tr>
+              <tr align="center">
+                 <td colspan="2" class="td_bg_white" height="35">
+                   <input type="submit" name="op" value="提交" class="button_bg" />
+                   <input name="dev_no" type="hidden" value="<!--{$dev_no}-->" />
+                 </td>
+              </tr> 
+      	  </table>

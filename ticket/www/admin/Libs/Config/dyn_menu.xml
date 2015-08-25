@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<module xml:id="User" name="User" des="用户管理">
+		<action xml:id="Som_Index" name="Som_Index" des="部门管理">
+			<op xml:id="Som_Add" name='Som_Add' des="添加部门" />
+			<op xml:id="Som_Modify" name='Som_Modify' des="编辑部门" />
+			<op xml:id="Som_Delete" name='Som_Delete' des="编辑部门" />
+		</action>
+		<action xml:id="User_Index" name="User_Index" des="用户管理">
+			<op xml:id="User_Add" name="User_Add" des="添加用户" />
+			<op xml:id="User_Modify" name="User_Modify" des="修改用户" />
+			<op xml:id="User_Assign" name="User_Assign" des="设置权限" />      
+		</action>	
+        <action xml:id="User_Identity" name="User_Identity" des="修改密码" />
+	</module>
+
+
+	<module xml:id="Prem" name="Prem" des="权限管理">
+		<action xml:id="Prem_AddCtl" name="Prem_AddCtl" des="添加控制器" />
+		<action xml:id="Prem_AddAct" name="Prem_AddAct" des="添加方法" />
+		<action xml:id="Role_Index" name="Role_Index" des="角色管理">
+			<op xml:id="Role_Add" name="Role_Add" des="添加角色" />
+			<op xml:id="Role_Modify" name="Role_Modify" des="编辑角色" />
+			<op xml:id="Role_Assign" name="Role_Assign" des="设置权限" />
+		</action>
+	</module>
+
+</menu>

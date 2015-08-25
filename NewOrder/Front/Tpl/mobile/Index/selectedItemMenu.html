@@ -1,0 +1,41 @@
+<script language="javascript" src="<!--{$__JS__}-->/Libs/jquery.js"></script>
+<script language="javascript" src="<!--{$__JS__}-->/Libs/Mask/mask.js"></script>
+<link href="<!--{$__CSS__}-->/App/Default.css" rel="stylesheet" type="text/css" />
+<link href="<!--{$__CSS__}-->/App/Index/selectedItemMenu.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+function deleteItem(itemNo){
+	$.ajax({
+		url:		"<!--{$deleteListURL}-->",
+		async:		false,
+		type: 		"GET",
+		cache:		false,
+		dataType:	"html",
+		data:		{itemNo:itemNo}
+	});
+	location.reload();
+}
+function addRemark(placeNum,itemNo){
+	remarkUrl="<!--{$remarkURL}-->" + "&placeNum=" + placeNum + "&itemNo=" + itemNo;
+	showDiv="<div id='remarkDiv'><div id='remarkFrame'><iframe frameborder='0' width='500px;' height='600'  src='" + remarkUrl + "' name='remarkFrame'></iframe></div></div>";
+	parent.$("body").append(showDiv);
+	showBg();
+}
+</script>
+<body>
+    <div class="box">
+        <ul>
+            <!--{foreach from=$list item=list}-->
+            <li>
+                <ul>
+                    <li class="s1"><span><!--{$placeNum}--></span>.<!--{$list.itemName|truncate:15}--></li>
+                    <li><!--{$list.price}--></li>
+                    <li style="width:30px"><!--{$list.num}--><!--{if $list.remark}-->&nbsp;<font color="#FF0000">*</font><!--{/if}--></li>
+                    <li class="s3"><a onClick="addRemark('<!--{$placeNum}-->','<!--{$list.itemNo}-->')" href="#">Seasoning</a></li>
+                    <li><a class="s1" href="#" onClick="deleteItem('<!--{$list.itemNo}-->')">Del</a></li>
+                </ul>
+            </li>
+            <!--{foreachelse}-->
+            <!--{/foreach}-->
+        </ul>
+    </div>
+</body>

@@ -1,0 +1,41 @@
+<!--{ config_load file=msgcode.conf section="$code" }-->
+<link href="<!--{$cssdir}-->main.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+td {
+	line-height: 21px;
+}
+-->
+</style>
+<p>&nbsp;</p>
+<table width="80%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_bg">
+  <tr>
+    <td class="td_title">信息提示窗口</td>
+  </tr>
+  <tr>
+    <td id="messagewin" class="td_bg_white" style="line-height:22px; background-repeat:no-repeat; background-position:right;" ><table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="80">	
+		<span class='title_color'><b>操作结果：</b></span>
+		<!--{if $msgtype==1}-->
+			<font color='green'>操作成功(<!--{$code}-->)</font>
+		<!--{elseif $msgtype==0}-->
+			<font color='red'>操作失败(<!--{$code}-->)</font>
+		<!--{else}-->
+			<font color='#666666'>未知操作</font>
+		<!--{/if}-->
+		<br>
+		<span class='title_color'><b>提示信息：</b></span>
+		<!--{#message#}--><br>
+		</td>
+      </tr>
+	  <tr>
+		<td>页面将在 <b> <!--{$reftime}--></b> 秒后自动转向....<meta http-equiv="refresh" content="<!--{$reftime}-->;url=<!--{$rurl}-->"></td>
+	  </tr>
+	  <tr>
+    <td height="40" align="center"><input type="button" name="Submit" value="立即跳转" onClick="javascript:location.href='<!--{$rurl}-->';" class="button_bg" /></td>
+  </tr>
+    </table></td>
+  </tr>
+</table>
+

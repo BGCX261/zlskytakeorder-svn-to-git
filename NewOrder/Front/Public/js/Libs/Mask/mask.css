@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+#remarkDiv{
+background-color:#FFF;
+z-index:3;
+position:absolute;
+left:0px;
+top:0px;
+filter:Alpha(Opacity=100);
+/* IE */
+-moz-opacity:1; 
+/* Moz + FF */
+opacity:1; 
+}
+
+#remarkFrame {
+position:absolute;
+background:#FFF;
+display: none;
+z-index: 5;
+}

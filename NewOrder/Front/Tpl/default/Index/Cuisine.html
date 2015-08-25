@@ -1,0 +1,24 @@
+<link href="<!--{$__CSS__}-->/App/Default.css" rel="stylesheet" type="text/css" />
+<link href="<!--{$__CSS__}-->/App/Index/Cuisine.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="<!--{$__JS__}-->/Libs/jquery.js"></script>
+<script language="javascript">
+$(function(){
+	$("ul a").click(function(){
+		$("ul a").attr( "class","" );
+		$(this).attr( "class", "selected_cate");
+		categoryNo=$(this).attr("cateNo");
+		parent.itemList.location.href="<!--{$itemListURL}-->&categoryNo="+categoryNo;
+	})
+})
+</script>
+<body>
+    <div class="content">	
+        <ul>
+            <!--{foreach from=$list item=list}-->
+                <li><a cateNo="<!--{$list.category_no}-->" href="javascript:void(0)"><!--{$list.cate_name}--></a></li>
+            <!--{foreachelse}-->
+                <li><a href="javascript:void(0)">No Data</a></li>
+            <!--{/foreach}-->
+        </ul>
+    </div>
+</body>

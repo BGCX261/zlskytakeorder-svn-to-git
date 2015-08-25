@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="js/ajax.js"></script>
+<link href="css/calculator.css" rel="stylesheet" type="text/css" />
+<link href="css/choseitem.css" rel="stylesheet" type="text/css" />
+<link href="css/remark.css" rel="stylesheet" type="text/css" />
+</head>
+<?smarty:strip?>
+<body>
+<!--主体开始-->
+<input type="hidden" value="temp_id" id="temp_id"/>
+<input type="hidden" value="temporder_id" id="temporder_id"/>
+<input type="hidden" value="qtyorder_id" id="qtyorder_id"/>
+<input type="hidden" value="ok" id="ok"/>
+<input type="hidden" value="0" id="status"/>
+<div class="tempbody">
+<!--菜单显示-->
+
+     <div id="show">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="food_list_menu">
+  <tr>
+    <td width="95%" rowspan="2" align="center">
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="food_list">
+          <tr>
+            <td width="5%" align="center" valign="top">No</td>
+            <td width="60%" align="center" valign="top">Item Name</td>
+            <td width="5%" align="center" valign="top">QTY</td>
+            <td width="10%" align="center" valign="top">R</td>
+            <td width="20%" align="center" valign="top">I</td>
+          </tr>
+          <tr bgcolor="#4897c4">
+          	<td colspan="5" height="70"></td>
+          </tr>
+        </table>
+   
+    </td>
+    <!--列表开始-->
+    <!--列表结束-->
+  
+  </tr>
+</table>
+</div>
+
+<!--菜单结束-->
+
+<div id="optiontable">
+<!--台号与台上的人物显示-->
+ <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table_no_view">
+  <tr>
+    <td width="20%" align="left" valign="bottom"><img src="./ico/gif_57_053.gif" />:<input class="input_text" type="text" value="" readonly="true" id="tableno"/></td>
+    <td width="20%" align="left" valign="bottom"><img src="./ico/no.gif" />:<input class="input_text" type="text" value="1" readonly="true" id="peopleno"/></td>
+
+    <td width="60%" align="left" valign="bottom"><img src="./ico/admin.gif" />:{$admin}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="location.href='index.php?action=out';" style="width:20px; height:20px;">L</button>&nbsp;&nbsp;<button onclick="javascript:showall();" style="width:20px; height:20px;">S</button>&nbsp;&nbsp;<button onclick="javascript:deleteall()" style="width:20px; height:20px;">D</button></td>
+  </tr>
+</table>
+<!--台号与台上的人物显示结束-->
+<div id="maintable" style="display:block;">
+<!--台子上选择人物-->
+ <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table_no_people_select">
+  <tr>
+    <td align="center" valign="middle">
+    <button class="peoplebutton" onclick="javascript:prewno();" name="prew" id="prew" type="button"><img src="./ico/left_true.gif" /></button>
+     </td>
+	<td id="td_no_1" style="display:block;" align="center" width="95%">
+	<input type='button' class="peoplebutton" id='no_1' name='no_1' value='1' valign="middle" onclick="javascript:selno(1);">
+	<input type='button' class="peoplebutton" id='no_2' name='no_2' value='2' valign="middle" onclick="javascript:selno(2);">
+	<input type='button' class="peoplebutton" id='no_3' name='no_3' value='3' valign="middle" onclick="javascript:selno(3);">
+	<input type='button' class="peoplebutton" id='no_4' name='no_4' value='4' valign="middle" onclick="javascript:selno(4);">
+	<input type='button' class="peoplebutton" id='no_5' name='no_5' value='5' valign="middle" onclick="javascript:selno(5);">
+	<input type='button' class="peoplebutton" id='no_6' name='no_6' value='6' valign="middle" onclick="javascript:selno(6);">
+	</td>
+
+	<td id="td_no_2" style="display:none;" align="center" width="95%">
+	<input type='button' class="peoplebutton" id='no_7' name='no_7' value='7' valign="middle" onclick="javascript:selno(7);">
+	<input type='button' class="peoplebutton" id='no_8' name='no_8' value='8' valign="middle" onclick="javascript:selno(8);">
+	<input type='button' class="peoplebutton" id='no_9' name='no_9' value='9' valign="middle" onclick="javascript:selno(9);">
+	<input type='button' class="peoplebutton" id='no_10' name='no_10' value='10' valign="middle" onclick="javascript:selno(10);">
+	<input type='button' class="peoplebutton" id='no_11' name='no_11' value='11' valign="middle" onclick="javascript:selno(11);">
+	<input type='button' class="peoplebutton" id='no_12' name='no_12' value='12' valign="middle" onclick="javascript:selno(12);">
+	</td>
+
+	<td id="td_no_3" style="display:none;" align="center" width="95%">
+	<input type='button' class="peoplebutton" id='no_13' name='no_13' value='13' valign="middle" onclick="javascript:selno(13);">
+	<input type='button' class="peoplebutton" id='no_14' name='no_14' value='14' valign="middle" onclick="javascript:selno(14);">
+	<input type='button' class="peoplebutton" id='no_15' name='no_15' value='15' valign="middle" onclick="javascript:selno(15);">
+	<input type='button' class="peoplebutton" id='no_16' name='no_16' value='16' valign="middle" onclick="javascript:selno(16);">
+	<input type='button' class="peoplebutton" id='no_17' name='no_17' value='17' valign="middle" onclick="javascript:selno(17);">
+	<input type='button' class="peoplebutton" id='no_18' name='no_18' value='18' valign="middle" onclick="javascript:selno(18);">
+	</td>
+    <td align="center" valign="middle">
+    <button onclick="javascript:nextno();" class="peoplebutton" name="next" id="next" type="button"><img src="./ico/right_true.gif" /></button></td>
+  </tr>
+</table>
+<!--台子上选择人物结束-->
+<!--主菜单选台-->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="main_menu">
+  <tr>
+    <td align="center" valign="middle"><button onclick="chosetable()" type="button"><img src="./ico/gif_57_053.gif" /></button></td>
+    <td align="center" valign="middle"><button onclick="choseitem()" type="button"><img src="./ico/comments.gif" /></button></td>
+
+    <td align="center" valign="middle"><button onclick="choseremark()" type="button"><img src="./ico/34aL_013.png" /></button></td>
+    
+    <td align="center" valign="middle"><button type="button" onclick="setqty()"><img src="./ico/n.jpg" /></button></td>
+    <td align="center" valign="middle"><button type="button" onclick="returninfo()"><img src="./ico/r.jpg" /></button></td>
+    <td align="center" valign="middle"><button type="button" onclick="returncai()"><img src="./ico/v.jpg" /></button></td>
+    <td align="center" valign="middle"><button onclick="insertvalue()" type="button" id="insertvalue"><img src="./ico/icon2_089.png" /></button></td>
+    <td align="center" valign="middle"><button onclick="rehold()" type="button"><img src="./ico/icon_refresh.gif" /></button></td>
+    <td align="center" valign="middle"><button type="button" onclick="deleteinfo()"><img src="./ico/buddy_delete.gif" /></button></td>
+  </tr>
+</table>
+</div>
+<!--主菜单选台结束-->
+<!--储存选择的记录-->
+</div>
+<!--主体结束-->
+</body>
+<?smarty:/strip?>
+</html>
+<script language="javascript" type="text/javascript">
+//开始remark
+function choseremark(){
+   //后来修改
+	if(document.getElementById("temp_id").value=="" || document.getElementById("status").value=="0")return false;
+	var k_id=document.getElementById("temp_id").value;
+	  document.getElementById("lcdiv").innerHTML='';
+	ajax_get('remark.php?k_id='+k_id,'main_div');
+	ajax_get('remark_list.php?k_id='+k_id,'remark_list_div');
+	ajax_get('remark_sort.php','remark_sort');
+	ajax_get('remark_content.php','remark_content');
+}
+
+
+  function chosetable(){	
+	  var url="cut.php";
+      ajax_get(url,'main_div');
+	  document.getElementById("lcdiv").innerHTML='';	
+    
+  }
+function send(id){
+    var a = document.getElementById("Customizeno").value;
+	var tmp = a+id;
+	document.getElementById("Customizeno").value=tmp;
+}
+function send1(id){
+    var a = document.getElementById("Customizeno1").value;
+	var tmp = a+id;
+	document.getElementById("Customizeno1").value=tmp;
+}
+function clearnum(){
+document.getElementById("Customizeno").value="";
+}
+function clearone(){
+var str=document.getElementById("Customizeno").value;
+str=str.substring(0,(str.length-1));
+document.getElementById("Customizeno").value=str;
+}
+function clearone1(){
+var str=document.getElementById("Customizeno1").value;
+str=str.substring(0,(str.length-1));
+document.getElementById("Customizeno1").value=str;
+}
+function entervalue(){
+    document.getElementById("maintable").style.display='block';	
+var str=document.getElementById("Customizeno").value;
+document.getElementById("tableno").value=str;
+var tablenum=str;
+ var url="insert.php?action=table&tableno="+tablenum;
+  ajax_get(url,'forthediv');
+  	document.getElementById("main_div").innerHTML='';	
+}
+
+function prewno(){
+    if(document.getElementById("td_no_2").style.display=='block'){
+	    document.getElementById("td_no_1").style.display='block';
+		document.getElementById("td_no_2").style.display='none';
+		document.getElementById("td_no_3").style.display='none';
+		document.getElementById("prew").enable=false;
+	}else if(document.getElementById("td_no_3").style.display=='block'){
+	    document.getElementById("td_no_1").style.display='none';
+		document.getElementById("td_no_2").style.display='block';
+		document.getElementById("td_no_3").style.display='none';
+	}else if(document.getElementById("td_no_1").style.display=='block'){
+	   document.getElementById("prew").enable=true;
+	}
+}
+
+function nextno(){
+    if(document.getElementById("td_no_2").style.display=='block'){
+	    document.getElementById("td_no_1").style.display='none';
+		document.getElementById("td_no_2").style.display='none';
+		document.getElementById("td_no_3").style.display='block';
+		document.getElementById("next").enable=false;
+	}else if(document.getElementById("td_no_1").style.display=='block'){
+      
+	    document.getElementById("td_no_1").style.display='none';
+		document.getElementById("td_no_2").style.display='block';
+		document.getElementById("td_no_3").style.display='none';
+        document.getElementById("next").enable=true;
+	}else if(document.getElementById("td_no_1").style.display=='block'){
+	    document.getElementById("next").enable=true;
+	}
+}
+function selno(id){
+   if(document.getElementById("tableno").value==''){
+   document.getElementById("main_div").innerHTML='';
+   document.getElementById("peopleno").value=id;   
+	}else{
+	document.getElementById("peopleno").value=id;
+	if(exist("k_id")){
+	  var k_id=document.getElementById("k_id").value;
+	 document.getElementById("temporder_id").value=k_id;
+	} 
+    var tableno=document.getElementById("tableno").value;
+	var s_id=document.getElementById("temporder_id").value;
+     var url="insert.php?action=people&id="+id+"&k_id="+s_id+"&tableno="+tableno;
+       ajax_get(url,'main_div');	
+     var showurl="show.php?id="+id+"&k_id="+s_id+"&tableno="+tableno;
+      ajax_get(showurl,'show');	
+      choseitem();
+	}
+	
+}
+  function exist(id){
+    var s=document.getElementById(id);
+    if(s){return true}
+    else{return false}
+   }
+ function choseitem(){
+ if(document.getElementById("tableno").value!=''&&document.getElementById("peopleno").value!=''){	
+		  var url="zlsky_dincai.php";
+      ajax_get(url,'main_div');	
+	  document.getElementById("lcdiv").innerHTML='';
+  }else{
+        document.getElementById("main_div").innerHTML="";	
+  	    document.getElementById("lcdiv").innerHTML='';
+      }
+}
+ function autochoseitem(){
+ if(document.getElementById("tableno").value!=''&&document.getElementById("peopleno").value!=''){
+	  var url="mbcut.php";
+      ajax_get(url,'main_div');	
+  }else{
+        document.getElementById("main_div").innerHTML=="";	
+      }
+}
+function sendvalue(flag)
+    {
+	var arr=flag.split(",");
+	var optionText=arr[1];
+	var optionvalue=arr[0];
+					//获得当前被选择的选项的索引
+	var selobj=document.getElementById("selectall");
+	selobj.options[selobj.length] = new Option(optionText,optionvalue);
+	}
+
+    function getinfo(flag){
+     var newname="li"+flag;
+    var lies=document.getElementById("area").getElementsByTagName("li").className;
+   }
+   function remark(flag) {
+    //后来修改
+	document.getElementById("status").value="1";
+    var newname="tr"+flag;
+	var beginname=flag-10;
+	var endname=flag+10;
+	var i=0;
+	for(i=beginname;i<endname;i++){
+	var newid="tr"+i;
+	if(exist(newid)){
+	 document.getElementById(newid).style.background="#fff";
+	}	
+	}
+    document.getElementById(newname).style.background="#f00";
+    document.getElementById('temp_id').value=flag;
+    document.getElementById("maintable").style.display='block';
+	if(exist('remark_list_div')){
+	document.getElementById("remark_list_div").innerHTML='';
+	}
+	  if(exist('remark_sort')){
+	document.getElementById("remark_sort").innerHTML='';
+	} 
+	  if(exist('main_div')){
+	document.getElementById("main_div").innerHTML='';
+	} 
+
+
+   }
+    function remarkout(flag) {
+    var newname="tr"+flag;
+    document.getElementById(newname).style.background="#fff";
+    document.getElementById('temp_id').value="";
+   }
+     function ajax_item(flag) {
+      if(document.getElementById("tableno").value!=''&&document.getElementById("peopleno").value!=''){
+         var k_id=document.getElementById("k_id").value;
+     var peopleno=document.getElementById("peopleno").value;
+        var tableno=document.getElementById("tableno").value;
+        var url="insert.php?action=item&id="+flag+"&k_id="+k_id+"&tableno="+tableno+"&peopleno="+peopleno;
+       ajax_get(url,'test');      
+      var showurl="show.php?id="+peopleno+"&k_id="+k_id;
+       ajax_get(showurl,'show');	
+      }else{
+      var url="insert.php?action=returninfo";
+       ajax_get(url,'main_div');	
+       document.getElementById("ok").value='yes';
+      }
+   
+   }
+   function setqty() {
+	  if(document.getElementById("ok").value!=''){
+	   if(document.getElementById("tableno").value!=''&&document.getElementById("peopleno").value!=''){
+   var flag=document.getElementById('temp_id').value;
+    var url='qtycut.php';
+    ajax_get(url,'main_div');
+	  document.getElementById("lcdiv").innerHTML='';
+}
+ }
+
+   function rqtyentervalue(){
+var k_id=document.getElementById("qtyorder_id").value;
+var qty=document.getElementById("Customizeno").value;
+     var peopleno=document.getElementById("peopleno").value;
+ var url="insert.php?action=qty&k_id="+k_id+"&qty="+qty;
+  ajax_get(url,'main_div');	
+  var temid=document.getElementById("temporder_id").value;
+   var showurl="show.php?id="+peopleno+"&k_id="+temid;
+   ajax_get(showurl,'show');
+   }
+   }
+function insertvalue() {
+/*
+    var url="insert.php?action=insert";
+    ajax_get(url,'main_div');
+
+    var temid=document.getElementById("temporder_id").value;
+    var peopleno=document.getElementById("peopleno").value;
+    var showurl="show.php?id="+peopleno+"&k_id="+temid;
+    ajax_get(showurl,'show');
+    document.getElementById("ok").value='ok';
+	*/
+
+var showurl="inshow.php";
+ajax_get(showurl,'lcdiv'); 
+
+ 
+}
+
+function add_remark_content(flag)
+{   
+    var strArr=flag.split(",");
+	var str1=strArr[0];
+	var str2=strArr[1];
+	document.getElementById("remark_content_input").value=str1;
+	document.getElementById("remark_content_h").value=str2;
+}
+
+function add_remark_sort(flag)
+{
+    //后来修改
+	document.getElementById("status").value="0";
+	var strArr=flag.split(",");
+	var str1=strArr[0];
+	var str2=strArr[1];
+	document.getElementById("remark_sort_input").value=str1;
+	document.getElementById("remark_sort_h").value=str2;
+}
+function add_remark()
+{
+	var remark_sort_flag=document.getElementById("remark_sort_input").value;
+	var remark_content_flag=document.getElementById("remark_content_input").value;
+	var k_id=document.getElementById("temp_id").value;
+	if(remark_sort_flag=="" || remark_content_flag=="" || k_id=="")return false;	//如果两个值都等于空，那么将return false;
+    var durl='remark_list.php?sort='+remark_sort_flag+'&content='+remark_content_flag+'&k_id='+k_id+"&type=all";
+	ajax_get(durl,'remark_list_div');
+	document.getElementById("remark_sort_input").value="";
+	document.getElementById("remark_content_input").value="";
+	var id=document.getElementById("peopleno").value;
+	var s_id=document.getElementById("k_id").value;
+	   var showurl="show.php?id="+id+"&k_id="+s_id;
+	      ajax_get(showurl,'show');	
+	      var flag=document.getElementById("temp_id").value;
+	      var newname="tr"+flag;
+	      document.getElementById(newname).style.background="#f00";
+}
+function delete_remark_list(k_id)
+{   var deleteurl='remark_list.php?sqlaction=del&k_id='+k_id;
+	ajax_get(deleteurl,'remark_list_div');
+	var peopleno=document.getElementById("peopleno").value;
+    var temid=document.getElementById("k_id").value;
+    var showurl="show.php?id="+peopleno+"&k_id="+temid;
+    ajax_get(showurl,'show');
+    var flag=document.getElementById("temp_id").value;
+    var newname="tr"+flag;
+    document.getElementById(newname).style.background="#f00";
+
+	var remark_sort_flag=document.getElementById("remark_sort_input").value;
+	var remark_content_flag=document.getElementById("remark_content_input").value;
+	var k_id=document.getElementById("temp_id").value;
+    ajax_get('remark_list.php?sort='+remark_sort_flag+'&content='+remark_content_flag+'&k_id='+k_id,'remark_list_div');
+}
+function rehold(){
+var url="rehold.php";
+ajax_get(url,'main_div');
+document.getElementById("lcdiv").innerHTML='';
+}
+function reholdinfo(){
+var tableno=document.getElementById("Customizeno1").value;
+var url="rshowlist.php?table="+tableno;
+location.href=url;
+}
+function reholdinfolist(){
+	var tableno=document.getElementById("Customizeno1").value;
+	var url="rehold_list.php?table="+tableno;
+	   ajax_get(url,'main_div');
+	   document.getElementById("maintable").style.display='block';  	
+//	location.href=url;
+}
+  function rsetqty(flag) {
+  
+    var url="qtycut.php";
+    ajax_get(url,'test');
+    document.getElementById("qtyorder_id").value=flag;
+
+   }
+     function returninfo() {
+    
+    	   if(document.getElementById("tableno").value!=''&&document.getElementById("peopleno").value!=''){
+	   var flag=document.getElementById('temp_id').value;
+   var url="returninfo.php?id="+flag;
+    ajax_get(url,'main_div');
+	  document.getElementById("lcdiv").innerHTML='';
+    	   }
+
+   }
+   
+      function returncai() {
+    	   if(document.getElementById("tableno").value!=''&&document.getElementById("peopleno").value!=''){
+	   var flag=document.getElementById('temp_id').value;
+   var url="returncai.php?id="+flag;
+    ajax_get(url,'main_div');
+	  document.getElementById("lcdiv").innerHTML='';
+    	   }
+   }
+   function returnentervalue(){
+        var peopleno=document.getElementById("peopleno").value;
+		var temporder_id=document.getElementById("temporder_id").value;
+         var Customizeno=document.getElementById("Customizeno").value;
+      var url="enterinfo.php?peopleno="+peopleno+"&temporder_id="+temporder_id+"&Customizeno="+Customizeno;
+    ajax_get(url,'main_div');
+	 var showurl="show.php?id="+peopleno+"&k_id="+temporder_id;
+      ajax_get(showurl,'show');	
+      document.getElementById("maintable").style.display='block';
+   }
+   function deleteinfo(){
+	   if(document.getElementById("tableno").value!=''&&document.getElementById("peopleno").value!=''){
+	var temporder_id=document.getElementById("temp_id").value;
+	 var url="insert.php?action=delete&id="+temporder_id;
+	
+	  ajax_get(url,'main_div');
+var peopleno=document.getElementById("peopleno").value;
+ var temid=document.getElementById("k_id").value;
+var showurl="show.php?id="+peopleno+"&k_id="+temid;
+ajax_get(showurl,'show');
+document.getElementById("lcdiv").innerHTML='';
+	   }
+	   }
+
+ function qtyentervalue(){
+
+ var k_id=document.getElementById("temp_id").value;
+ var qty=document.getElementById("Customizeno").value;
+
+ var url="insert.php?action=qty&k_id="+k_id+"&qty="+qty;
+ ajax_get(url,'main_div');	
+  var peopleno=document.getElementById("peopleno").value;
+ var temid=document.getElementById("temporder_id").value;
+var showurl="show.php?id="+peopleno+"&k_id="+temid;
+ ajax_get(showurl,'show');    
+}
+ function deleteall(){
+	 var url="insert.php?action=deleteall";
+	 ajax_get(url,'main_div');	
+	 var showurl="show.php";
+	 ajax_get(showurl,'show'); 
+	}
+ function showall(){
+	 var showurl="show.php";
+	 ajax_get(showurl,'show'); 
+	}
+
+function lastvalue(){
+ var url="insert.php?action=insert";
+    ajax_get(url,'lcdiv');
+  
+    var temid=document.getElementById("temporder_id").value;
+    var peopleno=document.getElementById("peopleno").value;
+    var showurl="show.php?id="+peopleno+"&k_id="+temid;
+    ajax_get(showurl,'show');
+    document.getElementById("ok").value='ok';
+	  document.getElementById("lcdiv").innerHTML='';
+
+}
+
+function closevalue(){
+document.getElementById("lcdiv").innerHTML='';
+}
+</script>
+<div id="main_div"></div>
+<div id="test"></div>
+<div id="forthediv"></div>
+<div id="lcdiv"></div>

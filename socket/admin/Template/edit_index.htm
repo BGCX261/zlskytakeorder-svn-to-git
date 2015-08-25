@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>无标题文档</title>
+<script language="javascript" src="<!--{$jsdir}-->main.js"></script>
+<script language="javascript" src="<!--{$jsdir}-->checkdata.js"></script>
+<script language="javascript" src="<!--{$jsdir}-->datepick/WdatePicker.js"></script>
+<link href="<!--{$cssdir}-->main.css" rel="stylesheet" type="text/css" />
+<link href="./Public/css/index.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="./Public/js/jquery.js"></script>
+<script language="javascript" type="text/javascript">
+$(function(){
+	$(".lv_2").mouseout(function(){
+								 $(this).attr('class','lv_2');
+								 });
+	$(".lv_2").mouseover(function(){
+									$(this).attr('class','onmouseover');
+									});
+	$(".lv_2").click(function(){
+							  var equipment=$(this).attr('equipment');
+							  var devname=$(this).attr('devname');
+							  var ip=$(this).attr('ip');
+							  var port=$(this).attr('port');
+							  location.href='<!--{url controller="edit" action="channelview"}-->&serial='+equipment+'&devname='+devname+'&ip='+ip+'&port='+port;
+							  /*
+							  $("#station").fadeIn('normal');
+							  $.get(
+									'<!--{url controller="edit" action="channelview"}-->',
+									{'serial':equipment,'chn':channel},
+									function(data){
+										$("#station").html(data);
+										}
+									);
+							  */
+							  });
+
+
+/*
+	//input样式
+	$(":input").mouseover(function(){
+								  $(this).attr('class','input_mouseover');
+								  });
+	$(":input").mouseout(function(){
+								  $(this).attr('class','input');
+								  });
+*/
+});
+
+function close_edit_view()
+{
+	$(".tv_station_close").click(function(){
+									  $("#station").fadeOut('normal');
+									  });
+}
+
+function selectchninfo(serial)
+{
+	if(serial=="")return false;
+	location.href="<!--{url controller='edit' action='channelview'}-->&serial="+serial;
+}
+</script>
+</head>
+
+<body>
+<center>
+
+<div class="main">
+<div class="search">
+
+    
+    <span><input type="button" style="display:none" value="备份当前值为默认值" onclick="{if(confirm('您确定要备份吗?')){location.href='<!--{url controller='edit' action='appdefault'}-->'} return false;}" /></span>
+    <span><input type="button" style="display:none" value="还原默认值为当前状态" onclick="{if(confirm('您确定要还原吗?')){location.href='<!--{url controller='edit' action='restoredefault'}-->'} return false;}" />
+    </span>
+
+
+
+
+	<form action="<!--{url controller='edit' action='search'}-->" method="post">
+    
+<fieldset style="width:80%">
+<legend>快速搜索</legend>
+
+    	节目名称列表：
+   	  <select onchange="selectchninfo(this.value)" style="border:1px solid #006; padding:2px;">
+      		<option value="">请选择...</option>
+        	<!--{foreach from=$chnselect item=chnselect}-->
+            	<option value="<!--{$chnselect.serial}-->"><!--{$chnselect.prgname}--></option>
+            <!--{/foreach}-->
+        </select>
+
+    
+
+    <span style="padding:3px;">
+	<b>搜索：</b>
+    <select name="search_type" style="border:1px solid #006; padding:2px;">
+    	<option value="1">节目简称</option>
+        <option value="2">节目名称</option>
+    </select><span><input type="text" name="searchstring" /></span>
+    <span><input type="submit" value="提交" /></span></span>
+    
+    
+    
+    
+    
+</fieldset>
+<span><input type="button" class="button_bg" style="font-size:14px; font-weight:bold; color:red" value="频道整体设置" onclick="location.href='<!--{url controller="edit" action="allmondy"}-->'" /></span>
+    
+    
+    </form>
+	
+</div>
+
+<!--{foreach from=$Datalist item=Datalist}-->
+	<div class="lv_1">
+    	<div class="lv_1_dv"><span>设备名称：<b style="color:#FFF"><!--{$Datalist.devname}--></b></span>&nbsp;|&nbsp;<span>IP：<b style="color:#FFF"><!--{$Datalist.ipaddr}-->:<!--{$Datalist.ipport}--></b></span><br />
+<input type="button" value="【获取设备信息】" class="button_bg" onclick="location.href='<!--{url controller='socket' action='updatedevinfo' serial=$Datalist.serial jump='edit' socket_C='edit' socket_A='index'}-->'" />
+</div>
+        
+        <!--{foreach from=$Datalist.chninfo item=chninfor}-->	
+        <div style="width:50%; float:left; margin:0px; padding:0px;" class="lv_2" equipment="<!--{$chninfor.serial}-->" devname="<!--{$Datalist.devname}-->" ip="<!--{$Datalist.ipaddr}-->" port="<!--{$Datalist.ipport}-->">
+        <table width="100%" height="100%" border="1" bordercolor="#333333" cellspacing="1" cellpadding="0" style="border-collapse:collapse;" >
+          <tr>
+            <td width="35%"><font style="font-size:12px;"><strong>节目：</strong><!--{$chninfor.prgname|truncate:5}--></font></strong></td>
+            <td><font style="font-size:12px;">节目简称：<!--{$chninfor.chnshort}--></font></td>
+          </tr>
+          <tr>
+            <td width="35%"><font style="font-size:12px;"><b>音量：<br><!--{$chninfor.gain}--></b></font></td>
+            <td>
+            	<div>
+                <font style="font-size:12px; width:50%; display:inline-block; float:left;">模块:<!--{if $chninfor.chn!='9'}--><!--{$chninfor.chn}--><!--{else}--><!--{/if}--></font>
+                <font style="font-size:12px; width:50%; display:inline-block; float:left;">静音:<!--{$chninfor.mutestat}--></font>
+                </div>
+                
+                <div>
+                <font style="font-size:12px; width:50%; display:inline-block; float:left;">agc:<!--{$chninfor.agcstat}--></font>
+                <font style="font-size:12px; width:50%; display:inline-block; float:left;">旁通:<!--{$chninfor.passstat}--></font>
+                </div>
+            </td>
+          </tr>
+        </table>
+        </div>
+<!--{/foreach}-->
+          
+	<div style="clear:both"></div>
+    </div>
+<!--{/foreach}-->
+
+</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="td_bg_white">
+    <div style='float:right;' class="pagedata"><!--{webcontrol type="pagernav" name="pagenav" pager=$pagerData controller="edit" action="index" param=$param}--></div>
+    	</td>
+	</tr>
+</table>
+</center>
+
+</body>
+</html>

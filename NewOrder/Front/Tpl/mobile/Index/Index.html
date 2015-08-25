@@ -1,0 +1,150 @@
+<link href="<!--{$__CSS__}-->/App/Index/Index.css" rel="stylesheet" type="text/css" />
+<link href="<!--{$__JS__}-->/Libs/Mask/mask.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+$(function(){
+	$(".l1 a").click(function(){
+		$(".l1 a").attr( "class", "" );
+		href=$(this);
+		href.attr( "class" , "selected_place");
+		placeNum=href.text();
+		$.ajax({
+			url:	"<!--{$selectPlaceURL}-->",
+			data:	{placeNum:placeNum},
+			type:	"GET",
+			async:	false,
+			cache:	false
+		});
+		selectedItemMenu.location.reload();
+	});
+	$("#defaultPlace").click();
+});
+
+
+</script>
+
+<script language="javascript">
+function _(id) { return document.getElementById(id); }
+ if (navigator.userAgent.toLowerCase().indexOf("msie 6.0") != -1) {
+ window.setInterval(function () {
+ var top = (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop) + (document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight);
+ var left = (document.documentElement.clientWidth > document.body.clientWidth) && (document.documentElement.clientWidth != 0) ? document.documentElement.clientWidth : document.body.clientWidth;
+ _('index_box').style.position = "absolute";
+ _('index_box').style.top = (bottom - 30) + " px";
+ }, 500);
+ } 
+</script>
+<div id="index_box">
+	<div class="inner">
+    	<div style="width:534px;text-align:left; overflow:hidden">
+ 		<a href="#">一个栏目</a>
+		<a href="#c_detailed2">两个栏目</a>
+  		<a href="#c_detailed3">三个栏目</a>
+        </div>
+    </div>
+
+</div>
+
+<!--已点菜开始-->
+	<div class="b1" id="c_detailed">
+			<div class="content">
+				<div class="title">
+				<div class="ltitle"><a href="<!--{$subItemUrl}-->" >Submit</a></div>
+				<div class="ltitle2"><!--{$weclomeMsg}--></div>
+				<div class="ltitle3"><a href="<!--{$changeTableURL}-->"><!--{$changeTableMsg}--></a>&nbsp;&nbsp;&nbsp;<a href="<!--{$exitURL}-->"><!--{$exitMsg}--></a></div>
+				</div>
+				<div style="width:512px;">
+				<iframe style="float:left;" frameborder="0" width="442px;" height="140px;" src="<!--{$selectedItemMenuURL}-->" id="selectedItemMenu" name="selectedItemMenu"></iframe>
+                <div class="de_btn">
+                	<a class="pre" href="javascript:void(0)"></a>
+                    <a class="next" href="javascript:void(0)"></a>
+                </div>
+                </div>
+			</div>
+	</div>
+    <div style="clear:both"></div>
+<!--已点菜结束-->
+<!--已选桌子开始-->	
+		<script>
+        function sit1(){
+		document.getElementById('sit1').style.display="block";
+		document.getElementById('sit2').style.display="none"
+		}
+		 function sit2(){
+		document.getElementById('sit1').style.display="none";
+		document.getElementById('sit2').style.display="block"
+		}
+        </script>
+    <div class="b2">
+    	<a onclick="sit1()" class="pre" href="javascript:void(0)"></a>
+        <div class="content">
+            <span id="sit1" class="l1" style="block">
+                <a href="javascript:void(0)" id="defaultPlace">01</a>
+                <a href="javascript:void(0)">02</a>
+                <a href="javascript:void(0)">03</a>
+                <a href="javascript:void(0)">04</a>
+                <a href="javascript:void(0)">05</a>
+                <a href="javascript:void(0)">06</a>
+                <a href="javascript:void(0)">07</a>
+                <a href="javascript:void(0)">08</a>
+                <a class="sp" href="javascript:void(0)">09</a>                
+           </span>
+           <span  id="sit2" class="l1" style="display:none;">
+           <a href="javascript:void(0)">10</a>
+                <a href="javascript:void(0)">11</a>
+                <a href="javascript:void(0)">12</a>
+                <a href="javascript:void(0)">13</a>
+                <a href="javascript:void(0)">14</a>
+                <a href="javascript:void(0)">15</a>
+                <a href="javascript:void(0)">16</a>
+                <a href="javascript:void(0)">17</a>
+                <a class="sp" href="javascript:void(0)">18</a>
+           </span>     
+        </div>
+        <a onclick="sit2()" class="next" href="javascript:void(0)"></a>
+    </div>
+<!-- 已选桌子结束-->
+
+<!--菜式信息开始-->
+<div class="b3">
+    <!-- <div class="tit">
+        <div class="left">Cuisine</div>
+        <div class="right">
+        	<a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+        </div>
+    </div> -->
+    <iframe style="float:left;" scrolling="no" frameborder="0" height="120px" width="482px" src="<!--{$cuisineURL}-->" name="Cuisine"></iframe>
+    <div class="b3_btn">
+                	<a class="next" href="javascript:void(0)"></a>
+                    <a class="pre" href="javascript:void(0)"></a>
+     </div>
+</div>
+<!--菜式信息结束 -->
+<div id="c_detailed3"></div>
+<!--菜谱列表开始-->
+    <div class="b4">
+        <div class="tit">
+            <ul>
+                <li>ItName</li>
+                <li class="l5">Price</li>
+                <!-- <li class="l5">QYT</li> -->
+            </ul>
+        </div>
+        
+        <div class="content">
+            <iframe width="450px" height="145px" frameborder="0" src="<!--{$itemListURL}-->" name="itemList"></iframe>
+        </div>
+        <div class="list_btn">
+        	<a class="pre" href="#"></a>
+            <a class="next" href="#"></a>
+        </div>
+    </div>
+<!--菜谱列表开始-->
+	
+<div class="b5">
+	<button onclick="location.href='<!--{$subItemUrl}-->'" class="sub0"></button>
+</div>

@@ -1,0 +1,24 @@
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="food_list">
+          <tr>
+            <td width="10%" align="center" valign="middle">No</td>
+            <td width="50%" align="center" valign="middle">Item Name</td>
+            <td width="5%" align="center" valign="middle">QTY</td>
+            <td width="10%" align="center" valign="middle">R</td>
+            <td width="25%" align="center" valign="middle">Info</td>
+          </tr>
+     <?smarty:foreach from=$list key=k item=list?>  
+          <tr>
+            <td colspan="5" height="3" bgcolor="#4897c4" class="food_list_spacing"></td>
+          </tr>
+          <tr onclick="javascript:remark('{$list.0}');" id="tr{$list.0}">
+            <td width="10%" align="center" valign="middle">{$list.client_id}</td>
+            <td width="50%" align="center" valign="middle">{$list.name}</td>
+            <td width="5%" align="center" valign="middle" ><a href="javascript:void(0);" onclick="javascript:rsetqty('{$list.0}')">{$list.qty}</a></td>
+            <td width="10%" align="center" valign="middle">*</td>
+            <td width="25%" align="center" valign="middle"><a href="javascript:void(0);">view</a></td>
+          </tr>
+ <?smarty:/foreach?>
+        </table>
+
+

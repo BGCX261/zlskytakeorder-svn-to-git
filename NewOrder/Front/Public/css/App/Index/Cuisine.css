@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+body{background:#fff;}
+.content{padding:5px 5px 1px 5px; background:#fff; overflow:hidden;height:110px;}
+li{
+	float:left;
+	margin-left:10px;
+	margin-bottom:7px;
+	width:145px;
+	font-size:14px;
+	text-align:center;
+	font-weight:bold;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	border:1px solid #ccc
+	}
+
+li a{
+	text-decoration:none;
+	color:#333;
+	border:0px;
+	padding:0px;
+	width:145px;
+	height:30px;
+	display:block;
+	overflow:hidden;
+	}
+.selected_cate{
+	text-decoration:none;
+	color:#FFFFFF;
+	border:0px;
+	padding:0px;
+	width:145px;
+	height:30px;
+	display:block;
+	overflow:hidden;
+
+	background:#F90;
+	font-weight:bold;
+}

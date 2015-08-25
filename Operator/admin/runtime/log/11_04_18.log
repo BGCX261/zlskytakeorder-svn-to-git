@@ -1,0 +1,3 @@
+[ 2011-04-18T14:51:29+08:00 ] ERR: (CoreException) error sql: SELECT * FROM op_servers   WHERE 1 and game_mark=frg  and pay_status=1   LIMIT 0,20. 	 Unknown column 'frg' in 'where clause'
+[ 2011-04-18T15:24:25+08:00 ] ERR: (CoreException) error sql: select mark from op_servers where mark=bto_2. 	 Unknown column 'bto_2' in 'where clause'
+[ 2011-04-18T15:24:56+08:00 ] ERR: (CoreException) error sql: update `op_servers` set  `mark` = 'bto_2', `open_time` = '1303108652', `game_mark` = 'bto', `server_id` = '2', `name` = 'bto二服', `status` = '3', `pay_status` = '0' where mark='bto_1' . 	 Duplicate entry 'bto_2' for key 1

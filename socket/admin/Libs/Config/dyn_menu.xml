@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+
+	<module xml:id="socket" name="socket" des="系统管理">
+		<action xml:id="socket_index" name="socket_index" des="设备管理">
+			<op xml:id="socket_Add" name="socket_Add" des="增加设备" />
+			<op xml:id="socket_Modify" name="socket_Modify" des="编辑设备" />
+		</action>
+		
+		<action xml:id="edit_index" name="edit_Index" des="设备信息"></action>
+		<action xml:id="time_Index" name="time_Index" des="定时任务">
+			<op xml:id="time_Add" name="time_Add" des="新增频道任务" />
+			<op xml:id="time_Modify" name="time_Modify" des="修改频道任务" />
+			<op xml:id="time_Alladd" name="time_Alladd" des="新增设备任务" />
+			<op xml:id="time_AllModify" name="time_AllModify" des="修改设备任务" />
+			<op xml:id="time_weekAdd" name="time_weekAdd" des="新增每周频道任务" />
+			<op xml:id="time_weekModify" name="time_weekModify" des="修改每周频道任务" />
+			<op xml:id="time_AllweekAdd" name="time_AllweekAdd" des="新增每周设备任务" />
+			<op xml:id="time_AllweekModify" name="time_AllweekModify" des="修改每周设备任务" />
+		</action>
+		<action xml:id="socket_monitor" name="socket_monitor" des="设备监控"></action>
+		<action xml:id="socket_loglist" name="socket_loglist" des="日志管理"></action>
+	</module>
+
+
+	<module xml:id="User" name="User" des="用户管理">
+		<action xml:id="Som_Index" name="Som_Index" des="部门管理">
+			<op xml:id="Som_Add" name='Som_Add' des="添加部门" />
+			<op xml:id="Som_Modify" name='Som_Modify' des="编辑部门" />
+			<op xml:id="Som_Delete" name='Som_Delete' des="编辑部门" />
+		</action>
+		<action xml:id="User_Index" name="User_Index" des="用户管理">
+			<op xml:id="User_Add" name="User_Add" des="添加用户" />
+			<op xml:id="User_Modify" name="User_Modify" des="修改用户" />
+			<op xml:id="User_Assign" name="User_Assign" des="设置权限" />      
+		</action>	
+        <action xml:id="User_Identity" name="User_Identity" des="修改密码" />
+	</module>
+
+
+	<module xml:id="Prem" name="Prem" des="权限管理">
+		<action xml:id="Prem_AddCtl" name="Prem_AddCtl" des="添加控制器" />
+		<action xml:id="Prem_AddAct" name="Prem_AddAct" des="添加方法" />
+		<action xml:id="Role_Index" name="Role_Index" des="角色管理">
+			<op xml:id="Role_Add" name="Role_Add" des="添加角色" />
+			<op xml:id="Role_Modify" name="Role_Modify" des="编辑角色" />
+			<op xml:id="Role_Assign" name="Role_Assign" des="设置权限" />
+		</action>
+	</module>
+
+</menu>

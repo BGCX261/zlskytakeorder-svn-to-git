@@ -1,0 +1,22 @@
+1.梦想E世界:http://www.daydayline.com
+以php,linux,jquery,javascript,二次开发等资料与一体，正在不断完善中
+2.回忆未来[张宴]:http://blog.s135.com
+估计大家对他并不陌生，网络上的牛人，以系统架构见称
+3.风雪之隅 :http://www.laruence.com/
+4.五四陈科学院:http://www.54chen.com/
+5.skiyo:http://www.skiyo.cn
+6.Show Framework:http://www.showframework.com
+7.司徒楠:http://www.c1991.com/
+8.分享工作室：http://www.fenanr.com/
+9.海峡IT网：http://www.haixiait.com/
+10.十八迷城：http://www.18mc.com/
+11.Lacorey:http://www.lacorey.com/
+12.吃肉论道，佛在心中:http://blog.csdn.net/iminto
+13.N神AS研究所:http://www.nshen.net/blog/
+要研究action script的可以去这里看看
+14.OOPHP：http://www.oophp.cn/
+想学习zend framework的可以看看
+15.米可网络：http://www.miikey.com/
+包括技术文章，系统架构，原创文章等
+16：Ppabc的博客：http://ppabc.cn
+包括freebsd,Linux,mysql,php,sql等技术文章

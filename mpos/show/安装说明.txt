@@ -1,0 +1,6 @@
+1.将程序放置网站根目录如
+http://localhost/mpos/show/index.php
+2  用下列sql语句创建名为comment的数据库：
+CREATE DATABASE `comment` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; 
+3在该数据库中执行mpos.sql文件SQL中SQL
+4 修改inc文件夹下面config.inc.php配置数据库连接参数

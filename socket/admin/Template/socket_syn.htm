@@ -1,0 +1,216 @@
+<style type="text/css">
+table td{
+	margin:0px;
+	padding:0px;
+}
+</style>
+<script language="javascript" type="text/javascript" src="./Public/js/edit_confirm.js"></script>
+<script language="javascript">
+function check()
+{
+	if(document.socket_form.ipaddr.value.length == 0)
+	{
+		alert("请输入TS-AGC IP地址！");
+		document.socket_form.ipaddr.focus();
+		return false;
+	}
+	if(document.socket_form.ipport.value.length == 0)
+	{
+		alert("请输入TS-AGC IP端口！");
+		document.socket_form.ipport.focus();
+		return false;
+	}
+	if(document.socket_form.devname.value.length == 0)
+	{
+		alert("请输入设备名称！");
+		document.socket_form.devname.focus();
+		return false;
+	}
+	
+	if(!isIP($("#ipaddr").val())){
+		alert("请输入正确的TS-AGC IP地址！");
+		document.socket_form.ipaddr.focus();
+		return false;
+	}
+	
+/*
+	var ary = new Array(); 
+	for(i=1;i<9;i++){
+		if(isNaN($("#sub_apid_"+i).val())){
+			alert("频道"+i+"的Apid必须为数字");
+			return false;
+		}
+		ary.push($("#sub_apid_"+i).val());
+	}
+	var nary=ary.sort(); 
+	for(var i=0;i<nary.length-1;i++) 
+	{
+		if(nary[i]>8191){
+			alert("过大的Apid："+nary[i]);
+			return false;
+		}
+		if(nary[i]!=8191){
+			if (nary[i]==nary[i+1]){
+				alert("重复Apid："+nary[i]);
+				return false;
+			} 
+		}
+	}
+*/
+	return true;
+}
+
+function checkapid(apid)
+{
+	var apid_name=($(apid).attr("name"));
+	$.get(
+		"<!--{url controller='socket' action='checkapid'}-->",
+		{apid:$(apid).val()},
+		function(data){
+			$("#"+apid_name).html(data);
+		}
+	);
+}
+
+function checkName(chnName)
+{
+	thisDivName=($(chnName).attr("checkname"));
+	$.get(
+		"<!--{url controller='socket' action='CheckName'}-->",
+		{name:$(chnName).val()},
+		function(data){
+			$("#"+thisDivName).html(data);
+		}
+	);
+}
+
+function synchro_dev()
+{
+	if(document.socket_form.ipaddr.value.length == 0)
+	{
+		alert("请输入TS-AGC IP地址！");
+		document.socket_form.ipaddr.focus();
+		return false;
+	}
+	if(document.socket_form.ipport.value.length == 0)
+	{
+		alert("请输入TS-AGC IP端口！");
+		document.socket_form.ipport.focus();
+		return false;
+	}
+	if(document.socket_form.devname.value.length == 0)
+	{
+		alert("请输入设备名称！");
+		document.socket_form.devname.focus();
+		return false;
+	}
+	
+	if(!isIP($("#ipaddr").val())){
+		alert("请输入正确的TS-AGC IP地址！");
+		document.socket_form.ipaddr.focus();
+		return false;
+	}
+	ipaddr=$("#ipaddr").val();	//ip
+	ipport=$("#ipport").val();	//端口
+	devname=$("#devname").val();	//设备名称
+	location.href="<!--{url controller='socket' action='socketsyn' }-->&ipaddr="+ipaddr+"&ipport="+ipport+"&devname="+devname;
+}
+
+</script>
+<table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_bg">
+<form action='<!--{$_acurl}-->&socket_C=socket&socket_A=Add' method="post" name="socket_form">
+	  <tr>
+		 <td colspan="2" class="td_title">
+         	设备编辑
+         	
+         </td>
+	  </tr>
+	<tr>
+	  <td width="14%" class="td_bg_blue"><strong>TS-AGC IP地址</strong></td>
+      <td width="86%" class="td_bg_white">
+		<input type="text" id="ipaddr" name="ipaddr" value="<!--{$devinfo.ipaddr}-->" size='40' /><font color="red"> * </font> TS-AGC IP地址
+	  </td>
+	</tr>
+		<tr>
+	  <td width="14%" class="td_bg_blue"><strong>TS-AGC IP端口</strong></td>
+      <td width="86%" class="td_bg_white">
+		<input type="text" name="ipport" id="ipport" value="<!--{$devinfo.ipport}-->" size='40' /><font color="red"> * </font> TS-AGC IP端口
+	  </td>
+	</tr>
+	<tr>
+	  <td width="14%" class="td_bg_blue"><strong>设备名称</strong></td>
+      <td width="86%" class="td_bg_white">
+		<input type="text" name="devname" id="devname" value="<!--{$devinfo.devname}-->" size='40' /> <font color="red"> * </font> 设备名称
+	  </td>
+	</tr>
+  <tr align="center">
+  	<td class="td_bg_white" colspan="2">
+		<table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_bg">
+        	<tr align="center">
+  				
+                    <!--{foreach from=$chninfo item=chninfo}-->
+                    <td class="td_bg_white">
+                      <table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_bg">
+                        <tr><td colspan="2" class="td_title">频道编辑</tr>
+                        <tr>
+                            <td class="td_bg_blue"><b>处理模块号</b></td>
+                            <td class="td_bg_white"><input type="text" style="width:40px;" value="<!--{$chninfo.chn}-->" name="chn<!--{$chninfo.num}-->"  /></td>
+                        </tr>
+                        <tr>
+                            <td class="td_bg_blue"><b>节目名称</b></td>
+                            <td class="td_bg_white"><input type="text" style="width:70px;" onblur="checkName(this)" checkname="prgname_<!--{$chninfo.num}-->" name="prgname<!--{$chninfo.num}-->"  /><span id="prgname_<!--{$chninfo.num}-->"></td>
+                        </tr>
+                        <tr>
+                            <td class="td_bg_blue"><b>简称</b></td>
+                            <td class="td_bg_white"><input type="text" style="width:60px;" value="" name="chnshort<!--{$chninfo.num}-->"  /></td>
+                        </tr>
+                        <tr>
+                            <td class="td_bg_blue"><b>音频PID</b></td>
+                            <td class="td_bg_white">
+                                <input type="text" style="width:40px;" id="sub_apid<!--{$chninfo.num}-->" value="<!--{$chninfo.apid}-->" name="apid<!--{$chninfo.num}-->"  /><br><span id="apid<!--{$chninfo.num}-->"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td_bg_blue"><b>AGC状态</b></td>
+                            <td class="td_bg_white">
+                                开启：<input type="radio" value="O" <!--{if $chninfo.agcstat=='O'}--> checked="checked" <!--{/if}-->name="agcstat<!--{$chninfo.num}-->" />	
+                                关闭：<input type="radio" value="C" <!--{if $chninfo.agcstat=='C'}--> checked="checked" <!--{/if}--> name="agcstat<!--{$chninfo.num}-->" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td_bg_blue"><b>音频能级</b></td>
+                            <td class="td_bg_white">
+                                <select name="gain<!--{$chninfo.num}-->">
+                                	<!--{html_options options=$gainArray selected=$chninfo.gain}-->
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td_bg_blue"><b>静音状态</b></td>
+                            <td class="td_bg_white">
+                                开启：<input type="radio" value="O" <!--{if $chninfo.mutestat=='O'}--> checked="checked" <!--{/if}--> name="mutestat<!--{$chninfo.num}-->" />	
+                                关闭：<input type="radio" value="C" <!--{if $chninfo.mutestat=='C'}--> checked="checked" <!--{/if}--> name="mutestat<!--{$chninfo.num}-->" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td_bg_blue"><b>旁通状态</b></td>
+                            <td class="td_bg_white">
+                                开启：<input type="radio" value="O" <!--{if $chninfo.passstat=='O'}--> checked="checked" <!--{/if}--> name="passstat<!--{$chninfo.num}-->" />	
+                                关闭：<input type="radio" value="C" <!--{if $chninfo.passstat=='C'}--> checked="checked" <!--{/if}--> name="passstat<!--{$chninfo.num}-->" />
+                            </td>
+                        </tr>
+                      </table>
+                   </td>
+                      <!--{if $chninfo.num_list mod 4 ==0}-->
+						</tr>
+                      <!--{/if}-->
+                    <!--{/foreach}-->
+  <tr align="center">
+	 <td colspan="4" class="td_bg_white" height="35">
+       <input type="button" onclick="history.go(-1)" class="button_bg" style="margin-right:10px;" value="返回" />
+       <input type="submit" name="op" value="提交" class="button_bg" onClick="return check();">
+	 </td>
+  </tr>
+  </form>
+</table>
+

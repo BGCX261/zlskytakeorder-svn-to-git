@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>FILE</title>
+<link href="./css/menu.css" rel="stylesheet" type="text/css" />
+
+<base target="mainFrame"/>
+<style type="text/css">
+<!--
+body {
+	background-color: #FCFCFC;
+}
+-->
+</style></head>
+
+<body>
+<script language="javascript">
+function showmenulist(obj_id){
+	with(document.getElementById("MenuId"+obj_id)){
+		if(style.display == "none"){
+			style.display = "";
+			document.getElementById("MenuTitle"+obj_id).src="./images/menu_btn3.gif";
+		}else{
+			style.display = "none";
+			document.getElementById("MenuTitle"+obj_id).src="./images/menu_btn2.gif";
+		}
+	}
+}
+
+</script>
+<table  border="0" cellspacing="1" cellpadding="0">
+  <tr>
+    <td width=160 height=50>
+		&nbsp;&nbsp;WELCOME，<b style='font-size:14px;color:GREEN'>Admin</b>
+		<h3 style='border-bottom:3px solid GREEN' />
+	</td>
+  </tr>
+
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td height="189" valign="top">
+	
+    	<table width="100%"  border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="menutitle" style="cursor:hand;" onClick="showmenulist('Xxgl');">
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0" class="menuitle_chr">
+          <tr>
+            <td width="30" align="center"><img src="./images/menu_btn2.gif" id="MenuTitleXxgl" /></td>
+            <td>Manager</td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td id="MenuIdXxgl" style="display:none;">
+		<table width="100%"  border="0" cellspacing="8" cellpadding="0">
+		
+				          <tr>
+            <td width="30" align="right"><img src="./images/menu_sub_title.gif" width="15" height="18" /></td>
+            <td><a href="#" onclick="javascript:getAction('menumain');">menumain manager</a></td>
+          </tr>
+		  		 		          <tr>
+            <td width="30" align="right"><img src="./images/menu_sub_title.gif" width="15" height="18" /></td>
+            <td><a href="/ata/admin/index.php?c=Zxgl&a=Tjzx">添加资讯</a></td>
+          </tr>
+		  		 		          <tr>
+            <td width="30" align="right"><img src="./images/menu_sub_title.gif" width="15" height="18" /></td>
+            <td><a href="/ata/admin/index.php?c=Zxgl&a=Spgl">视频管理</a></td>
+          </tr>
+		  		 		          <tr>
+            <td width="30" align="right"><img src="./images/menu_sub_title.gif" width="15" height="18" /></td>
+            <td><a href="/ata/admin/index.php?c=Zxgl&a=Tjsp">添加视频</a></td>
+          </tr>
+		  		 		          <tr>
+            <td width="30" align="right"><img src="./images/menu_sub_title.gif" width="15" height="18" /></td>
+            <td><a href="/ata/admin/index.php?c=Zxgl&a=Plgl">资讯批量管理</a></td>
+          </tr>
+
+		  		  
+		  
+        </table>
+		</td>
+      </tr>
+    </table>
+	
+	</td>
+  </tr>
+</table>
+</body>
+</html>
+<script language='javascript'>
+	function getAction(action){
+		window.parent.rightFrame.location = action+'.php';
+	}
+</script>

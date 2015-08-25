@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script language="javascript" src="<!--{$jsdir}-->main.js"></script>
+<script language="javascript" src="<!--{$jsdir}-->checkdata.js"></script>
+<script language="javascript" src="<!--{$jsdir}-->datepick/WdatePicker.js"></script>
+
+<link href="./Public/css/index.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="./Public/js/jquery.js"></script>
+<script language="javascript" type="text/javascript">
+$(function(){
+	$(".lv_2").mouseout(function(){
+								 $(this).attr('class','lv_2');
+								 });
+	$(".lv_2").mouseover(function(){
+									$(this).attr('class','onmouseover_search');
+									});
+	$(".lv_2").click(function(){
+							  var equipment=$(this).attr('equipment');
+							  if(!equipment)return false;
+							  location.href='<!--{url controller="edit" action="channelview"}-->&serial='+equipment;
+							  /*
+							  $("#station").fadeIn('normal');
+							  $.get(
+									'<!--{url controller="edit" action="channelview"}-->',
+									{'serial':equipment,'chn':channel},
+									function(data){
+										$("#station").html(data);
+										}
+									);
+							  */
+							  });
+
+	
+	//input样式
+	$(":input").mouseover(function(){
+								  $(this).attr('class','input_mouseover');
+								  });
+	$(":input").mouseout(function(){
+								  $(this).attr('class','input');
+								  });
+});
+
+function close_edit_view()
+{
+	$(".tv_station_close").click(function(){
+									  $("#station").fadeOut('normal');
+									  });
+}
+</script>
+</head>
+
+<body >
+<center>
+
+<div class="main" style="height:auto">
+<div class="search">
+	<form action="<!--{url controller='edit' action='search'}-->" method="post">
+    <fieldset style="width:60%">
+    <legend>快速搜索</legend>
+    <input type="button" value="返回上一步" style="width:auto" onclick="location.href='<!--{url controller='edit' action='index'}-->'" />
+	</fieldset>
+</div>
+<!--{if $Datalist}-->
+        <!--{foreach from=$Datalist item=chninfor}-->
+    	<div class="lv_2" style="border:2px solid #069; margin:5px; padding:10px;" equipment="<!--{$chninfor.serial}-->">
+            <div class="lv_2_content">通道号：<!--{$chninfor.chn}-->&nbsp;|&nbsp;频道名称：<!--{$chninfor.prgname}-->&nbsp;|&nbsp;频道简称：<!--{$chninfor.chnshort}-->
+              <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                <tr>
+                  <td width="10%">APID：</td>
+                  <td width="38%" valign="middle"><!--{$chninfor.apid}--></td>
+                  <td width="9%">AGC：</td>
+                  <td width="43%" valign="middle"><!--{$chninfor.agcstat}--></td>
+                </tr>
+                <tr>
+                  <td>音量：</td>
+                  <td valign="middle"><!--{$chninfor.gain}--></td>
+                  <td>静音&nbsp;：</td>
+                  <td valign="middle"><!--{$chninfor.mutestat}--></td>
+                </tr>
+                <tr>
+                  <td>旁通：</td>
+                  <td valign="middle"><!--{$chninfor.passstat}--></td>
+                  <td></td>
+                  <td valign="middle"></td>
+                </tr>
+              </table>
+          </div></div>
+          <!--{/foreach}-->
+<!--{else}-->
+<div class="lv_2" style="border:2px solid #069; margin:5px; padding:10px;">暂无记录！</div>
+<!--{/if}-->          
+          
+</div>
+<!--
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="td_bg_white">
+    <div style='float:right;' class="pagedata"></div>
+    	</td>
+	</tr>
+</table>-->
+</center>
+
+</body>
+</html>

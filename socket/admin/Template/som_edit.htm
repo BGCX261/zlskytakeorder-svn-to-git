@@ -1,0 +1,44 @@
+<script language="javascript">
+
+function check()
+{
+	if(document.som_form.name.value.length == 0)
+	{
+		alert("请输入部门名称！");
+		document.som_form.name.focus();
+		return false;
+	}
+
+	return true;
+}
+</script>
+<table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_bg">
+<form action='<!--{$_acurl}-->' method="post" name="som_form">
+	  <tr>
+		 <td colspan="2" class="td_title">部门编辑</td>
+	  </tr>
+	<tr>
+	  <td width="40%" class="td_bg_blue"><strong>部门名称</strong></td>
+      <td width="73%" class="td_bg_white">
+		<input type="text" name="name" value="<!--{$DataList.name}-->" size='22' /><font color="red"> * </font> 填写部门名称
+	  </td>
+	</tr>
+
+	<tr>
+	  <td width="40%" class="td_bg_blue"><strong>描述</strong></td>
+      <td width="73%" class="td_bg_white">
+		<textarea name='des' cols='40' rows='5'><!--{$DataList.des}--></textarea>
+	  </td>
+	</tr>
+   <tr align="center">
+	 <td colspan="2" class="td_bg_white" height="35">
+       <input type="button" class="button_bg" value="返回上一步" onclick="history.go(-1);" />
+       <input type="submit" name="op" value="提交" class="button_bg" onClick="return check();">
+	   <!--{if $op=='m'}-->
+       <input name="org_id" type="hidden" id="org_id" value="<!--{$DataList.org_id}-->">
+	   <!--{/if}-->
+	 </td>
+  </tr> 
+  </form>
+</table>
+

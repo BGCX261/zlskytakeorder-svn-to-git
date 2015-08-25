@@ -1,0 +1,4 @@
+http://downloads.php.net/pierre/	apc.dll下载
+http://www.blogkid.net/archives/1356.html	windows下安装apc
+http://hi.baidu.com/yuanxiangyi/blog/item/93c12b97938e996754fb960c.html		PHP APC扩展模块实现大文件上传
+http://www.phprpc.org/zh_CN/	phprpc教程

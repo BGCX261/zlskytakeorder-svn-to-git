@@ -1,0 +1,182 @@
+.zcontent{
+	width:1003px;
+	margin:0 auto;
+}
+
+.jipiao{
+	width:424px;
+	height:258px;
+	float:left;
+	margin-right:10px;
+	}
+.jipiao p{_padding-bottom:7px;}
+.sub1{ 
+	background:url(../../../images/app/default/chaxun_22.jpg) no-repeat;
+
+	}
+.sub{
+	width:125px;
+	height:25px; 
+	padding-top:3px;
+	font-size:14px;
+	font-weight:bold;
+	margin-right:3px;
+	line-height:25px;
+	float:left;
+	text-align:center;}
+.sub2{
+	
+	background:url(../../../images/app/default/chaxun_24.jpg) no-repeat;
+
+	}
+sub{
+	background:url(../../../images/app/default/chaxun_22.jpg) no-repeat;
+
+	}
+.sub a{
+	color:#000;
+	width:125px;
+	height:25px; 
+	display:block;	
+	text-decoration:none;
+	}
+.sub a:hover {
+	color:#FFF;
+	}
+
+.jipiao .content{
+	height:170px; 
+	background:url(../../../images/app/default/chaxun_28.jpg) no-repeat;
+	line-height:30px;
+	font-size:12px;
+	padding:30px 30px;
+	}
+.jipiao .content input{
+	background:none;
+	}
+.dingpiao{
+	border:1px #a7a6aa solid; 
+	width:100px;
+	}
+.jipiao .content span{
+	margin-right:12px;
+	}
+.jipiao .tijiao{
+	margin-top:20px;
+	padding-left:40px;
+	}
+.jipiao .tijiao span{margin:0px 0px 0px 10px;}
+.button3{
+	width:78px;
+	border:0px;
+	height:25px; 
+	background:url(../../../images/app/default/chaxun_32.jpg) no-repeat !important;
+	}
+.gundong{
+	width:391px;
+	height:258px; 
+	float:left;
+	margin-right:10px; 
+	background:url(../../../images/app/default/gun_dong_26.jpg) no-repeat;
+	}
+.help{
+	width:167px; 
+	height:258px;
+	background:url(../../../images/app/default/help_28.jpg) no-repeat; 
+	float:left
+	}
+.help ul{
+	margin:8px 0 0 5px;
+	overflow:hidden;
+	}
+.help ul li{
+	line-height:30px;
+	margin-top:-1px;
+	border-top:1px dashed #ccc;
+	width:150px; 
+	}
+.help ul li a{
+	color:#333;
+	text-decoration:none;
+	}
+.help ul li a:hover{color:#f00}
+.helpt{
+	height:18px;
+	margin:10px 0 0 10px;
+	}
+
+.thirty_guoji{
+	width:1003px;
+	margin-top:10px;
+	}
+.thirty_guoji .tnav{
+	height:31px;
+	background:url(../../../images/app/default/sanshiri_guoji_34.jpg) no-repeat;
+	}
+.thirty{float:left;display:inline;margin:7px 0px 0px 150px;border-left:1px #aaccee solid}
+.thirty li{
+	float:left;
+	padding:0 15px 0px 15px;
+	height:23px; 
+	border:1px #aaccee solid;
+	border-bottom:0px;
+	border-left:0px;
+	background:url(../../../images/app/default/sanshiri_jipiao_36.jpg) repeat-x;
+	line-height:23px;
+	font-size:14px;
+	text-align:center;
+	}
+.tcontent{
+	width:981px; 
+	border:1px #aaccee solid;
+	border-width:0 1px 0 1px ;	
+	height:130px;
+	padding:10px 0px 0px 20px;
+	}
+.t1_end{width:1003px;background:url(../../../images/app/default/sanshiri_guoji_36.jpg) no-repeat;height:11px;}
+.ding{overflow:hidden;display:inline-block;}
+.ding ul{float:left;border-left:1px #ccc solid;margin-left:-1px;}
+.ding ul li{width:230px;background:#fff; height:29px;padding:1px 0px 0 8px; line-height:29px;}
+.ding ul li a{text-decoration:none;display:block;widht:220px;height:29px;color:#000}
+.ding ul li a:hover{background:url(../../../images/app/default/hover.gif) no-repeat;}
+.ding ul li.z1{background:#f5faff;}
+.thirty li.an {background:#fff;font-weight:bold;}
+.fonth{float:left;padding:8px 0px 0px 12px;}
+
+.ding span.addr{width:90px;font-size:12px;color:#004499; float:left;padding-left:9px;}
+.ding span.from{color:#004499;}
+.ding span.to{padding-left:12px; background:url(../../../images/app/default/to.gif) no-repeat;}
+.ding span.discount{width:40px;float:left; text-align:left}
+.ding span.date{color:#404040;float:left;width:40px;}
+.ding em{color:#ff5500; line-height:29px;font-style:normal;}
+.ding em.price{
+	width:37px;
+	padding-left:7px;
+	background:url(../../../images/app/default/price.gif) no-repeat 0 3px ;
+	float:left;
+	font-weight:bold;
+	font-size:14px;
+	}
+.thirty_jiudian{
+	width:1003px;
+	margin-top:10px;
+	_margin-top:7px;
+	}
+.thirty_jiudian .tnav{
+	height:31px;
+	background:url(../../../images/app/default/sanshiri_jiudian_38.jpg) no-repeat;
+	}
+.thirty2{float:left;display:inline;margin:7px 0px 0px 150px;border-left:1px #bab3e6 solid}
+.thirty2 li{
+	float:left;
+	padding:0 15px 0px 15px;
+	height:23px; 
+	border:1px #aaccee solid;
+	border-bottom:0px;
+	border-left:0px;
+	background:url(../../../images/app/default/sanshiri_jiudian_t_47.jpg) repeat-x;
+	line-height:23px;
+	font-size:14px;
+	text-align:center;
+	}
+.thirty2 li.an {background:#fff;font-weight:bold;}

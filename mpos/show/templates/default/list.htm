@@ -1,0 +1,144 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+   <link rel="index" href="./" title="Home" />
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" media="print" type="text/css" href="css/print.css" />
+    <link rel="stylesheet" media="aural" type="text/css" href="css/aural.css" />
+    <script language="javascript" type="text/javascript" src="js/ajax.js"></script>
+    <style>
+	.close_panel{text-align:right; background:#c9e1ef; height:20px; line-height:20px; cursor:pointer;}
+	.newarticle {
+	 CLEAR: both; PADDING-RIGHT: 20px; PADDING-LEFT: 20px;PADDING-BOTTOM: 20px; MARGIN: 3px; PADDING-TOP: 20px;background:#c9e1ef;border:1px 1px solid #000000;
+}
+	</style>
+</head>
+
+<body id="www-url-cz">
+
+<!-- Main -->
+<div id="main" class="box">
+
+
+
+   
+
+    <!-- Page (2 columns) -->
+    <div id="page" class="box">
+    <div id="page-in" class="box">
+
+     
+        <!-- Content -->
+        <div id="content">
+                <div class="article">
+        <p>我也来提问:(标题)<input type="text" id="titleid" size="22"/><span id="image">   <?smarty:foreach from=$list2 key=k item=list2?><a href="javascript:void(0);" onclick="setvalue('{$k}')">{$list2}</a><?smarty:/foreach?></span></p>
+      <textarea name="" cols="60" rows="5" id="contextid"></textarea>
+         <p><input name="submit" type="button" value="回复提问" onclick="insert()"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="取消回复" /></p>
+        </div> 
+        <div id="main_div">
+          <?smarty:foreach from=$list key=k item=list?>
+            <!-- Article -->
+            <div class="article">
+                <h2><span><a href="#">{$list.title}</a></span></h2>
+                <p class="info noprint">
+                    <span class="date">{$list.time}</span><span class="noscreen">,</span>
+         
+                    <span class="user"><a href="#">{$list.name}</a></span><span class="noscreen">,</span>
+                    <span class="comments"><a href="javascript:void(0);" onclick="show('{$list.id}')">回复问题</a></span>
+                </p>
+
+                <p>{$list.context}.</p>
+
+   
+            </div> <!-- /article -->
+       
+        <div class="article" id="show_{$list.id}">
+ 
+        </div> 
+        
+             <?smarty:/foreach?>
+               <div align="center">
+            {$pages}
+            </div>
+             </div>
+          
+         
+            
+      </div> <!-- /content -->
+
+ 
+
+    </div> <!-- /page-in -->
+    </div> <!-- /page -->
+
+
+
+</div> <!-- /main -->
+<div id='insert'></div>
+</body>
+</html>
+<script language="javascript" type="text/javascript">
+   function insert(){
+	   var title=encodeURI(document.getElementById("titleid").value);
+
+       var context=encodeURI(document.getElementById("contextid").value); 
+	
+	   var url="insert.php?title="+title+"&context="+context+"&action=add";
+
+       ajax_get(url,'insert');
+	   
+	   alert("保存问题成功！");
+	   location.href="index.php";
+ 
+	   }
+	   
+	     function re(flag){
+		
+		 var tname="tet_"+flag;
+		 
+		 var cname="con_"+flag;
+	   var title=encodeURI(document.getElementById(tname).value);
+
+       var context=encodeURI(document.getElementById(cname).value); 
+	
+	   var url="insert.php?title="+title+"&context="+context+"&action=rq&id="+flag;
+	   
+
+       ajax_get(url,'insert');
+	   
+	   alert("回复问题成功！");
+	   location.href="index.php";
+ 
+	   } 
+  function show(flag){
+		var newname="show_"+flag;
+	   var url="insert.php?id="+flag+"&action=show";
+
+       ajax_get(url,newname);
+
+ 
+	   }
+  function closediv(flag){
+  var newname="show_"+flag;
+  document.getElementById(newname).innerHTML='';
+  }	
+  function setimage(flag){
+    var newname="image_"+flag;
+	var url="insert.php?id="+flag+"&action=image";
+	     ajax_get(url,newname);
+  }  
+  function setvalue(flag){
+  var str="[Y]"+flag+"[/Y]";
+  document.getElementById("contextid").value+=str;
+  } 
+  
+   function setallimage(flag){
+   var arr=flag.split(",");
+   var str=arr[0];
+     var str1=arr[1];
+  var str="[Y]"+str+"[/Y]";
+  		 var cname="con_"+str1;
+  document.getElementById(cname).value+=str;
+  } 
+</script>

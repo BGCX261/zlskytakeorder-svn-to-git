@@ -1,0 +1,60 @@
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Take Order</title>
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/smain.css" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/sbase.css" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/smenu.css" />
+<script language="javascript" type="text/javascript" src="js/ajax.js"></script>
+
+<!-- ×Ü±í  -->
+<table width='450px;' align='center' border="1" cellspacing="0" cellpadding="0">
+<tr>
+<td width="150px;"  valign='top'>
+<form action="customer.php" method="post" name="form1">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table_tr_bgcolor"  valign='top'>
+
+  <?smarty:foreach from=$sortlist key=k item=sortlist?>
+  <tr class="td_style_mouse" width="30px;">
+  <td width="130"><font color="#666666"><input id="btn_{$sortlist.id}" name="btn_{$k}" type='button' value='{$sortlist.sortname}' style="WIDTH:130px;height:30px;" onclick="getselfitem({$sortlist.id},{$k})"></font></td>
+  </tr>
+  <?smarty:/foreach?>
+  <tr>
+  <td align="center">{$pages}</td>
+  </tr>
+  </table>
+  </form>
+</td>
+<td width="250px;" valign='top'>
+<div id="itemself">
+</div>
+</td>
+</tr>
+<tr><td colspan="2" align="center"><input type='button' value='Close' style="WIDTH:80px;height:30px;" onclick="javascript:window.close();"></td></tr>
+</table>
+
+<script language="javascript">
+function selectitem(){
+    window.open('item.php','_blank');
+}
+
+function getselfitem(id,k){
+   for(j=0;j<10;j++){
+       if(document.getElementById('btn_'+j)!=null){
+	       document.getElementById('btn_'+j).style.color='';
+	   }
+   }
+
+
+   var obj=document.getElementById('btn_'+k);
+   obj.style.color='red';
+   ajax_get('itemself.php?id='+id+'&no={$no}&customize={$customize}','itemself');	
+}
+//ajax_get('selfitem.php?id={$sortlist[0].id}','itemself');	
+
+function setitem(id){
+    window.location = 'setitemnum.php?id='+id+'&no={$no}&customize={$customize}';
+}
+
+
+</script>

@@ -1,0 +1,37 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/smain.css" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/sbase.css" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/smenu.css" />
+
+<!-- ×Ü±í  -->
+<table width='100%' align='center' border="0" cellspacing="0" cellpadding="0" valign='top'>
+<tr>
+<td>
+<form action="customer.php" method="post" name="form1">
+<table width="250px;" border="0" cellspacing="0" cellpadding="0" class="table_tr_bgcolor">
+
+  <?smarty:foreach from=$itemselflist key=k item=itemselflist?>
+  <tr class="td_style_mouse" width="30px;">
+  <td width="130" align='center'><font color="#666666"><input type='button' value='{$itemselflist.itemname}' style="WIDTH: 160px;height:30px;" onclick="javascript:setitem({$itemselflist.id})"></font></td>  
+  </tr>
+  <?smarty:/foreach?>
+  <tr>
+  <td align="center" height="30px;">{$selfpages}</td>
+  </tr>
+  </table>
+  </form>
+</td>
+
+</tr>
+</table>
+
+<script language="javascript">
+function setitem(id){
+    alert('fffffffffffff');
+    window.location = 'setitemnum.php?id='+id+'&no={$no}&customize={$customize}';
+}
+ajax_get('itemself.php?id={$sortlist[0].id}','itemself');	
+
+
+</script>

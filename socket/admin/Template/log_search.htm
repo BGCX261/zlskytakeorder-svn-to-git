@@ -1,0 +1,30 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0" >
+  <tr>
+    <td width="60">关键字：</td>
+	<form action="<!--{url controller='socket' action='loglist'}-->" name="searchform" method="POST">
+	<td>开始日期:
+        <select name="startYear">
+        	<!--{html_options options=$searchTime.year selected=$startYear}-->
+        </select>
+        <select name="startMonth">
+       		<!--{html_options options=$searchTime.month selected=$startMonth}-->
+        </select>
+        <select name="startDay">
+        	<!--{html_options options=$searchTime.day selected=$startDay}-->
+        </select>
+        
+        结束日期:
+        <select name="endYear">
+        	<!--{html_options options=$searchTime.year selected=$endYear}-->
+        </select>
+        <select name="endMonth">
+       		<!--{html_options options=$searchTime.month selected=$endMonth}-->
+        </select>
+        <select name="endDay">
+        	<!--{html_options options=$searchTime.day selected=$endDay}-->
+        </select>
+		<input name="gmsub" class="button_bg" style="width:40px;" type="submit" value="确定" />		
+	</td>
+	</form>
+  </tr>
+</table>

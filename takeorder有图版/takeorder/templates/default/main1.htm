@@ -1,0 +1,231 @@
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Take Order</title>
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/smain.css" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/sbase.css" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/smenu.css" />
+
+<!-- �ܱ�  -->
+<table width='100%' align='center' border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<!-- �б�Table -->
+<form >
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table_tr_bgcolor">
+	<tr class="title_bgcolor">
+	<td>{$rows[0].no}</td>
+	<td>{$rows[0].itemname}</td>
+	<td>{$rows[0].qty}</td>
+	<td>{$rows[0].r}</td>
+	<td>{$rows[0].info}</td>
+	</tr>
+
+<?smarty:foreach from=$rowitem key=k item=rowitem?>
+	<tr>
+	<td><a href=''>info</a></td>
+	<td>{$rowitem.sortname}</td>
+	<td>{$rowitem.itemname}</td>
+	<td>{$rowitem.price}</td>
+	<td>{$rowitem.status}</td>
+	
+	</tr>
+<?smarty:/foreach?>
+	</table>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<!-- ��ʾ̨�ţ���λ�ţ�����Ա�� -->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table_tr_bgcolor">
+	<tr class="title_bgcolor">
+    <td width="12.5%">Customize:<input type='text' id='ipt_customize' name='ipt_customize' value='' readonly="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No:<input type='text' id='ipt_no' name='ipt_no' value='' readonly="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Person:{$person}
+	<input type="hidden" id="customize" name="customize" value="{$customize}">
+	<input type="hidden" id="no" name="no" value="{$no}">
+	<input type="hidden" id="itemid" name="itemid" value="{$itemid}">
+	</td>
+	</tr>
+</table>
+
+</td>
+</tr>
+
+<tr>
+<td>
+<!-- ���˺�Table -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table_tr_bgcolor">
+	<tr class="title_bgcolor">
+    <td width="50px;"><input id="prew" type='button' value="PREW" style="WIDTH: 40px;height:20px;" onclick="javascript:prewno();" enable="false"></td>
+
+	<td id="td_no_1" style="display:block;" align="left" width="265px;">
+	<input type='button' id='no_1' name='no_1' value='1' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(1);">
+	<input type='button' id='no_2' name='no_2' value='2' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(2);">
+	<input type='button' id='no_3' name='no_3' value='3' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(3);">
+	<input type='button' id='no_4' name='no_4' value='4' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(4);">
+	<input type='button' id='no_5' name='no_5' value='5' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(5);">
+	<input type='button' id='no_6' name='no_6' value='6' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(6);">
+	</td>
+
+	<td id="td_no_2" style="display:none;" align="left" width="265px;">
+	<input type='button' id='no_7' name='no_7' value='7' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(7);">
+	<input type='button' id='no_8' name='no_8' value='8' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(8);">
+	<input type='button' id='no_9' name='no_9' value='9' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(9);">
+	<input type='button' id='no_10' name='no_10' value='10' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(10);">
+	<input type='button' id='no_11' name='no_11' value='11' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(11);">
+	<input type='button' id='no_12' name='no_12' value='12' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(12);">
+	</td>
+
+	<td id="td_no_3" style="display:none;" align="left" width="265px;">
+	<input type='button' id='no_13' name='no_13' value='13' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(13);">
+	<input type='button' id='no_14' name='no_14' value='14' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(14);">
+	<input type='button' id='no_15' name='no_15' value='15' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(15);">
+	<input type='button' id='no_16' name='no_16' value='16' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(16);">
+	<input type='button' id='no_17' name='no_17' value='17' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(17);">
+	<input type='button' id='no_18' name='no_18' value='18' style="WIDTH: 40px;height:20px;" onclick="javascript:selno(18);">
+	</td>
+
+    <td ><input id="next" type='button' value='NEXT' style="WIDTH: 40px;height:20px;" onclick="javascript:nextno();"></td>
+	</tr>
+</table>
+
+</td>
+</tr>
+<form action="main.php" name="customer_form" id="customer_form" method="POST">
+<tr>
+<td>
+<!-- ����Ŧ -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table_tr_bgcolor">
+	<tr class="title_bgcolor">
+	<td width="16.6%"><input id="selcustomize" name="selcustomize" type='button' value="Customize" style="WIDTH: 60px;height:30px;" onclick="javascript:selectcustomize();"></td>
+    <td width="16.6%"><input id="selitem" name="selitem" type='button' value="Item" style="WIDTH: 60px;height:30px;" onclick="javascript:selectitem();"></td>
+    <td width="16.6%"><input id="selremark" name="selremark" type='button' value='Remark' style="WIDTH: 60px;height:30px;" onclick="javascript:remark();"></td>
+	<td width="16.6%"><input id="selhold" name="selhold" type='button' value='Hold' style="WIDTH: 60px;height:30px;" onclick="javascript:hold();"></td>
+	<td width="16.6%"><input id="selrehold" name="selrehold" type='button' value='Rehold' style="WIDTH: 60px;height:30px;" onclick="javascript:rehold();"></td>
+	<td width="16.6%"><input id="seldelete" name="seldelete" type='button' value='Delete' style="WIDTH: 60px;height:30px;" onclick="javascript:selitem();"></td>
+	</tr>
+</table>
+
+</td>
+</tr>
+
+<tr>
+<td>
+<!-- ���ּ��� -->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table_tr_bgcolor">
+
+	<tr class="title_bgcolor">
+    <td colspan="6"><input type="text" id="selnum" name="selnum"   value="" style="WIDTH: 300px;height:30px;"></td>
+
+	</tr>
+
+	<tr class="title_bgcolor">
+    <td width="16.6%"><input type='button' value="9" style="WIDTH: 60px;height:30px;" onclick="javascript:send(9);"></td>
+    <td width="16.6%"><input type='button' value='8' style="WIDTH: 60px;height:30px;" onclick="javascript:send(8);"></td>
+	<td width="16.6%"><input type='button' value='7' style="WIDTH: 60px;height:30px;" onclick="javascript:send(7);"></td>
+	<td width="16.6%"><input type='button' value='6' style="WIDTH: 60px;height:30px;" onclick="javascript:send(6);"></td>
+	<td width="16.6%"><input type='button' value='5' style="WIDTH: 60px;height:30px;" onclick="javascript:send(5);"></td>
+	<td width="16.6%"><input type='button' value='4' style="WIDTH: 60px;height:30px;" onclick="javascript:send(4);"></td>
+	</tr>
+
+	<tr class="title_bgcolor">
+    <td width="16.6%"><input type='button' value="3" style="WIDTH: 60px;height:30px;" onclick="javascript:send(3);"></td>
+    <td width="16.6%"><input type='button' value='2' style="WIDTH: 60px;height:30px;" onclick="javascript:send(2);"></td>
+	<td width="16.6%"><input type='button' value='1' style="WIDTH: 60px;height:30px;" onclick="javascript:send(1);"></td>
+	<td width="16.6%"><input type='button' value='0' style="WIDTH: 60px;height:30px;" onclick="javascript:send(0);"></td>
+	<td width="16.6%"><input type='button' value='Return' style="WIDTH: 60px;height:30px;" onclick="javascript:send_return();"></td>
+	<td width="16.6%"><input type='button' value='Enter' style="WIDTH: 60px;height:30px;" onclick="javascript:send_enter();">
+	
+	<input type='text' id='type_customize' name='type_customize' value=''>
+	<input type='text' id='type_no' name='type_no' value=''>
+	</td>
+	</tr>
+</table>
+
+</td>
+</tr>
+
+</table>
+
+<script language="javascript">
+
+function send_enter(){
+    var a = document.getElementsByName("selnum")[0].value;
+	document.getElementsByName("type_customize")[0].value=a;
+	document.getElementsByName("ipt_customize")[0].value=a;
+	document.getElementsByName("selnum")[0].value='';
+}
+
+function send(id){
+    var a = document.getElementsByName("selnum")[0].value;
+	var tmp = a+id;
+	document.getElementsByName("selnum")[0].value=tmp;
+}
+
+
+function selno(id){
+    //var a = document.getElementsByName("selnum")[0].value;
+	document.getElementsByName("ipt_no")[0].value=id;
+}
+
+
+
+function selectcustomize(){
+	document.getElementById("selnum").focus();   
+	var obj=document.getElementById('selcustomize');
+    obj.style.color='red';
+
+}
+
+function selectitem(){
+    var no=document.getElementById("ipt_no").value;
+	var customize=document.getElementById("ipt_customize").value;
+    if(customize==''){
+	    alert('pls select customzie!');
+		return false;
+	}
+    if(no==''){
+	    alert('pls select no!');
+		return false;
+	}
+
+
+    window.open('item.php?no='+no+'&customize='+customize,'_blank');
+}
+
+function prewno(){
+    if(document.getElementById("td_no_2").style.display=='block'){
+	    document.getElementById("td_no_1").style.display='block';
+		document.getElementById("td_no_2").style.display='none';
+		document.getElementById("td_no_3").style.display='none';
+		document.getElementById("prew").enable=false;
+	}else if(document.getElementById("td_no_3").style.display=='block'){
+	    document.getElementById("td_no_1").style.display='none';
+		document.getElementById("td_no_2").style.display='block';
+		document.getElementById("td_no_3").style.display='none';
+	}else if(document.getElementById("td_no_1").style.display=='block'){
+	   document.getElementById("prew").enable=true;
+	}
+}
+
+function nextno(){
+    if(document.getElementById("td_no_2").style.display=='block'){
+	    document.getElementById("td_no_1").style.display='none';
+		document.getElementById("td_no_2").style.display='none';
+		document.getElementById("td_no_3").style.display='block';
+		document.getElementById("next").enable=false;
+	}else if(document.getElementById("td_no_1").style.display=='block'){
+      
+	    document.getElementById("td_no_1").style.display='none';
+		document.getElementById("td_no_2").style.display='block';
+		document.getElementById("td_no_3").style.display='none';
+        document.getElementById("next").enable=true;
+	}else if(document.getElementById("td_no_1").style.display=='block'){
+	    document.getElementById("next").enable=true;
+	}
+}
+
+</script>

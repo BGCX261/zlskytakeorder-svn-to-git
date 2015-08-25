@@ -1,0 +1,38 @@
+<table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_tr_bgcolor">
+  <tr>
+    <td colspan="7" class="td_title">角色列表</td>
+  </tr>
+  <tr class="title_bgcolor">
+    <td width='5%'><strong>选择</strong></td>
+    <td><strong>角色</strong></td>
+	<td><strong>创建时间</strong></td>
+	<td width='15%'><strong>操作</strong></td>
+  </tr>
+  <!--{section name="list" loop=$plist}-->
+  <tr class="td_style_mouse">
+    <td width='5%'>&nbsp;<input type="checkbox" name='ops[]' value='<!--{$plist[list].role_id}-->'></td>
+    <td><!--{$plist[list].roledes}-->(<!--{$plist[list].rolename}-->)</td>
+	<td><!--{$plist[list].created_d}--></td>
+	<td width='15%'>
+	<!--{if $_rights.mod}-->
+	<a href='<!--{url controller='Role' action='Modify' role_id=$plist[list].role_id}-->'>修改</a> <a href='<!--{url controller='Role' action='Assign' role_name=$plist[list].rolename}-->' title='设置权限'>设置权限</a>
+	<!--{else}-->
+		--
+	<!--{/if}-->
+	</td>
+  </tr>
+  <!--{sectionelse}-->
+	<tr>
+		<td align='center' colspan='5'><b style='color:red'><!--{$nodata}--></b></td>
+	</tr>
+  <!--{/section}-->
+</table>
+<!--{if $plist}-->
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="td_bg_white">
+		<div style='float:right;padding:0px;'><!--{webcontrol type="pagernav" name="pagenav" pager=$pagerData controller="Role" action="Index" param=$param}--></div>
+		</td>
+	</tr>
+</table>
+<!--{/if}-->

@@ -1,0 +1,16 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+	<td><!--{if $_rights.logalldelete}-->
+		[<a href="<!--{url controller='socket' action='logalldelete'}-->" onClick="return confirm('确实要删除所有日志吗?');">删除所有的日志</a>]
+       <!--{/if}-->
+        &nbsp;&nbsp;&nbsp;
+		<!--{if $_rights.sendlogcvs}-->
+        [<a href="<!--{url controller='socket' action='sendlogcvs'}-->">导出所有的日志为CVS格式</a>]
+		<!--{/if}-->
+        &nbsp;&nbsp;&nbsp;
+        <!--{if $log_warning}-->
+        [<font color="#FF0000">您的日志记录过多,请注意清理</font>]
+        <!--{/if}-->
+	</td>
+  </tr>
+</table>

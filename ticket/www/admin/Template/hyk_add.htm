@@ -1,0 +1,67 @@
+<script language="javascript">
+function cutNum(){
+    hyk_form.num.value=parseInt(hyk_form.to.value)-parseInt(hyk_form.from.value)+1;
+}
+function check()
+{
+	if(document.hyk_form.from.value.length == "")
+	{
+		alert("请输入卡号段！");
+		document.hyk_form.from.focus();
+		return false;
+	}
+	if(document.hyk_form.to.value.length == "")
+	{		
+		alert("请输入卡号段！");
+		document.hyk_form.to.focus();
+		return false;
+	}
+	return true;
+	
+}
+</script>
+<table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_bg">
+<form action='<!--{$_acurl}-->' method="post" name="hyk_form">
+	  <tr>
+		 <td colspan="2" class="td_title">生成学习卡</td>
+	  </tr>
+	<tr>
+	  <td width="40%" class="td_bg_blue"><strong>卡号段：</strong></td>
+      <td width="73%" class="td_bg_white">
+		从&nbsp;<input type="text" name="from" value="0" maxlength="40"/>&nbsp;到&nbsp;<input type="text" name="to" value="0" class="txtbox1" maxlength="40"/><font color="red"> * </font> 填写部门名称
+	  </td>
+	</tr>
+		<tr>
+	  <td width="40%" class="td_bg_blue"><strong>生成张数：</strong></td>
+      <td width="73%" class="td_bg_white">
+		<input type="text" name="num" class="txtbox2" onblur="cutNum()">
+	  </td>
+	</tr>
+	<tr>
+	  <td width="40%" class="td_bg_blue"><strong>卡类型：</strong></td>
+      <td width="73%" class="td_bg_white">
+		学生<input type="radio" value="S" checked name="card">&nbsp;&nbsp; 老师<input type="radio" name="card" value="T">&nbsp;&nbsp;家长<input type="radio" name="card" value="P">&nbsp;&nbsp;测试<input type="radio" name="card" value="E">
+	  </td>
+	</tr>
+	
+		<tr>
+	  <td width="40%" class="td_bg_blue"><strong>有效期类型：</strong></td>
+      <td width="73%" class="td_bg_white">
+	  <select name="type" size="1">
+    <option value="0">半年</option>
+    <option value="1">一年</option>
+  </select>
+	  </td>
+	</tr>
+	
+	
+	
+	
+   <tr align="center">
+	 <td colspan="2" class="td_bg_white" height="35">
+       <input type="submit" name="op" value="制作学习卡" class="button_bg" onClick="return check();">
+	 </td>
+  </tr> 
+  </form>
+</table>
+

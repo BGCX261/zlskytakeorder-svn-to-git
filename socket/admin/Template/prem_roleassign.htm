@@ -1,0 +1,51 @@
+<script language="javascript">
+function allCheckBox()
+{
+	if($(":checkbox").attr("checked")==true){
+		$(":checkbox").attr("checked",false);
+	}else{
+		$(":checkbox").attr("checked",true);
+	}
+}
+</script>
+<table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_bg">
+<form action='<!--{$_acurl}-->' method="post" name="roleassign_form">
+	  <tr>
+		 <td colspan="2" class="td_title">设置权限 <!--{$role}--><a href="javascript:allCheckBox()">全选</a></td>
+	  </tr>
+	<tr>
+      <td class="td_bg_white" style="padding:0px">
+      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+      	<!--{section name=i loop=$prems}-->
+        <tr>
+        	<td class="td_bg_blue" width="8%" style="font-weight:bold;color:#003300;border-right:1px solid #999999 ">
+            	<input type="checkBox" name="prems[]" id="<!--{$prems[i].controller}-->" value="<!--{$prems[i].controller}-->" <!--{if $prems[i].sys}-->checked="checked" disabled="disabled"<!--{/if}--> <!--{if $prems[i].checked}-->checked="checked" <!--{/if}--> /> <!--{$prems[i].des}-->
+				<!--{section name=j loop=$prems[i].actions}-->
+                       	<td width="8%">
+                        	<input type="checkBox" name="prems[]" id="<!--{$prems[i].controller}-->_<!--{$prems[i].actions[j].action}-->" value="<!--{$prems[i].controller}-->_<!--{$prems[i].actions[j].action}-->" <!--{if $prems[i].actions[j].linkto}-->onclick="checkWith('<!--{$prems[i].controller}-->','<!--{$prems[i].actions[j].action}-->','<!--{$prems[i].actions[j].linkto}-->');"<!--{/if}--> <!--{if $prems[i].actions[j].sys}-->checked="checked" disabled="disabled"<!--{/if}--> <!--{if $prems[i].actions[j].checked}-->checked="checked" <!--{/if}--> /> <!--{$prems[i].actions[j].des}--> 
+                        </td>  
+                    <!--{/section}-->
+            </td>
+        </tr>
+        <!--{/section}-->
+      </table>
+
+	  </td>
+	</tr>
+
+   <tr align="center">
+	 <td colspan="2" class="td_bg_white" height="35">
+       <input type="submit" name="op" value="提交" class="button_bg">
+       <input name="role" type="hidden" id="role" value="<!--{$role}-->">
+	 </td>
+  </tr> 
+  </form>
+</table>
+<script type="text/javascript">
+	function checkWith(c,a,l){
+		if($("#"+c+"_"+a)[0].checked!==$("#"+c+"_"+l)[0].checked){
+			$("#"+c+"_"+l)[0].checked = $("#"+c+"_"+a)[0].checked;
+		}
+	}
+	
+</script>

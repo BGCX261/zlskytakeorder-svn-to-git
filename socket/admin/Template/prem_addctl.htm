@@ -1,0 +1,39 @@
+
+<table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_bg">
+<form action='<!--{$_acurl}-->' method="post" name="ctl_form">
+	  <tr>
+		 <td colspan="2" class="td_title">添加控制器</td>
+	  </tr>
+	<tr>
+	  <td width="" class="td_bg_blue"><strong>控制器名</strong></td>
+      <td width="73%" class="td_bg_white">
+		<input type="text" name="name" id="name" value=""/>
+	  </td>
+	</tr>
+	<tr>
+	  <td width="" class="td_bg_blue"><strong>功能描述</strong></td>
+      <td width="73%" class="td_bg_white"><input type="text" name="des" id="des" value=""/></td>
+	</tr>
+    <tr>
+    <td colspan="2" height="35" class="td_bg_white"><a href="javascript:void(0);" onclick="show()">指定系统角色？</a>
+    <div id="showsys" style="display:none;margin-left:30px;">
+            <input type="radio" name="sys" id="sys" value="1"/>任何人(RBAC_EVERYONE)
+            <input type="radio" name="sys" id="sys" value="2"/>拥有角色(RBAC_HAS_ROLE)
+        </div>
+    </td>
+      </tr>
+   <tr align="center">
+	 <td colspan="2" class="td_bg_white" height="35">
+       <input type="submit" name="op" value="提交" class="button_bg">
+	 </td>
+  </tr> 
+  </form>
+</table>
+
+<script type="text/javascript">
+ function show()
+ {
+ 	$("#showsys").toggle(); 	
+ }
+</script>
+

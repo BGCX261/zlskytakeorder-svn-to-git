@@ -1,0 +1,2 @@
+http://www.open-lib.com/html/index.html	jquery插件
+http://abane.cn/ajax/jQuery/list.html

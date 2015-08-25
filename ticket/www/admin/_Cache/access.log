@@ -1,0 +1,911 @@
+﻿[2010-01-28 09:32:21 0.78125600] ======= FleaPHP Loaded =======
+[2010-01-28 09:32:21] REQUEST_URI: /admin/
+[2010-01-28 09:32:21] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:32:21] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:32:21] [debug] :sql: SHOW FULL COLUMNS FROM `socket_user`
+[2010-01-28 09:32:21] [exception] :FLEA_Db_Exception_SqlQuery: SQL 错误消息: "Table 'ticket.socket_user' doesn't exist"
+SQL 语句: "SHOW FULL COLUMNS FROM `socket_user`"
+SQL 错误代码: "7335941".
+[2010-01-28 09:32:21 0.92362600] ======= FleaPHP End (elapsed: 0.142370 seconds) =======
+
+[2010-01-28 09:51:03 0.07812900] ======= FleaPHP Loaded =======
+[2010-01-28 09:51:03] REQUEST_URI: /admin/
+[2010-01-28 09:51:03] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:51:03] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:51:03] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 09:51:03] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id=''  LIMIT 1
+[2010-01-28 09:51:03 0.28726100] ======= FleaPHP End (elapsed: 0.209132 seconds) =======
+
+[2010-01-28 09:51:15 0.07812700] ======= FleaPHP Loaded =======
+[2010-01-28 09:51:15] REQUEST_URI: /admin/index.php?c=Default&a=login
+[2010-01-28 09:51:15] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:51:15] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:51:15] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 09:51:15] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`username` = 'admin'  LIMIT 1
+[2010-01-28 09:51:15] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 09:51:15] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('1') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 09:51:15] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 09:51:15] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('1')
+[2010-01-28 09:51:15] [debug] :sql: UPDATE `ticket_user` SET `updated`=1264643475  WHERE user_id='1'
+[2010-01-28 09:51:15 0.30437300] ======= FleaPHP End (elapsed: 0.226246 seconds) =======
+
+[2010-01-28 09:51:17 0.25000500] ======= FleaPHP Loaded =======
+[2010-01-28 09:51:17] REQUEST_URI: /admin/index.php?c=Default&a=index
+[2010-01-28 09:51:17] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:51:17] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:51:17] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='1'  LIMIT 1
+[2010-01-28 09:51:17] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('1') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 09:51:17] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('1')
+[2010-01-28 09:51:17 0.35466400] ======= FleaPHP End (elapsed: 0.104659 seconds) =======
+
+[2010-01-28 09:51:21 0.64062900] ======= FleaPHP Loaded =======
+[2010-01-28 09:51:21] REQUEST_URI: /admin/index.php?c=default&a=index
+[2010-01-28 09:51:21] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:51:21] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:51:21] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id=''  LIMIT 1
+[2010-01-28 09:51:21 0.73884100] ======= FleaPHP End (elapsed: 0.098212 seconds) =======
+
+[2010-01-28 09:51:26 0.48438000] ======= FleaPHP Loaded =======
+[2010-01-28 09:51:26] REQUEST_URI: /admin/index.php?c=Default&a=login
+[2010-01-28 09:51:26] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:51:26] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:51:26] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 09:51:26] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`username` = 'main'  LIMIT 1
+[2010-01-28 09:51:26] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 09:51:26] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 09:51:26] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 09:51:26] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 09:51:26] [debug] :sql: UPDATE `ticket_user` SET `updated`=1264643486  WHERE user_id='2'
+[2010-01-28 09:51:26 0.63583400] ======= FleaPHP End (elapsed: 0.151454 seconds) =======
+
+[2010-01-28 09:51:28 0.01562900] ======= FleaPHP Loaded =======
+[2010-01-28 09:51:28] REQUEST_URI: /admin/index.php?c=Default&a=index
+[2010-01-28 09:51:28] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:51:28] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:51:28] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 09:51:28] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 09:51:28] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 09:51:28 0.11994100] ======= FleaPHP End (elapsed: 0.104312 seconds) =======
+
+[2010-01-28 09:51:30 0.20312900] ======= FleaPHP Loaded =======
+[2010-01-28 09:51:30] REQUEST_URI: /admin/index.php?c=default&a=index
+[2010-01-28 09:51:30] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:51:30] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:51:30] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id=''  LIMIT 1
+[2010-01-28 09:51:30 0.30163000] ======= FleaPHP End (elapsed: 0.098501 seconds) =======
+
+[2010-01-28 09:51:42 0.62500400] ======= FleaPHP Loaded =======
+[2010-01-28 09:51:42] REQUEST_URI: /admin/index.php?c=Default&a=login
+[2010-01-28 09:51:42] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:51:42] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:51:42] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 09:51:42] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`username` = 'robin'  LIMIT 1
+[2010-01-28 09:51:42] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 09:51:42] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('5') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 09:51:42] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 09:51:42] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('5')
+[2010-01-28 09:51:42 0.75860800] ======= FleaPHP End (elapsed: 0.133604 seconds) =======
+
+[2010-01-28 09:51:45 0.78125200] ======= FleaPHP Loaded =======
+[2010-01-28 09:51:45] REQUEST_URI: /admin/index.php?c=Default&a=index
+[2010-01-28 09:51:45] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:51:45] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:51:45] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id=''  LIMIT 1
+[2010-01-28 09:51:45 0.88972200] ======= FleaPHP End (elapsed: 0.108470 seconds) =======
+
+[2010-01-28 09:51:55 0.04688000] ======= FleaPHP Loaded =======
+[2010-01-28 09:51:55] REQUEST_URI: /admin/index.php?c=Default&a=login
+[2010-01-28 09:51:55] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:51:55] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:51:55] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 09:51:55] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`username` = 'main'  LIMIT 1
+[2010-01-28 09:51:55] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 09:51:55] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 09:51:55] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 09:51:55] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 09:51:55] [debug] :sql: UPDATE `ticket_user` SET `updated`=1264643515  WHERE user_id='2'
+[2010-01-28 09:51:55 0.18616600] ======= FleaPHP End (elapsed: 0.139286 seconds) =======
+
+[2010-01-28 09:51:56 0.85938000] ======= FleaPHP Loaded =======
+[2010-01-28 09:51:56] REQUEST_URI: /admin/index.php?c=Default&a=index
+[2010-01-28 09:51:56] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:51:56] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:51:56] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 09:51:56] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 09:51:56] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 09:51:56 0.96544900] ======= FleaPHP End (elapsed: 0.106069 seconds) =======
+
+[2010-01-28 09:52:02 0.37500400] ======= FleaPHP Loaded =======
+[2010-01-28 09:52:02] REQUEST_URI: /admin/index.php?c=default&a=index
+[2010-01-28 09:52:02] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:52:02] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:52:02] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id=''  LIMIT 1
+[2010-01-28 09:52:02 0.47359800] ======= FleaPHP End (elapsed: 0.098594 seconds) =======
+
+[2010-01-28 09:52:49 0.18750400] ======= FleaPHP Loaded =======
+[2010-01-28 09:52:49] REQUEST_URI: /admin/index.php?c=Default&a=login
+[2010-01-28 09:52:49] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:52:49] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:52:49] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 09:52:49] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`username` = 'main'  LIMIT 1
+[2010-01-28 09:52:49] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 09:52:49] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 09:52:49] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 09:52:49] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 09:52:49 0.30834400] ======= FleaPHP End (elapsed: 0.120840 seconds) =======
+
+[2010-01-28 09:52:52 0.39062600] ======= FleaPHP Loaded =======
+[2010-01-28 09:52:52] REQUEST_URI: /admin/index.php?c=Default&a=index
+[2010-01-28 09:52:52] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:52:52] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:52:52] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id=''  LIMIT 1
+[2010-01-28 09:52:52 0.48701100] ======= FleaPHP End (elapsed: 0.096385 seconds) =======
+
+[2010-01-28 09:52:59 0.85938000] ======= FleaPHP Loaded =======
+[2010-01-28 09:52:59] REQUEST_URI: /admin/index.php?c=Default&a=login
+[2010-01-28 09:52:59] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:52:59] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:52:59] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`username` = 'main'  LIMIT 1
+[2010-01-28 09:52:59] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 09:52:59] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 09:52:59] [debug] :sql: UPDATE `ticket_user` SET `updated`=1264643579  WHERE user_id='2'
+[2010-01-28 09:53:00 0.01011400] ======= FleaPHP End (elapsed: 0.150734 seconds) =======
+
+[2010-01-28 09:53:01 0.84375500] ======= FleaPHP Loaded =======
+[2010-01-28 09:53:01] REQUEST_URI: /admin/index.php?c=Default&a=index
+[2010-01-28 09:53:01] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:53:01] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:53:01] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 09:53:01] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 09:53:01] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 09:53:01] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 09:53:01] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 09:53:01] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 09:53:01 0.95462800] ======= FleaPHP End (elapsed: 0.110873 seconds) =======
+
+[2010-01-28 09:54:39 0.51562800] ======= FleaPHP Loaded =======
+[2010-01-28 09:54:39] REQUEST_URI: /admin/index.php?c=default&a=index
+[2010-01-28 09:54:39] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:54:39] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:54:39] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 09:54:39 0.61072700] ======= FleaPHP End (elapsed: 0.095099 seconds) =======
+
+[2010-01-28 09:54:44 0.65625100] ======= FleaPHP Loaded =======
+[2010-01-28 09:54:44] REQUEST_URI: /admin/index.php?c=Default&a=login
+[2010-01-28 09:54:44] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:54:44] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:54:44] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`username` = 'main'  LIMIT 1
+[2010-01-28 09:54:44] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 09:54:44] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 09:54:44] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 09:54:44] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 09:54:44] [debug] :sql: UPDATE `ticket_user` SET `updated`=1264643684  WHERE user_id='2'
+[2010-01-28 09:54:44 0.79527600] ======= FleaPHP End (elapsed: 0.139025 seconds) =======
+
+[2010-01-28 09:54:46 0.23438000] ======= FleaPHP Loaded =======
+[2010-01-28 09:54:46] REQUEST_URI: /admin/index.php?c=Default&a=index
+[2010-01-28 09:54:46] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:54:46] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:54:46 0.36134100] ======= FleaPHP End (elapsed: 0.126961 seconds) =======
+
+[2010-01-28 09:54:46 0.39062600] ======= FleaPHP Loaded =======
+[2010-01-28 09:54:46] REQUEST_URI: /admin/index.php?c=Default&a=Index&op=left
+[2010-01-28 09:54:46] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:54:46] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:54:46 0.57074000] ======= FleaPHP End (elapsed: 0.180114 seconds) =======
+
+[2010-01-28 09:54:46 0.39062500] ======= FleaPHP Loaded =======
+[2010-01-28 09:54:46] REQUEST_URI: /admin/index.php?c=Default&a=bottom
+[2010-01-28 09:54:46] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:54:46] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:54:46 0.67583200] ======= FleaPHP End (elapsed: 0.285207 seconds) =======
+
+[2010-01-28 09:54:46 0.39062700] ======= FleaPHP Loaded =======
+[2010-01-28 09:54:46] REQUEST_URI: /admin/index.php?c=Default&a=Index&op=right
+[2010-01-28 09:54:46] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:54:46] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:54:46 0.77381300] ======= FleaPHP End (elapsed: 0.383186 seconds) =======
+
+[2010-01-28 09:54:49 0.17187700] ======= FleaPHP Loaded =======
+[2010-01-28 09:54:49] REQUEST_URI: /admin/index.php?c=Som&a=Index
+[2010-01-28 09:54:49] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:54:49] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:54:49] [debug] :sql: SELECT COUNT(`ticket_org`.`org_id`) FROM `ticket_org`
+[2010-01-28 09:54:49] [debug] :sql: SELECT  `ticket_org`.`org_id` AS flea_pkref_org_id, `ticket_org`.* FROM `ticket_org`   ORDER BY org_id DESC LIMIT 0, 10
+[2010-01-28 09:54:49] [debug] :sql: SELECT `ticket_user`.`org_id` AS flea_pkref_org_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`org_id` IN ('1')
+[2010-01-28 09:54:49 0.39112600] ======= FleaPHP End (elapsed: 0.219249 seconds) =======
+
+[2010-01-28 09:54:50 0.37500100] ======= FleaPHP Loaded =======
+[2010-01-28 09:54:50] REQUEST_URI: /admin/index.php?c=User&a=Index
+[2010-01-28 09:54:50] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:54:50] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:54:50] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 09:54:50] [debug] :sql: SELECT  `ticket_org`.`org_id` AS flea_pkref_org_id, `ticket_org`.* FROM `ticket_org`  
+[2010-01-28 09:54:50] [debug] :sql: SELECT `ticket_user`.`org_id` AS flea_pkref_org_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`org_id` IN ('1')
+[2010-01-28 09:54:50] [debug] :sql: SELECT COUNT(`ticket_user`.`user_id`) FROM `ticket_user` WHERE  username!='admin'
+[2010-01-28 09:54:50] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE  username!='admin'  ORDER BY user_id DESC LIMIT 0, 10
+[2010-01-28 09:54:50] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('5','4','3','2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 09:54:50] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('5','4','3','2')
+[2010-01-28 09:54:50 0.57363200] ======= FleaPHP End (elapsed: 0.198631 seconds) =======
+
+[2010-01-28 09:54:52 0.17187700] ======= FleaPHP Loaded =======
+[2010-01-28 09:54:52] REQUEST_URI: /admin/index.php?c=Role&a=Index
+[2010-01-28 09:54:52] [debug] :sql: SELECT VERSION()
+[2010-01-28 09:54:52] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 09:54:52] [debug] :sql: SELECT COUNT(`ticket_roles`.`role_id`) FROM `ticket_roles` WHERE  rolename!='sysadmin'
+[2010-01-28 09:54:52] [debug] :sql: SELECT  `ticket_roles`.`role_id` AS flea_pkref_role_id, `ticket_roles`.* FROM `ticket_roles`  WHERE  rolename!='sysadmin'  ORDER BY role_id DESC LIMIT 0, 10
+[2010-01-28 09:54:52] [debug] :sql: SELECT `ticket_rose`.`role_id` AS flea_pkref_role_id, `ticket_user`.* FROM `ticket_rose` INNER JOIN `ticket_user` ON `ticket_user`.`user_id` = `ticket_rose`.`user_id`  WHERE `ticket_rose`.`role_id` IN ('6','5','4')
+[2010-01-28 09:54:52 0.36631500] ======= FleaPHP End (elapsed: 0.194438 seconds) =======
+
+[2010-01-28 10:00:44 0.85937900] ======= FleaPHP Loaded =======
+[2010-01-28 10:00:44] REQUEST_URI: /admin/
+[2010-01-28 10:00:44] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:00:44] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:00:44] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 10:00:44] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:00:44] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 10:00:44] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:00:44] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 10:00:44] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:00:44 0.98304700] ======= FleaPHP End (elapsed: 0.123668 seconds) =======
+
+[2010-01-28 10:00:49 0.26563000] ======= FleaPHP Loaded =======
+[2010-01-28 10:00:49] REQUEST_URI: /admin/index.php?c=default&a=index
+[2010-01-28 10:00:49] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:00:49] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:00:49] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id=''  LIMIT 1
+[2010-01-28 10:00:49 0.36590800] ======= FleaPHP End (elapsed: 0.100278 seconds) =======
+
+[2010-01-28 10:00:51 0.85937700] ======= FleaPHP Loaded =======
+[2010-01-28 10:00:51] REQUEST_URI: /admin/index.php?c=Default&a=login
+[2010-01-28 10:00:51] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:00:51] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:00:51] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`username` = 'main'  LIMIT 1
+[2010-01-28 10:00:51] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:00:51] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:00:51] [debug] :sql: UPDATE `ticket_user` SET `session_id`=2062652,`updated`=1264644051  WHERE user_id='2'
+[2010-01-28 10:00:52 0.00288800] ======= FleaPHP End (elapsed: 0.143511 seconds) =======
+
+[2010-01-28 10:00:53 0.18750500] ======= FleaPHP Loaded =======
+[2010-01-28 10:00:53] REQUEST_URI: /admin/index.php?c=Default&a=index
+[2010-01-28 10:00:53] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:00:53] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:00:53] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:00:53] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:00:53] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:00:53 0.30397100] ======= FleaPHP End (elapsed: 0.116466 seconds) =======
+
+[2010-01-28 10:00:53 0.34375200] ======= FleaPHP Loaded =======
+[2010-01-28 10:00:53] REQUEST_URI: /admin/index.php?c=Default&a=Index&op=left
+[2010-01-28 10:00:53] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:00:53] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:00:53] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:00:53] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:00:53] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:00:53 0.50698000] ======= FleaPHP End (elapsed: 0.163228 seconds) =======
+
+[2010-01-28 10:00:53 0.34375100] ======= FleaPHP Loaded =======
+[2010-01-28 10:00:53] REQUEST_URI: /admin/index.php?c=Default&a=Index&op=right
+[2010-01-28 10:00:53] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:00:53] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:00:53] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:00:53] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:00:53] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:00:53 0.61010200] ======= FleaPHP End (elapsed: 0.266351 seconds) =======
+
+[2010-01-28 10:00:53 0.34375100] ======= FleaPHP Loaded =======
+[2010-01-28 10:00:53] REQUEST_URI: /admin/index.php?c=Default&a=bottom
+[2010-01-28 10:00:53] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:00:53] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:00:53 0.68228400] ======= FleaPHP End (elapsed: 0.338533 seconds) =======
+
+[2010-01-28 10:01:08 0.40625200] ======= FleaPHP Loaded =======
+[2010-01-28 10:01:08] REQUEST_URI: /admin/index.php?c=Default&a=Logout
+[2010-01-28 10:01:08] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:01:08] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:01:08] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 10:01:08 0.51540700] ======= FleaPHP End (elapsed: 0.109155 seconds) =======
+
+[2010-01-28 10:01:09 0.70312900] ======= FleaPHP Loaded =======
+[2010-01-28 10:01:09] REQUEST_URI: /admin/index.php?c=Default&a=index
+[2010-01-28 10:01:09] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:01:09] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:01:09] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id=''  LIMIT 1
+[2010-01-28 10:01:09 0.80331900] ======= FleaPHP End (elapsed: 0.100190 seconds) =======
+
+[2010-01-28 10:01:11 0.21875200] ======= FleaPHP Loaded =======
+[2010-01-28 10:01:11] REQUEST_URI: /admin/index.php?c=Default&a=login
+[2010-01-28 10:01:11] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:01:11] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:01:11] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`username` = 'main'  LIMIT 1
+[2010-01-28 10:01:11] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 10:01:11] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:01:11] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 10:01:11] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:01:11] [debug] :sql: UPDATE `ticket_user` SET `session_id`=9519348,`updated`=1264644071  WHERE user_id='2'
+[2010-01-28 10:01:11 0.36065100] ======= FleaPHP End (elapsed: 0.141899 seconds) =======
+
+[2010-01-28 10:01:13 0.21875500] ======= FleaPHP Loaded =======
+[2010-01-28 10:01:13] REQUEST_URI: /admin/index.php?c=Default&a=index
+[2010-01-28 10:01:13] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:01:13] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:01:13] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:01:13] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:01:13] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:01:13 0.33475700] ======= FleaPHP End (elapsed: 0.116002 seconds) =======
+
+[2010-01-28 10:01:13 0.37500200] ======= FleaPHP Loaded =======
+[2010-01-28 10:01:13] REQUEST_URI: /admin/index.php?c=Default&a=Index&op=left
+[2010-01-28 10:01:13] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:01:13] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:01:13] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:01:13] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:01:13] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:01:13 0.53471500] ======= FleaPHP End (elapsed: 0.159713 seconds) =======
+
+[2010-01-28 10:01:13 0.37500100] ======= FleaPHP Loaded =======
+[2010-01-28 10:01:13] REQUEST_URI: /admin/index.php?c=Default&a=Index&op=right
+[2010-01-28 10:01:13] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:01:13] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:01:13] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:01:13] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:01:13] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:01:13 0.63242900] ======= FleaPHP End (elapsed: 0.257428 seconds) =======
+
+[2010-01-28 10:01:13 0.37500100] ======= FleaPHP Loaded =======
+[2010-01-28 10:01:13] REQUEST_URI: /admin/index.php?c=Default&a=bottom
+[2010-01-28 10:01:13] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:01:13] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:01:13 0.70505100] ======= FleaPHP End (elapsed: 0.330050 seconds) =======
+
+[2010-01-28 10:34:31 0.78125400] ======= FleaPHP Loaded =======
+[2010-01-28 10:34:31] REQUEST_URI: /admin111/
+[2010-01-28 10:34:31] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:34:31] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:34:31] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 10:34:31] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:34:31] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 10:34:31] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:34:31] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 10:34:31] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:34:31 0.91767900] ======= FleaPHP End (elapsed: 0.136425 seconds) =======
+
+[2010-01-28 10:34:31 0.98437900] ======= FleaPHP Loaded =======
+[2010-01-28 10:34:32] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=left
+[2010-01-28 10:34:32] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:34:32] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:34:32] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:34:32] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:34:32] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:34:32 0.14977900] ======= FleaPHP End (elapsed: 0.165400 seconds) =======
+
+[2010-01-28 10:34:31 0.98437700] ======= FleaPHP Loaded =======
+[2010-01-28 10:34:32] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=right
+[2010-01-28 10:34:32] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:34:32] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:34:32] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:34:32] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:34:32] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:34:32 0.24947900] ======= FleaPHP End (elapsed: 0.265102 seconds) =======
+
+[2010-01-28 10:34:32 0.00000100] ======= FleaPHP Loaded =======
+[2010-01-28 10:34:32] REQUEST_URI: /admin111/index.php?c=Default&a=bottom
+[2010-01-28 10:34:32] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:34:32] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:34:32 0.33698100] ======= FleaPHP End (elapsed: 0.336980 seconds) =======
+
+[2010-01-28 10:34:35 0.89062700] ======= FleaPHP Loaded =======
+[2010-01-28 10:34:35] REQUEST_URI: /admin111/index.php?c=Default&a=Logout
+[2010-01-28 10:34:35] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:34:35] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:34:36 0.01609900] ======= FleaPHP End (elapsed: 0.125472 seconds) =======
+
+[2010-01-28 10:34:37 0.42188100] ======= FleaPHP Loaded =======
+[2010-01-28 10:34:37] REQUEST_URI: /admin111/index.php?c=Default&a=index
+[2010-01-28 10:34:37] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:34:37] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:34:37] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id=''  LIMIT 1
+[2010-01-28 10:34:37 0.55523100] ======= FleaPHP End (elapsed: 0.133350 seconds) =======
+
+[2010-01-28 10:34:41 0.62500100] ======= FleaPHP Loaded =======
+[2010-01-28 10:34:41] REQUEST_URI: /admin111/index.php?c=Default&a=login
+[2010-01-28 10:34:41] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:34:41] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:34:41] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`username` = 'main'  LIMIT 1
+[2010-01-28 10:34:41] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:34:41] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:34:41] [debug] :sql: UPDATE `ticket_user` SET `session_id`=8233947,`updated`=1264646081  WHERE user_id='2'
+[2010-01-28 10:34:41 0.77702000] ======= FleaPHP End (elapsed: 0.152019 seconds) =======
+
+[2010-01-28 10:34:43 0.14062900] ======= FleaPHP Loaded =======
+[2010-01-28 10:34:43] REQUEST_URI: /admin111/index.php?c=Default&a=index
+[2010-01-28 10:34:43] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:34:43] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:34:43] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 10:34:43] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:34:43] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 10:34:43] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:34:43] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 10:34:43] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:34:43 0.26067300] ======= FleaPHP End (elapsed: 0.120044 seconds) =======
+
+[2010-01-28 10:34:43 0.29687700] ======= FleaPHP Loaded =======
+[2010-01-28 10:34:43] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=left
+[2010-01-28 10:34:43] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:34:43] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:34:43] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:34:43] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:34:43] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:34:43 0.45511100] ======= FleaPHP End (elapsed: 0.158234 seconds) =======
+
+[2010-01-28 10:34:43 0.29687600] ======= FleaPHP Loaded =======
+[2010-01-28 10:34:43] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=right
+[2010-01-28 10:34:43] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:34:43] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:34:43] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:34:43] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:34:43] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:34:43 0.55012700] ======= FleaPHP End (elapsed: 0.253251 seconds) =======
+
+[2010-01-28 10:34:43 0.31250100] ======= FleaPHP Loaded =======
+[2010-01-28 10:34:43] REQUEST_URI: /admin111/index.php?c=Default&a=bottom
+[2010-01-28 10:34:43] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:34:43] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:34:43 0.63621400] ======= FleaPHP End (elapsed: 0.323713 seconds) =======
+
+[2010-01-28 10:36:55 0.67187700] ======= FleaPHP Loaded =======
+[2010-01-28 10:36:55] REQUEST_URI: /admin111/index.php?c=Som&a=Index
+[2010-01-28 10:36:55] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:36:55] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:36:55] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 10:36:55] [debug] :sql: SELECT COUNT(`ticket_org`.`org_id`) FROM `ticket_org`
+[2010-01-28 10:36:55] [debug] :sql: SELECT  `ticket_org`.`org_id` AS flea_pkref_org_id, `ticket_org`.* FROM `ticket_org`   ORDER BY org_id DESC LIMIT 0, 10
+[2010-01-28 10:36:55] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 10:36:55] [debug] :sql: SELECT `ticket_user`.`org_id` AS flea_pkref_org_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`org_id` IN ('1')
+[2010-01-28 10:36:55 0.79654200] ======= FleaPHP End (elapsed: 0.124665 seconds) =======
+
+[2010-01-28 10:36:57 0.42187800] ======= FleaPHP Loaded =======
+[2010-01-28 10:36:57] REQUEST_URI: /admin111/index.php?c=User&a=Index
+[2010-01-28 10:36:57] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:36:57] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:36:57] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 10:36:57] [debug] :sql: SELECT  `ticket_org`.`org_id` AS flea_pkref_org_id, `ticket_org`.* FROM `ticket_org`  
+[2010-01-28 10:36:57] [debug] :sql: SELECT `ticket_user`.`org_id` AS flea_pkref_org_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`org_id` IN ('1')
+[2010-01-28 10:36:57] [debug] :sql: SELECT COUNT(`ticket_user`.`user_id`) FROM `ticket_user` WHERE  username!='admin'
+[2010-01-28 10:36:57] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE  username!='admin'  ORDER BY user_id DESC LIMIT 0, 10
+[2010-01-28 10:36:57] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('5','4','3','2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:36:57] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('5','4','3','2')
+[2010-01-28 10:36:57 0.56178600] ======= FleaPHP End (elapsed: 0.139908 seconds) =======
+
+[2010-01-28 10:36:59 0.00000700] ======= FleaPHP Loaded =======
+[2010-01-28 10:36:59] REQUEST_URI: /admin111/index.php?c=Role&a=Index
+[2010-01-28 10:36:59] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:36:59] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:36:59] [debug] :sql: SELECT COUNT(`ticket_roles`.`role_id`) FROM `ticket_roles` WHERE  rolename!='sysadmin'
+[2010-01-28 10:36:59] [debug] :sql: SELECT  `ticket_roles`.`role_id` AS flea_pkref_role_id, `ticket_roles`.* FROM `ticket_roles`  WHERE  rolename!='sysadmin'  ORDER BY role_id DESC LIMIT 0, 10
+[2010-01-28 10:36:59] [debug] :sql: SELECT `ticket_rose`.`role_id` AS flea_pkref_role_id, `ticket_user`.* FROM `ticket_rose` INNER JOIN `ticket_user` ON `ticket_user`.`user_id` = `ticket_rose`.`user_id`  WHERE `ticket_rose`.`role_id` IN ('6','5','4')
+[2010-01-28 10:36:59 0.11319000] ======= FleaPHP End (elapsed: 0.113183 seconds) =======
+
+[2010-01-28 10:42:22 0.26562700] ======= FleaPHP Loaded =======
+[2010-01-28 10:42:22] REQUEST_URI: /admin111/index.php?c=Default&a=index
+[2010-01-28 10:42:22] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:42:22] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:42:22] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 10:42:22] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:42:22] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 10:42:22] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:42:22] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 10:42:22] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:42:22 0.38625900] ======= FleaPHP End (elapsed: 0.120632 seconds) =======
+
+[2010-01-28 10:42:22 0.40625100] ======= FleaPHP Loaded =======
+[2010-01-28 10:42:22] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=left
+[2010-01-28 10:42:22] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:42:22] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:42:22] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:42:22] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:42:22] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:42:22 0.61584800] ======= FleaPHP End (elapsed: 0.209597 seconds) =======
+
+[2010-01-28 10:42:22 0.42187600] ======= FleaPHP Loaded =======
+[2010-01-28 10:42:22] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=right
+[2010-01-28 10:42:22] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:42:22] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:42:22] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:42:22] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:42:22] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:42:22 0.73655800] ======= FleaPHP End (elapsed: 0.314682 seconds) =======
+
+[2010-01-28 10:42:22 0.42187600] ======= FleaPHP Loaded =======
+[2010-01-28 10:42:22] REQUEST_URI: /admin111/index.php?c=Default&a=bottom
+[2010-01-28 10:42:22] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:42:22] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:42:22 0.81334300] ======= FleaPHP End (elapsed: 0.391467 seconds) =======
+
+[2010-01-28 10:46:48 0.62500300] ======= FleaPHP Loaded =======
+[2010-01-28 10:46:48] REQUEST_URI: /admin111/index.php?c=Default&a=index
+[2010-01-28 10:46:48] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:46:48] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:46:48] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 10:46:48] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:46:48] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 10:46:48] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:46:48] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 10:46:48] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:46:48 0.75975800] ======= FleaPHP End (elapsed: 0.134755 seconds) =======
+
+[2010-01-28 10:46:48 0.78125100] ======= FleaPHP Loaded =======
+[2010-01-28 10:46:48] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=left
+[2010-01-28 10:46:48] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:46:48] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:46:48] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:46:48] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:46:48] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:46:48 0.94864800] ======= FleaPHP End (elapsed: 0.167397 seconds) =======
+
+[2010-01-28 10:46:48 0.79687600] ======= FleaPHP Loaded =======
+[2010-01-28 10:46:49] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=right
+[2010-01-28 10:46:49] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:46:49] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:46:49] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:46:49] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:46:49] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:46:49 0.06774900] ======= FleaPHP End (elapsed: 0.270873 seconds) =======
+
+[2010-01-28 10:46:48 0.79687500] ======= FleaPHP Loaded =======
+[2010-01-28 10:46:49] REQUEST_URI: /admin111/index.php?c=Default&a=bottom
+[2010-01-28 10:46:49] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:46:49] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:46:49 0.16330000] ======= FleaPHP End (elapsed: 0.366425 seconds) =======
+
+[2010-01-28 10:48:31 0.15625200] ======= FleaPHP Loaded =======
+[2010-01-28 10:48:31] REQUEST_URI: /admin111/index.php?c=Default&a=index
+[2010-01-28 10:48:31] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:48:31] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:48:31] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 10:48:31] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:48:31] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 10:48:31] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:48:31] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 10:48:31] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:48:31 0.29503800] ======= FleaPHP End (elapsed: 0.138786 seconds) =======
+
+[2010-01-28 10:48:31 0.32812700] ======= FleaPHP Loaded =======
+[2010-01-28 10:48:31] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=left
+[2010-01-28 10:48:31] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:48:31] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:48:31] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:48:31] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:48:31] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:48:31 0.50182500] ======= FleaPHP End (elapsed: 0.173698 seconds) =======
+
+[2010-01-28 10:48:31 0.34375200] ======= FleaPHP Loaded =======
+[2010-01-28 10:48:31] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=right
+[2010-01-28 10:48:31] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:48:31] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:48:31] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:48:31] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:48:31] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:48:31 0.61423200] ======= FleaPHP End (elapsed: 0.270480 seconds) =======
+
+[2010-01-28 10:48:31 0.34375100] ======= FleaPHP Loaded =======
+[2010-01-28 10:48:31] REQUEST_URI: /admin111/index.php?c=Default&a=bottom
+[2010-01-28 10:48:31] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:48:31] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:48:31 0.68425000] ======= FleaPHP End (elapsed: 0.340499 seconds) =======
+
+[2010-01-28 10:50:21 0.51562800] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:21] REQUEST_URI: /admin111/index.php?c=Default&a=index
+[2010-01-28 10:50:21] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:21] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:21] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 10:50:21] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:50:21] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 10:50:21] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:50:21] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 10:50:21] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:50:21 0.63810700] ======= FleaPHP End (elapsed: 0.122479 seconds) =======
+
+[2010-01-28 10:50:21 0.67187700] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:21] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=left
+[2010-01-28 10:50:21] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:21] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:21] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:50:21] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:50:21] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:50:21 0.83871600] ======= FleaPHP End (elapsed: 0.166839 seconds) =======
+
+[2010-01-28 10:50:21 0.67187600] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:21] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=right
+[2010-01-28 10:50:21] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:21] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:21] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:50:21] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:50:21] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:50:21 0.94355900] ======= FleaPHP End (elapsed: 0.271683 seconds) =======
+
+[2010-01-28 10:50:21 0.68750100] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:22] REQUEST_URI: /admin111/index.php?c=Default&a=bottom
+[2010-01-28 10:50:22] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:22] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:22 0.03976400] ======= FleaPHP End (elapsed: 0.352263 seconds) =======
+
+[2010-01-28 10:50:25 0.15625200] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:25] REQUEST_URI: /admin111/index.php?c=Default&a=index
+[2010-01-28 10:50:25] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:25] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:25] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:50:25] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:50:25] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:50:25 0.27342300] ======= FleaPHP End (elapsed: 0.117171 seconds) =======
+
+[2010-01-28 10:50:25 0.29687600] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:25] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=right
+[2010-01-28 10:50:25] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:25] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:25] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:50:25] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:50:25] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:50:25 0.41344400] ======= FleaPHP End (elapsed: 0.116568 seconds) =======
+
+[2010-01-28 10:50:25 0.31250000] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:25] REQUEST_URI: /admin111/index.php?c=Default&a=bottom
+[2010-01-28 10:50:25] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:25] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:25 0.50139400] ======= FleaPHP End (elapsed: 0.188894 seconds) =======
+
+[2010-01-28 10:50:25 0.29687600] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:25] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=left
+[2010-01-28 10:50:25] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:25] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:25] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:50:25] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:50:25] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:50:25 0.63649600] ======= FleaPHP End (elapsed: 0.339620 seconds) =======
+
+[2010-01-28 10:50:53 0.48437600] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:53] REQUEST_URI: /admin111/index.php?c=Default&a=Logout
+[2010-01-28 10:50:53] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:53] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:53] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 10:50:53 0.62258000] ======= FleaPHP End (elapsed: 0.138204 seconds) =======
+
+[2010-01-28 10:50:54 0.82812900] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:54] REQUEST_URI: /admin111/index.php?c=Default&a=index
+[2010-01-28 10:50:54] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:54] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:54] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id=''  LIMIT 1
+[2010-01-28 10:50:54 0.97385200] ======= FleaPHP End (elapsed: 0.145723 seconds) =======
+
+[2010-01-28 10:50:56 0.03125400] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:56] REQUEST_URI: /admin111/index.php?c=Default&a=login
+[2010-01-28 10:50:56] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:56] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:56] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`username` = 'main'  LIMIT 1
+[2010-01-28 10:50:56] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 10:50:56] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:50:56] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 10:50:56] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:50:56] [debug] :sql: UPDATE `ticket_user` SET `session_id`=6083648,`updated`=1264647056  WHERE user_id='2'
+[2010-01-28 10:50:56 0.24032300] ======= FleaPHP End (elapsed: 0.209069 seconds) =======
+
+[2010-01-28 10:50:57 0.23437900] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:57] REQUEST_URI: /admin111/index.php?c=Default&a=index
+[2010-01-28 10:50:57] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:57] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:57] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:50:57] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:50:57] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:50:57 0.38914200] ======= FleaPHP End (elapsed: 0.154763 seconds) =======
+
+[2010-01-28 10:50:57 0.42187700] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:57] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=left
+[2010-01-28 10:50:57] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:57] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:57] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:50:57] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:50:57] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:50:57 0.63031900] ======= FleaPHP End (elapsed: 0.208442 seconds) =======
+
+[2010-01-28 10:50:57 0.43750200] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:57] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=right
+[2010-01-28 10:50:57] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:57] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:57] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:50:57] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:50:57] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:50:57 0.76271600] ======= FleaPHP End (elapsed: 0.325214 seconds) =======
+
+[2010-01-28 10:50:57 0.43750100] ======= FleaPHP Loaded =======
+[2010-01-28 10:50:57] REQUEST_URI: /admin111/index.php?c=Default&a=bottom
+[2010-01-28 10:50:57] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:50:57] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:50:57 0.85926200] ======= FleaPHP End (elapsed: 0.421761 seconds) =======
+
+[2010-01-28 10:55:32 0.48437900] ======= FleaPHP Loaded =======
+[2010-01-28 10:55:32] REQUEST_URI: /admin111/
+[2010-01-28 10:55:32] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:55:32] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:55:32] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 10:55:32] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id=''  LIMIT 1
+[2010-01-28 10:55:32 0.59570700] ======= FleaPHP End (elapsed: 0.111328 seconds) =======
+
+[2010-01-28 10:55:34 0.79687700] ======= FleaPHP Loaded =======
+[2010-01-28 10:55:34] REQUEST_URI: /admin111/index.php?c=Default&a=login
+[2010-01-28 10:55:34] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:55:34] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:55:34] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`username` = 'main'  LIMIT 1
+[2010-01-28 10:55:34] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 10:55:34] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:55:34] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 10:55:34] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:55:34] [debug] :sql: UPDATE `ticket_user` SET `session_id`=5175628,`updated`=1264647334  WHERE user_id='2'
+[2010-01-28 10:55:34 0.94593500] ======= FleaPHP End (elapsed: 0.149058 seconds) =======
+
+[2010-01-28 10:55:36 0.17187900] ======= FleaPHP Loaded =======
+[2010-01-28 10:55:36] REQUEST_URI: /admin111/index.php?c=Default&a=index
+[2010-01-28 10:55:36] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:55:36] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:55:36] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:55:36] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:55:36] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:55:36 0.28741100] ======= FleaPHP End (elapsed: 0.115532 seconds) =======
+
+[2010-01-28 10:55:36 0.31250400] ======= FleaPHP Loaded =======
+[2010-01-28 10:55:36] REQUEST_URI: /admin111/index.php?c=Default&a=bottom
+[2010-01-28 10:55:36] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:55:36] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:55:36 0.41346400] ======= FleaPHP End (elapsed: 0.100960 seconds) =======
+
+[2010-01-28 10:55:36 0.31250200] ======= FleaPHP Loaded =======
+[2010-01-28 10:55:36] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=right
+[2010-01-28 10:55:36] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:55:36] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:55:36] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:55:36] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:55:36] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:55:36 0.52161700] ======= FleaPHP End (elapsed: 0.209115 seconds) =======
+
+[2010-01-28 10:55:36 0.32812600] ======= FleaPHP Loaded =======
+[2010-01-28 10:55:36] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=left
+[2010-01-28 10:55:36] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:55:36] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:55:36] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:55:36] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:55:36] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:55:36 0.66247900] ======= FleaPHP End (elapsed: 0.334353 seconds) =======
+
+[2010-01-28 10:57:54 0.85938000] ======= FleaPHP Loaded =======
+[2010-01-28 10:57:54] REQUEST_URI: /admin111/
+[2010-01-28 10:57:54] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:57:54] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:57:54] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 10:57:54] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id=''  LIMIT 1
+[2010-01-28 10:57:54 0.96941500] ======= FleaPHP End (elapsed: 0.110035 seconds) =======
+
+[2010-01-28 10:57:56 0.48437600] ======= FleaPHP Loaded =======
+[2010-01-28 10:57:56] REQUEST_URI: /admin111/index.php?c=Default&a=login
+[2010-01-28 10:57:56] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:57:56] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:57:56] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`username` = 'main'  LIMIT 1
+[2010-01-28 10:57:56] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 10:57:56] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:57:56] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 10:57:56] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:57:56] [debug] :sql: UPDATE `ticket_user` SET `session_id`=3487304,`updated`=1264647476  WHERE user_id='2'
+[2010-01-28 10:57:56 0.63012400] ======= FleaPHP End (elapsed: 0.145748 seconds) =======
+
+[2010-01-28 10:57:57 0.62500200] ======= FleaPHP Loaded =======
+[2010-01-28 10:57:57] REQUEST_URI: /admin111/index.php?c=Default&a=index
+[2010-01-28 10:57:57] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:57:57] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:57:57] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:57:57] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:57:57] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:57:57 0.74502500] ======= FleaPHP End (elapsed: 0.120023 seconds) =======
+
+[2010-01-28 10:57:57 0.76562700] ======= FleaPHP Loaded =======
+[2010-01-28 10:57:57] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=left
+[2010-01-28 10:57:57] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:57:57] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:57:57] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:57:57] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:57:57] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:57:57 0.94863200] ======= FleaPHP End (elapsed: 0.183005 seconds) =======
+
+[2010-01-28 10:57:57 0.78125100] ======= FleaPHP Loaded =======
+[2010-01-28 10:57:58] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=right
+[2010-01-28 10:57:58] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:57:58] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:57:58] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:57:58] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:57:58] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:57:58 0.06701900] ======= FleaPHP End (elapsed: 0.285768 seconds) =======
+
+[2010-01-28 10:57:57 0.78125100] ======= FleaPHP Loaded =======
+[2010-01-28 10:57:58] REQUEST_URI: /admin111/index.php?c=Default&a=bottom
+[2010-01-28 10:57:58] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:57:58] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:57:58 0.14486900] ======= FleaPHP End (elapsed: 0.363618 seconds) =======
+
+[2010-01-28 10:58:44 0.54687700] ======= FleaPHP Loaded =======
+[2010-01-28 10:58:44] REQUEST_URI: /admin111/index.php?c=Default&a=index
+[2010-01-28 10:58:44] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:58:44] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:58:44] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 10:58:44] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:58:44] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 10:58:44] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:58:44] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 10:58:44] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:58:44 0.71486900] ======= FleaPHP End (elapsed: 0.167992 seconds) =======
+
+[2010-01-28 10:58:44 0.75000600] ======= FleaPHP Loaded =======
+[2010-01-28 10:58:44] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=right
+[2010-01-28 10:58:44] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:58:44] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:58:44] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:58:44] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:58:44] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:58:44 0.89231200] ======= FleaPHP End (elapsed: 0.142306 seconds) =======
+
+[2010-01-28 10:58:44 0.75000200] ======= FleaPHP Loaded =======
+[2010-01-28 10:58:44] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=left
+[2010-01-28 10:58:44] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:58:44] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:58:44] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 10:58:44] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 10:58:45] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 10:58:45 0.08386000] ======= FleaPHP End (elapsed: 0.333858 seconds) =======
+
+[2010-01-28 10:58:44 0.76562600] ======= FleaPHP Loaded =======
+[2010-01-28 10:58:45] REQUEST_URI: /admin111/index.php?c=Default&a=bottom
+[2010-01-28 10:58:45] [debug] :sql: SELECT VERSION()
+[2010-01-28 10:58:45] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 10:58:45 0.18311300] ======= FleaPHP End (elapsed: 0.417487 seconds) =======
+
+[2010-01-28 11:01:02 0.25000100] ======= FleaPHP Loaded =======
+[2010-01-28 11:01:02] REQUEST_URI: /admin111/index.php?c=Default&a=index
+[2010-01-28 11:01:02] [debug] :sql: SELECT VERSION()
+[2010-01-28 11:01:02] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 11:01:02] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_user`
+[2010-01-28 11:01:02] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 11:01:02] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_org`
+[2010-01-28 11:01:02] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 11:01:02] [debug] :sql: SHOW FULL COLUMNS FROM `ticket_roles`
+[2010-01-28 11:01:02] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 11:01:02 0.37317400] ======= FleaPHP End (elapsed: 0.123173 seconds) =======
+
+[2010-01-28 11:01:02 0.40625200] ======= FleaPHP Loaded =======
+[2010-01-28 11:01:02] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=left
+[2010-01-28 11:01:02] [debug] :sql: SELECT VERSION()
+[2010-01-28 11:01:02] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 11:01:02] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 11:01:02] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 11:01:02] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 11:01:02 0.57855300] ======= FleaPHP End (elapsed: 0.172301 seconds) =======
+
+[2010-01-28 11:01:02 0.42187600] ======= FleaPHP Loaded =======
+[2010-01-28 11:01:02] REQUEST_URI: /admin111/index.php?c=Default&a=Index&op=right
+[2010-01-28 11:01:02] [debug] :sql: SELECT VERSION()
+[2010-01-28 11:01:02] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 11:01:02] [debug] :sql: SELECT  `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_user`.* FROM `ticket_user`  WHERE user_id='2'  LIMIT 1
+[2010-01-28 11:01:02] [debug] :sql: SELECT `ticket_user`.`user_id` AS flea_pkref_user_id, `ticket_org`.* FROM `ticket_org` LEFT JOIN `ticket_user` ON `ticket_user`.`user_id` IN ('2') WHERE `ticket_user`.`org_id` = `ticket_org`.`org_id` 
+[2010-01-28 11:01:02] [debug] :sql: SELECT `ticket_rose`.`user_id` AS flea_pkref_user_id, `ticket_roles`.* FROM `ticket_rose` INNER JOIN `ticket_roles` ON `ticket_roles`.`role_id` = `ticket_rose`.`role_id`  WHERE `ticket_rose`.`user_id` IN ('2')
+[2010-01-28 11:01:02 0.72192900] ======= FleaPHP End (elapsed: 0.300053 seconds) =======
+
+[2010-01-28 11:01:02 0.42187500] ======= FleaPHP Loaded =======
+[2010-01-28 11:01:02] REQUEST_URI: /admin111/index.php?c=Default&a=bottom
+[2010-01-28 11:01:02] [debug] :sql: SELECT VERSION()
+[2010-01-28 11:01:02] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 11:01:02 0.80006100] ======= FleaPHP End (elapsed: 0.378186 seconds) =======
+
+[2010-01-28 11:01:05 0.37500100] ======= FleaPHP Loaded =======
+[2010-01-28 11:01:05] REQUEST_URI: /admin111/index.php?c=Som&a=Index
+[2010-01-28 11:01:05] [debug] :sql: SELECT VERSION()
+[2010-01-28 11:01:05] [debug] :sql: SET NAMES 'utf8'
+[2010-01-28 11:01:05] [debug] :sql: SELECT COUNT(`ticket_org`.`org_id`) FROM `ticket_org`
+[2010-01-28 11:01:05] [debug] :sql: SELECT  `ticket_org`.`org_id` AS flea_pkref_org_id, `ticket_org`.* FROM `ticket_org`   ORDER BY org_id DESC LIMIT 0, 10
+[2010-01-28 11:01:05] [debug] :sql: SELECT `ticket_user`.`org_id` AS flea_pkref_org_id, `ticket_user`.* FROM `ticket_user`  WHERE `ticket_user`.`org_id` IN ('1')
+[2010-01-28 11:01:05 0.59032600] ======= FleaPHP End (elapsed: 0.215325 seconds) =======
+

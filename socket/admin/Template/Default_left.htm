@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>菜单栏</title>
+<link href="<!--{$cssdir}-->menu.css" rel="stylesheet" type="text/css" />
+<base target="mainFrame"/>
+<style type="text/css">
+<!--
+body {
+	background-color: #FCFCFC;
+}
+-->
+</style></head>
+
+<body>
+<script language="javascript">
+function showmenulist(obj_id){
+	with(document.getElementById("MenuId"+obj_id)){
+		if(style.display == "none"){
+			style.display = "";
+			document.getElementById("MenuTitle"+obj_id).src="<!--{$imgdir}-->menu_btn3.gif";
+		}else{
+			style.display = "none";
+			document.getElementById("MenuTitle"+obj_id).src="<!--{$imgdir}-->menu_btn2.gif";
+		}
+	}
+}
+
+</script>
+<table  border="0" cellspacing="1" cellpadding="0">
+  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td width=160 height=50>
+		
+
+        <img style="margin-top:10px;" src="./Public/images/lefe_logo.gif" />
+        <div style="margin-top:10px;">&nbsp;&nbsp;欢迎回来，<b style='font-size:14px;color:GREEN'><!--{$user.TNAME}--></b></div>
+		<h3 style='border-bottom:3px solid GREEN' />
+        
+	</td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr align="center" class="title_color">
+        <td><a href="<!--{url controller='Default' action='Index' op='right'}-->"><strong>首页</strong></a></td>
+        <td><a href="<!--{url controller='User' action='Identity'}-->"><b>改密码</b></a></td>
+        <td height="29"><font color="#FF6600"><b><a href="<!--{url controller='Default' action='Logout'}-->" target="_parent"><b>退出</b></a>
+          <!--{$defgamename}--></b></font></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td height="189" valign="top">
+	<!--{$MenuList[Info].module}-->
+<!--{section name='Info' loop=$MenuList}-->
+    <!--{if $MenuList[Info].judge==1}-->
+	<table width="100%"  border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="menutitle" style="cursor:hand;" onClick="showmenulist('<!--{$MenuList[Info].module}-->');">
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0" class="menuitle_chr">
+          <tr>
+            <td width="30" align="center"><img src="<!--{$imgdir}-->menu_btn2.gif" id="MenuTitle<!--{$MenuList[Info].module}-->" /></td>
+            <td><!--{$MenuList[Info].name}--></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td id="MenuId<!--{$MenuList[Info].module}-->" style="display:none;">
+		<table width="100%"  border="0" cellspacing="8" cellpadding="0">
+		
+		<!--{section name="SubInfo" loop=$MenuList[Info].actions}-->
+		<!--{if $MenuList[Info].actions[SubInfo].judge==1}-->
+          <tr>
+            <td width="30" align="right"><img src="<!--{$imgdir}-->menu_sub_title.gif" width="15" height="18" /></td>
+            <td><a href="<!--{url controller=$MenuList[Info].actions[SubInfo].ctl action=$MenuList[Info].actions[SubInfo].action}-->"><!--{$MenuList[Info].actions[SubInfo].name}--></a>
+            <!--{if $MenuList[Info].actions[SubInfo].name=='设备信息监控'}-->
+            <input type="hidden" id="openrun" name="openrun" value="1">
+            <input type="hidden" id="openrunurl" name="openrunurl" value="<!--{url controller=$MenuList[Info].actions[SubInfo].ctl action=$MenuList[Info].actions[SubInfo].action}-->">
+            <!--{else}-->
+            <input type="hidden" id="openrun" name="openrun" value="0">
+            <!--{/if}-->
+            </td>
+          </tr>
+		  <!--{/if}-->
+		 <!--{/section}--> 
+		  
+        </table>
+		</td>
+      </tr>
+    </table>
+	<!--{/if}-->
+	
+<!--{/section}-->	
+	
+	</td>
+  </tr>
+</table>
+</body>
+</html>
+<script language="javascript">
+var a = document.getElementById('openrun').value;
+
+if(a==1){
+parent.mainFrame.location=document.getElementById('openrunurl').value;
+showmenulist('socket');
+}else{
+    showmenulist('socket');
+    showmenulist('User');
+    showmenulist('Prem');
+    
+}
+</script>

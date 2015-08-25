@@ -1,0 +1,17 @@
+.top{
+	width:1003px;
+	margin:0 auto; 
+	}
+.top a{color:#333;text-decoration:none;}
+.top a:hover{color:#333;text-decoration:underline;}
+.top .button1{height:19px;width:60px; background:url(../../../images/app/default/login_04.jpg) no-repeat;border:0px;}
+.top .button2{height:19px;width:60px; background:url(../../../images/app/default/login_06.jpg) no-repeat;border:0px;}
+.tlogin{line-height:24px;height:24px;}
+.tlogin input{height:15px; border:1px #afd5cc solid; width:100px;}
+.tlogin span{padding:0 10px 0 10px;}
+.title{ background:url(../../../images/app/default/bj_11.jpg) no-repeat;}
+.title .left{background:url(../../../images/app/default/title_11.jpg) no-repeat; float:left;width:401px;height:70px;}
+.title .right{background:url(../../../images/app/default/title_13.jpg) no-repeat; float:right;width:348px;height:70px;}
+.nav{width:1003px;height:39px;line-height:39px;background:url(../../../images/app/default/nav_18.jpg) no-repeat;padding:0px 30px 0px 30px;}
+.nav a{margin-left:30px;font-weight:bold;font-size:14px;}
+.title_img{background:url(../../../images/app/default/title_20.jpg) no-repeat; height:212px;}

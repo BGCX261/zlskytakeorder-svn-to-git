@@ -1,0 +1,34 @@
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td width="50%">
+    	<table border="0" cellspacing="2" cellpadding="0" width="100%">
+          <tr>
+            <td align="left" valign="middle" height="20">
+            <?smarty:if isset($prew)?>
+            {$prew}
+            <?smarty:/if?>
+            </td>
+          </tr>
+          <?smarty:foreach from=$list item=list?>
+            <tr><td align="left" valign="middle" class="zlsky_list"><a href="javascript:ajax_get('zlsky_caidan_lv2.php?k_id={$list.k_id}','caidan_lv2')" >{$list.name}</a></td></tr>
+          <?smarty:/foreach?>
+          <tr>
+            <td align="left" valign="middle" height="20">
+            <?smarty:if isset($next)?>
+            {$next}
+            <?smarty:/if?></td>
+          </tr>
+        </table>
+	</td>
+    <td width="50%" id="caidan_lv2">
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+

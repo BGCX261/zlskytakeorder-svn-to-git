@@ -1,0 +1,90 @@
+<script language="javascript">
+
+
+
+function isEmail(strEmail) {
+if (strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) != -1)
+return true;
+else
+return false;
+}
+
+function check()
+{
+	if(document.user_form.username.value.length == 0)
+	{
+		alert("请输入用户名称名称！");
+		document.user_form.username.focus();
+		return false;
+	}else if(document.user_form.tname.value.length == 0)
+	{
+		alert("请输入姓名！");
+		document.user_form.tname.focus();
+		return false;
+	}else if(document.user_form.email.value.length == 0)
+	{
+		alert("请输入邮箱！");
+		document.user_form.email.focus();
+		return false;
+	}else if(document.user_form.email.value.length != 0){
+	     if(!isEmail(document.user_form.email.value)){
+		     alert("你的邮件格式不正确！");
+		     return false;
+		 }
+	}
+	return true;
+}
+</script>
+<table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_bg">
+<form action='<!--{$_acurl}-->' method="post" name="user_form" id="user_form">
+	  <tr>
+		 <td colspan="2" class="td_title"> 编辑用户</td>
+	  </tr>
+	<tr>
+	  <td width="S" class="td_bg_blue"><strong>用户名</strong></td>
+      <td width="73%" class="td_bg_white">
+		<input type="text" name="username" id="username" value="<!--{$DataList.username}-->"/><font color="red"> * </font> 填写用户名
+	  </td>
+	</tr>
+	<tr>
+	  <td width="" class="td_bg_blue"><strong>密码</strong></td>
+      <td width="73%" class="td_bg_white"><input type="password" name="password" id="password" value=""/>        填写密码</td>
+	</tr>
+    <tr>
+	  <td width="" class="td_bg_blue"><strong>姓名</strong></td>
+      <td width="73%" class="td_bg_white">
+		<input type="text" name="tname" id="tname" value="<!--{$DataList.tname}-->"/><font color="red"> * </font> 填写姓名
+	  </td>
+	</tr>
+	<tr>
+	  <td width="" class="td_bg_blue"><strong>邮箱</strong></td>
+      <td width="73%" class="td_bg_white">
+		<input type="text" name="email" id="email" value="<!--{$DataList.email}-->"/><font color="red"> * </font> 填写油箱地址
+	  </td>
+	</tr>
+    <tr>
+	  <td width="" class="td_bg_blue"><strong>机构</strong></td>
+      <td width="73%" class="td_bg_white">
+		<select name="org_id">
+        	<!--{html_options options=$orgs selected=$DataList.org_id}-->
+        </select>
+	  </td>
+	</tr>
+    <tr>
+	  <td width="" class="td_bg_blue"><strong>角色</strong></td>
+      <td width="73%" class="td_bg_white">
+		<!--{section name=i loop=$roles}-->
+						<input type="checkBox" name="roles[]" id="roles" value="<!--{$roles[i].role_id}-->" <!--{if $roles[i].checked==1}--> checked="checked"<!--{/if}--> /><!--{$roles[i].roledes}--> &nbsp;
+					<!--{/section}-->
+	  </td>
+	</tr>
+   <tr align="center">
+	 <td colspan="2" class="td_bg_white" height="35">
+       <input type="submit" name="op" value="提交" class="button_bg" onClick="return check();">
+	   <!--{if $op=='m'}-->
+       <input name="user_id" type="hidden" id="user_id" value="<!--{$DataList.user_id}-->">
+	   <!--{/if}-->
+	 </td>
+  </tr> 
+  </form>
+</table>

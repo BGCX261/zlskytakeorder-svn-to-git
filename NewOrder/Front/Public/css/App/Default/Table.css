@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+.table_log_windows{
+	line-height:30px;
+	font-size:14px;
+	font-family:Verdana;	
+	width:492px;
+	text-align:center;
+	height:141px;
+	padding:25px 0px;
+	background:url(../../../img/App/Default/Table/table_log_03.jpg) no-repeat;
+	_left:15px;
+	}
+.table_log_windows select{font-size:25px;4}	
+.table_log_windows .bt2{
+	background:url(../../../img/App/Default/Table/table_b_06.jpg) no-repeat;
+	height:54px;
+	width:172px;
+	margin-top:15px;
+	}

@@ -1,0 +1,63 @@
+<link href="./Public/css/view.css" rel="stylesheet" type="text/css" />
+<link href="./Public/css/sliders_main.css" rel="stylesheet" type="text/css" />
+<link href="./Public/css/sliders_slider.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="./Public/js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="./Public/js/slider_extras.js"></script>
+<script language="javascript" type="text/javascript" src="./Public/js/edit_confirm.js"></script>
+<div id="station" class="station" align="center">
+<div class="tv_station">
+<form action="<!--{url controller='edit' action='channelsave' socket_C='edit' socket_A='index'}-->" method="post">
+	<div align="left" style="margin:3px;">
+	  <!--<b style="margin-left:60%;"><a style="margin-left:100px; color:#F00;" onclick="return confirm('您确定要删除这个设备吗?')" href="<!--{url controller='edit' action='clearchn' serial=$serial}-->
+	  ">删除此设备</a></b>-->
+	</div>
+	<div class="tv_station_intro" align="left">
+    设备名：<b><!--{$devname}--></b>&nbsp;<br />
+	IP：<b><!--{$ip}-->:<!--{$port}--></b>
+    模块： <b><!--{$Datalist.chn}--></b><br>
+    节目名称：<b><!--{$Datalist.prgname}--></b><br>
+    节目简称：<b><!--{$Datalist.chnshort}--></b><br />
+    音频PID：<B><!--{$Datalist.apid}--></B>
+    </div>
+    
+    <div class="tv_station_parameter" align="left">AGC状态：
+          <div style="height:40px;">
+          	开启：<input class="edit_radio" type="radio" value="O" <!--{if $Datalist.agcstat=='O'}-->checked="checked"<!--{/if}--> name="agcstat" />	
+            关闭：<input class="edit_radio" type="radio" value="C" <!--{if $Datalist.agcstat=='C'}-->checked="checked"<!--{/if}--> name="agcstat" />
+          </div>
+    </div>
+    
+    <div class="tv_station_parameter" align="left">音频能级：
+    	<select name="gain">
+        	<!--{html_options options=$gainArray selected=$Datalist.gain}-->
+        </select>
+    </div>
+    <div class="tv_station_parameter" align="left">静音状态：
+      <div style="font-weight:bolder;">
+            开启：<input class="edit_radio" type="radio" value="O" <!--{if $Datalist.mutestat=='O'}-->checked="checked"<!--{/if}--> name="mutestat" />	
+            关闭：<input class="edit_radio" type="radio" value="C" <!--{if $Datalist.mutestat=='C'}-->checked="checked"<!--{/if}--> name="mutestat" />
+      </div>
+    </div>
+    <div class="tv_station_parameter" align="left">旁通状态：    
+    <div style="font-weight:bolder;">
+    	开启：<input class="edit_radio" type="radio" value="O" <!--{if $Datalist.passstat=='O'}-->checked="checked"<!--{/if}--> name="passstat" />	
+        关闭：<input class="edit_radio" type="radio" value="C" <!--{if $Datalist.passstat=='C'}-->checked="checked"<!--{/if}--> name="passstat" />
+    </div>
+    </div>
+    <div class="tv_station_parameter" style="border:none"><span style="margin:3px;">
+      <input style="width:auto" type="button" onclick="location.href='<!--{url controller='edit' action='index'}-->'" value="返回上一步" />
+    </span>
+    <input type="hidden" name="serial" value="<!--{$serial}-->" />
+    <input type="hidden" name="devname" value="<!--{$devname}-->" />
+    <input type="hidden" name="ip" value="<!--{$ip}-->" />
+    <input type="hidden" name="port" value="<!--{$port}-->" />
+    <input type="hidden" name="chn" value="<!--{$Datalist.chn}-->" />
+    <input type="hidden" name="dev_no" value="<!--{$Datalist.dev_no}-->"  />
+    <input type="hidden" name="apid" value="<!--{$Datalist.apid}-->" />
+    <input type="submit" name="sub" style="width:40px;" value="提交" />
+    
+    
+    </div>
+    </form>
+</div>
+</div>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rbac>
+<controller xml:id="Default" name="Default" des="默认" sys="1"><action xml:id="Default_" name="" des="" allow="infomonitor"/></controller>
+
+<controller xml:id="socket" name="socket" des="设备管理" allow="sysadmin,main,operate,infomonitor">
+<action xml:id="socket_Index" name="Index" des="设备列表" allow="sysadmin,main,operate"/>
+<action xml:id="socket_Add" name="Add" des="添加设备" allow="sysadmin,main"/>
+<action xml:id="socket_Edit" name="Edit" des="编辑设备" allow="sysadmin,main"/>
+<action xml:id="socket_Delete" name="Delete" des="删除设备" allow="sysadmin,main"/>
+<action xml:id="socket_loglist" name="loglist" des="察看日志记录" allow="sysadmin,main,operate"/>
+<action xml:id="socket_logDelete" name="logDelete" des="删除指定条数日志" allow="sysadmin,main"/>
+<action xml:id="socket_logalldelete" name="logalldelete" des="删除所有日志" allow="sysadmin,main"/>
+<action xml:id="socket_sendlogcvs" name="sendlogcvs" des="导出CVS格式日志" allow="sysadmin,main"/>
+<action xml:id="socket_monitor" name="monitor" des="设备信息监控" allow="sysadmin,main,infomonitor"/>
+</controller>
+
+<controller xml:id="time" name="time" des="设备定时管理" allow="sysadmin,main,operate">
+<action xml:id="time_index" name="index" des="定时管理列表" allow="sysadmin,main,operate"/>
+<action xml:id="time_Add" name="Add" des="新增频道任务" allow="sysadmin,main"/>
+<action xml:id="time_Mondy" name="Mondy" des="修改频道管理" allow="sysadmin,main"/>
+<action xml:id="time_allAdd" name="allAdd" des="新增设备管理" allow="sysadmin,main"/>
+<action xml:id="time_allModify" name="allModify" des="修改设备管理" allow="sysadmin,main"/>
+
+<action xml:id="time_weekAdd" name="weekAdd" des="新增每周频道任务" allow="sysadmin,main"/>
+<action xml:id="time_weekMondy" name="weekMondy" des="修改每周频道管理" allow="sysadmin,main"/>
+<action xml:id="time_AllweekAdd" name="AllweekAdd" des="新增每周设备管理" allow="sysadmin,main"/>
+<action xml:id="time_AllweekModify" name="AllweekModify" des="修改每周设备管理" allow="sysadmin,main"/>
+<action xml:id="time_Delete" name="Delete" des="删除定时管理" allow="sysadmin,main"/>
+</controller>
+
+
+<controller xml:id="edit" name="edit" des="设备信息操作" allow="sysadmin,main,operate">
+<action xml:id="edit_Index" name="Index" des="设备信息列表" allow="sysadmin,main,operate"/>
+<action xml:id="edit_channelview" name="channelview" des="察看设备详细" allow="sysadmin,main,operate"/>
+<action xml:id="edit_channelsave" name="channelsave" des="修改设备功能" allow="sysadmin,main"/>
+<action xml:id="edit_allmondy" name="allmondy" des="修改所有设备功能" allow="sysadmin,main"/>
+<action xml:id="edit_search" name="search" des="设备搜索功能" allow="sysadmin,main,operate"/>
+<action xml:id="edit_appdefault" name="appdefault" des="将当前设备的状态存为默认值" allow="sysadmin,main,operate"/>
+<action xml:id="edit_restoredefault" name="edit_restoredefault" des="还原默认值为当前状态" allow="sysadmin,main"/>
+</controller>
+
+<controller xml:id="Som" name="Som" des="部门管理" allow="sysadmin,main,operate">
+<action xml:id="Som_Index" name="Index" des="浏览部门" allow="sysadmin,main,operate"/>
+<action xml:id="Som_Add" name="Add" des="添加部门" allow="sysadmin,main"/>
+<action xml:id="Som_Modify" name="Modify" des="修改部门" allow="sysadmin,main"/>
+<action xml:id="Som_Delete" name="Delete" des="删除部门" allow="sysadmin,main"/>
+</controller>
+
+<controller xml:id="User" name="User" des="用户管理" allow="sysadmin,main,operate,infomonitor">
+<action xml:id="User_Index" name="Index" des="浏览用户" allow="sysadmin,main,operate"/>
+<action xml:id="User_Add" name="Add" des="添加用户" allow="sysadmin,main"/>
+<action xml:id="User_Modify" name="Modify" des="修改用户" allow="sysadmin,main"/>
+<action xml:id="User_Delete" name="Delete" des="删除用户" allow="sysadmin,main"/>
+
+</controller>
+
+<controller xml:id="Prem" name="Prem" des="权限管理" allow="sysadmin,main,operate">
+<action xml:id="Prem_AddCtl" name="AddCtl" des="添加控制器" allow="sysadmin,operate"/>
+<action xml:id="Prem_AddAct" name="AddAct" des="添加方法" allow="sysadmin"/>
+<action xml:id="Prem_Xml" name="Xml" des="生成ACT文件" allow="sysadmin,main"/>
+</controller>
+
+<controller xml:id="Role" name="Role" des="角色管理" allow="sysadmin,main">
+<action xml:id="Role_Index" name="Index" des="浏览角色" allow="sysadmin,main"/>
+<action xml:id="Role_Add" name="Add" des="添加角色" allow="sysadmin,main"/>
+<action xml:id="Role_Modify" name="Modify" des="修改角色" allow="sysadmin,main"/>
+<action xml:id="Role_Delete" name="Delete" des="删除角色" allow="sysadmin,main"/>
+<action xml:id="Role_Assign" name="Assign" des="设置权限" allow="sysadmin,main"/>
+</controller>
+
+
+
+
+</rbac>

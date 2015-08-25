@@ -1,0 +1,13 @@
+1. 在php.ini文件里启用socket动态库及修改时区
+extension=php_sockets.dll
+date.timezone = PRC
+
+2.重启apache.
+
+3.将php_sockets.dll文件copy到windowsXP下的C:\windows\system32\目录下
+
+4.启动socket服务端程序。
+php -f server.php
+
+5.启动socket客户端程序连接socket服务器
+php -f client.php

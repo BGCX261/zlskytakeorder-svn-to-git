@@ -1,0 +1,50 @@
+<style type="text/css" media="all">
+@import "./css/global.css";
+@import "./css/thickbox.css";
+@import "./css/1024.css";
+</style>
+
+<script src="js/jquery-compressed.js" type="text/javascript"></script>
+<script src="js/thickbox.js" type="text/javascript"></script>
+<script src="js/global.js" type="text/javascript"></script>
+<div id="top">
+				<div class="rights">	</div>
+				<div id="search">
+						
+					</div>
+				<div class="lefts" style="margin-bottom:6px; text-align:left">
+					<h1>挪威高樂科技公司   MPos Norway</h1>
+         
+			
+				</div>
+</div>
+	
+	<div id="topmenu">
+				<div class="rights"></div>
+				<div class="lefts"><ul>
+				<li><a href="index.php" title="首頁">首頁</a></li>
+							<li><a href="callcenter.php" title="呼叫系統">呼叫系統</a></li>
+							<li><a href="product.php" title="产品简介">产品简介</a></li>
+							<li><a href="favourable.php" title="開戶優惠">開戶優惠</a></li>
+							<li><a href="service.php" title="支援計劃">支援計劃</a></li>
+							<li><a href="yewu.php" title="業務聯絡">業務聯絡</a></li>
+                            <li><a href="faq.php" title="FAQ">FAQ</a></li>
+                              <?smarty: if $right?>
+                            <li><a href="faqlist.php" title="FAQ管理">FAQ管理</a></li> 
+                         
+                            <li><a href="loginout.php?action=loginout" title="安全退出">安全退出</a></li> 
+                                <li><a href="javascript:void(0);" title="">({$username}){$tname}已經登陸</a></li> 
+                             <?smarty:else?>
+                            	<li><a href="ajaxLogin.php?height=90&amp;width=250" class="thickbox" title="請填寫登陸帳號" title="登陸">登陸</a></li>
+                              <?smarty:/if?>
+               
+
+				
+				</ul></div>
+	</div>
+	
+	<div id="subheader">
+	    <p><img width="759" height="193"  align="top" src="mpos_files/mpos_clip_image003.jpg" /></p>
+</div>
+	
+	

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LOGIN</title>
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="js/ajax.js"></script>
+<link href="css/calculator.css" rel="stylesheet" type="text/css" />
+<link href="css/choseitem.css" rel="stylesheet" type="text/css" />
+<link href="css/remark.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+<!--主体开始-->
+<div class="tempbody">
+<center>
+<form action="" method="post" id='formfoo' name='formbar'>
+<table border="0" cellspacing="5" cellpadding="0" style="margin-top:30px;">
+  <tr>
+    <td align="left" valign="middle">User:</td>
+    <td><input type="text" name="username" id="user" onfocus="focusselect(this)" style="width:90px; height:12px; font-size:11px;" /></td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">Passwd:</td>
+    <td><input type="password" name="passwd" id="passwd" onfocus="focusselect(this)" style="width:90px; height:12px; font-size:11px;" /></td>
+  </tr>
+    <tr>
+    <td align="left" valign="middle">type:</td>
+    <td>
+      <select name="type" id="type" style="width:90px; height:18px; font-size:11px;">
+       <option value="diffcult" selected="selected">常用模式</option>
+        <option value="simple">简易模式</option>
+       
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="left">&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="sub" value="Login" style="font-size:11px;" />
+    <INPUT name='txtMACAddr' type="hidden"> <INPUT name='txtIPAddr' type="hidden"> <INPUT name='txtDNSName' type="hidden">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Reset" style="font-size:11px;" /></td>
+    </tr>
+  <tr>
+    <td colspan="2" id="login_cut">&nbsp;</td>
+    </tr>
+  <tr>
+    <td colspan="2">{$message}</td>
+  </tr>
+</table>
+</form>
+</center>
+</div>
+<!--主体结束-->
+</body>
+</html>
+<script language="javascript">
+ajax_get('login_cut.php','login_cut');
+var input_id=null;
+var tmp;
+function focusselect(input)
+{
+	input_id=input.id;
+}
+
+function send(id){
+//    var a = document.getElementById("Customizeno").value;
+	if(!input_id)return false;
+	a=document.getElementById(input_id).value;
+	var tmp = a+id;
+	document.getElementById(input_id).value=tmp;
+}
+
+function clearone(){
+if(!input_id)return false;
+var str=document.getElementById(input_id).value;
+str=str.substring(0,(str.length-1));
+document.getElementById(input_id).value=str;
+}
+
+</script>

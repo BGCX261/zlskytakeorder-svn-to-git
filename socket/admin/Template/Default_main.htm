@@ -1,0 +1,15 @@
+<!--{ config_load file=env.conf }-->
+<html>
+<head>
+<title><!--{ #title# }--></title>
+<base target="mainFrame"/>
+</head>
+<frameset rows="95%,35" frameborder="NO" border="0" framespacing="0">
+	<frameset cols="180,*" frameborder="NO" border="0" framespacing="0">
+	  <frame src="<!--{url controller='Default' action='Index' op='left'}-->" name="leftFrame" noresize scrolling="yes">
+	  <frame src="<!--{url controller='Default' action='Index' op='right'}-->" name="mainFrame" scrolling="auto">
+	</frameset>
+	<frame src="<!--{url controller='Default' action='bottom'}-->" name="bottomFrame" scrolling="No">
+</frameset>
+
+</html>

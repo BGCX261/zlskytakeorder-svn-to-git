@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*主页登录开始*/
+body{background:#EE783F;}
+.log{
+	width:570px;
+	height:703px;
+	background:url(../../../img/App/Default/Index/login.jpg) no-repeat;
+	}	
+.log_windows{
+	width:430px;
+	height:356px;
+	left:0px;
+	top:160px;
+	position:relative;
+	}
+.log_in{
+	width:342px; 
+	top:40px;
+	left:45px;
+	position:relative;
+	line-height:30px;
+	font-size:16px;
+	}
+.log_in li .l1 input{
+	height:54px; 
+	background:url(../../../img/App/Default/Index/input_05.jpg) repeat-x; 
+	line-height:54px; 
+	width:210px; 
+	float:left;
+	font-size:24px; 
+	font-family:Verdana; 
+	text-align:center;
+	font-weight:bold;
+	}
+.log_in li{
+	height:100px;
+	}
+.log_in li .l1{
+	float:left; 
+	display:inline; 
+	overflow:hidden; 
+	font-size:0px;
+	}
+.log_in li span{
+	font-weight:bold;
+	}
+.bt1{
+	background:url(../../../img/App/Default/Index/login_03.jpg) no-repeat; 
+	width:99px; 
+	height:172px;
+	}
+.log_in button{
+	float:left;
+	}
+.log_in select{
+	float:left;
+	font-size:16px; 
+	margin-left:20px; 
+	height:30px; 
+	width:120px; 
+	margin-top:15px;
+	}
+.checkform{
+	font-size:16px;
+	font-family:Verdana, Geneva, sans-serif;
+	}
+.checkform input{margin-left:10px;}						

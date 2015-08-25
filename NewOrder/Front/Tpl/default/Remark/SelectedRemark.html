@@ -1,0 +1,25 @@
+<link href="<!--{$__CSS__}-->/App/Default.css" rel="stylesheet" type="text/css" />
+<link href="<!--{$__CSS__}-->/App/Remark/SelectedRemark.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+function delRemark(rmkNo){
+	$.ajax({
+		url:		"<!--{$delRemarkURL}-->",
+		async:		false,
+		type: 		"GET",
+		cache:		false,
+		dataType:	"html",
+		data:		{rmkNo:rmkNo}
+	});
+	location.reload();
+}
+</script>
+<div class="table">
+<!--{foreach from=$remarkList item=list key=key}-->
+	<ul>
+    	<li class="s1"><span><!--{$key+1}-->.</span><!--{$list.rmk_name}--></li>
+        <li>[<span><!--{$list.actionLang}--></span>]</li>
+        <li class="s2"><button onclick="delRemark('<!--{$list.rmk_no}-->')" class="del"></button></li>
+    </ul>
+<!--{foreachelse}-->
+<!--{/foreach}-->
+</div>

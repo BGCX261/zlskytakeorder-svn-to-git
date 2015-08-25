@@ -1,0 +1,299 @@
+body {
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 12px;
+	background-color: #FFFFFF;
+	margin: 0 0 0 0;
+	SCROLLBAR-ARROW-COLOR: #627367;
+	SCROLLBAR-BASE-COLOR:  #B6B8B6;
+	SCROLLBAR-HIGHLIGHT-COLOR: #E4E9E6;
+}
+
+TD {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	TABLE-LAYOUT: fixed;
+	WORD-WRAP: break-word;
+}
+
+.td_none{
+	padding-left: 0px;
+	padding-right: 0px;
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+}
+
+.tools_style{
+	cursor:hand;
+	color:#2A7D00;
+	behavior:url('../script/menu.htc');
+}
+
+.tools_style_none{
+	color:#B1B1B1;
+}
+
+/* 文字的颜色--绿色 */
+.title_color{
+	color:#2A7D00;
+}
+
+/* 文字的颜色--绿色 */
+.title_bgcolor{
+	background-color:#E2E2E2;	
+}
+
+
+/* 标题文字的颜色 */
+.td_title{
+	color:#2A7D00;
+	height:32px;
+	font-weight: bold;
+	background-image: url('../images/title_bg.gif');
+}
+
+/* TD 的背景颜色--绿色 */
+.td_bg_blue{
+	background-color:#F2F2F2;	
+}
+
+/* TD 的背景颜色--白色 */
+.td_bg_white{
+	background-color:#FFFFFF;	
+}
+
+/* 鼠标在 TD 上的样式*/
+.td_style_mouse{
+	behavior:url('../script/mousetd.htc');
+}
+
+/* TR 分隔行颜色 */
+.table_tr_bgcolor tr{
+	trColor:expression(bgColor=rowIndex%2==0?'#ffffff':'#F4F4F4');
+}
+
+/* Table 的背景颜色--灰绿色 */
+.table_tr_bgcolor{
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	background-color:#D6D6D6;
+}
+
+/* Table 的背景颜色--灰绿色 */
+.table_bg{
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Tahoma, Verdana, Arial;
+	background-color:#D6D6D6;
+}
+
+a:link,a:visited {color: #0000FF;text-decoration:none;}
+a:hover{color: #0000FF;text-decoration:underline;}
+
+input {
+   FONT-SIZE: 12px;
+	font-weight: normal;
+}
+
+
+
+.button_bg {
+	font-size: 12px;
+	color: #000000;
+	background-color: #FFFFFF;
+	background-image: url('../images/btn_bg.gif');
+	border: 1px solid #9F9F9F;
+	font-family: Tahoma, Verdana, Arial;
+	padding: 2px 3px;
+	cursor:pointer;
+	height:24px;
+
+}
+input {
+   FONT-SIZE: 12px;
+	font-weight: normal;
+	border: 1px solid #666666;
+	
+}
+.red {
+	color:#FF0000;
+}
+
+/*-----------------------分页 S-----------------------------*/
+ul#pagenav {
+        font-size: 12px;
+        font-weight: bold;
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+}
+
+#pagenav li {
+        list-style: none;
+        background-color: #fff;
+        margin: 0px;
+        display: block;
+        float: left;
+        margin-left: 2px;
+        margin-right: 2px;
+}
+
+#pagenav li.disabled {
+        border: 1px solid #DDDDDD;
+        padding: 2px 6px 2px 6px;
+        color: #ccc;
+}
+
+#pagenav li.current {
+        border: 1px solid #2E6AB1;
+        padding: 2px 6px 2px 6px;
+        background-color: #2E6AB1;
+        color: #fff;
+}
+
+#pagenav li.none {
+        border: 1px none;
+        padding: 2px 6px 2px 6px;
+}
+
+#pagenav li a {
+        border: 1px solid #9AAFE5;
+        padding: 2px 6px 2px 6px;
+        display: block;
+        text-decoration: none;
+        color: #105CB6;
+}
+
+#pagenav li a:hover {
+        border: 1px solid #2E6AB1;
+        color: #000;
+}
+/*-----------------------分页 E-----------------------------*/
+
+
+
+/* 日期 */
+/* Default attributes of table container for entire calendar */
+.table-style {
+	font-family: arial;
+	border-width: 0px;
+	background-color: #5093b4;
+	font-family: arial; 
+	font-size: 11px;
+}
+
+/* Default attributes of DIV containing table container for entire calendar.
+ * You probably don't want to alter this style.
+ */
+.div-style {
+	z-index: +999;
+	position: absolute;
+	visibility: hidden;
+}
+
+/* Default attributes used in calendar title (month and year columns).*/
+.title-style {
+	padding: 1px;
+	font-family: arial; 
+	font-size: 11px;
+	color: #FFFFFF;	
+	border-width: 0px;
+}
+
+/* Default attributes used in calendar title background.*/
+.title-background-style {
+	background: #cee3ef url('../cp_thead.gif');
+}
+
+/* Normal appearance of controls in calendar title. */
+/* Note: The right, left and down icons are images, which must be edited if you need to change them. */
+.title-control-normal-style {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #FFFFFF; 
+	cursor: pointer;
+}
+
+/* Moused-over (selected) appearance of controls in calendar title. */
+.title-control-select-style {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #FFFFFF; 
+	cursor: pointer;
+}
+
+/* Default attributes of drop down lists (month and year). */
+.dropdown-style {
+	font-family: arial; 
+	font-size: 11px; 
+	border-width: 1px; 
+	border-style: solid; 
+	border-color: #a0a0a0;
+	background-color: #cee3ef;
+	cursor: pointer;
+}
+
+/* Default attributes selected (mouse-over) item in drop down lists (month and year). */
+.dropdown-select-style {
+	background-color: #FFFFFF;
+}
+
+/* Default attributes unselected (mouse-off) item in drop down lists (month and year). */
+.dropdown-normal-style {
+}
+
+/* Default attributes of calendar body (weekday titles and numbers). */
+.body-style {
+	padding: 5px;
+	background-color: #f7f7f7;
+	font-family: verdana; 
+	font-size: 10px;
+}
+
+/* Attributes of current day in calendar body. */
+.current-day-style {
+	color: red;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* Attributes of end-of-week days (Sundays) in calendar body. */
+.end-of-weekday-style {
+	color: #909090;
+	text-decoration: none;
+}
+
+/* Attributes of all other days in calendar body. */
+.normal-day-style {
+	color: black;
+	text-decoration: none;
+}
+
+/* Attributes of border around selected day in calendar body. */
+.selected-day-style {
+	border-style: solid;
+	border-width: 1px; 
+	border-color: #a0a0a0;
+}
+
+/* Default attributes of designated holidays. */
+.holiday-style {
+	background-color: #FFDDDD;
+}
+
+/* Attributes of today display at bottom on calendar */
+.today-style {
+	padding: 0px;
+	color: #FFFFFF;
+	background: #cee3ef url('../cp_thead.gif');
+	text-align: center;
+	text-decoration: none;
+}
+
+/* Attributes of week number division (divider.gif) */
+.weeknumber-div-style {
+	background-color: #d0d0d0; 
+	padding: 0px;
+}

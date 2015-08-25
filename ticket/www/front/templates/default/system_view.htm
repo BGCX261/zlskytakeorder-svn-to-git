@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<title>{$WEBSITE_NAME}</title>
+<link href="{$CSS_DIR}/app/default/head.css" rel="stylesheet" type="text/css" />
+<link href="{$CSS_DIR}/app/default/style.css" rel="stylesheet" type="text/css" />
+<link href="{$CSS_DIR}/app/index/view.css" rel="stylesheet" type="text/css" />
+<link href="{$CSS_DIR}/app/default/footer.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+	var ROOT_DIR='{$WEBSITE_LINK}';
+</script>
+<script language="javascript" src="{$JS_DIR}/libs/jquery.js"></script>
+<script language="javascript" src="{$JS_DIR}/libs/jqueryForm/jquery.form.js"></script>
+<script language="javascript" src="{$JS_DIR}/app/AjaxMember/member.js"></script>
+</head>
+<body>
+    <div class="top">
+        <?smarty:include file=$head?>
+    </div>
+    <div class="container">
+        <?smarty:include file=$body?>
+    </div>
+    <div class="bottom">
+        <?smarty:include file=$foot?>
+    </div>
+</body>
+</html>

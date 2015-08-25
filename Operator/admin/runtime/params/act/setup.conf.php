@@ -1,0 +1,25 @@
+<?php
+return array (
+  'setup_Prem' => 'operator',
+  'setup_Prem_ModuleIndex' => 'master,operator',
+  'setup_Prem_ModuleEdit' => 'master,operator',
+  'setup_Prem_ModuleAdd' => 'operator',
+  'setup_Prem_ModuleDel' => 'operator',
+  'setup_Prem_ActionsIndex' => 'operator',
+  'setup_Prem_ActionEdit' => 'operator',
+  'setup_Prem_RoleDel' => 'master,operator',
+  'setup_Prem_RoleEdit' => 'RBAC_EVERYONE',
+  'setup_Prem_RoleAdd' => 'master,operator',
+  'setup_Prem_RoleIndex' => 'operator',
+  'setup_Prem_RoleAct' => 'operator',
+  'setup_Prem_ModelCache' => 'operator',
+  'setup_System' => 'master,operator',
+  'setup_System_Index' => 'master,operator',
+  'setup_User' => 'master,operator',
+  'setup_User_Index' => 'operator,master',
+  'setup_User_Add' => 'master,operator',
+  'setup_User_Edit' => 'master,operator',
+  'setup_User_Del' => 'operator,master',
+  'setup_User_CreateCache' => '',
+)
+?>

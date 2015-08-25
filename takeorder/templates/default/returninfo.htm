@@ -1,0 +1,16 @@
+     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="food_list">
+
+            <tr>
+            <td width="50%" align="center" valign="middle">action</td>
+            <td width="5%" align="center" valign="middle" >content</td>
+          </tr>
+  <?smarty:foreach from=$list key=k item=list?>  
+          <tr>
+            <td width="50%" align="center" valign="middle">{$list.action}</td>
+            <td width="5%" align="center" valign="middle" >{$list.remark}</td>
+          </tr>
+     <?smarty:/foreach?>
+        </table>
+
+
+

@@ -1,0 +1,8 @@
+1.第一步必须安装wamp包，将wamp安装到d:\wamp目录下，完成环境。
+2.然后运行TSAGC_NCSetup.exe的安装主程序。
+3.运行完后，重启wamp所有服务。
+4.启动IE，输入http://localhost/admin/update/index.php
+5.用系统账号main，密码main登录系统.
+6.修改D:\wamp\www\admin\server.php文件里的IP地址为服务器的IP地址。
+7.在命令行里运行以下命令，启动TSAGC_NCSetup系统服务端程序。
+D:\wamp\bin\php\php5.2.6\php -f D:\wamp\www\admin\server.php

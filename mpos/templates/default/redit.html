@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>挪威高樂科技公司</title>
+	<meta http-equiv="Content-Language" content="English" />
+	<meta name="Robots" content="index,follow" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+</head>
+<body>
+
+<div id="wrap" style="text-align:left;">
+<?smarty:include file=header.html?>	
+	<div id="main">
+
+                
+                
+
+
+  <div class="feedbacklist_box">
+ 
+  <?smarty:foreach from=$list key=k item=list?>
+   <ul class="feedbacklist_item_box">
+     
+    <li style="float:left;height:20px;background:url(./images/face1.gif) no-repeat 0 0;padding:0 0 0 25px;">類型：{$list.newtype}</li>
+    <li style="float:right;height:20px;">{$list.question_time}</li>
+    <li class="feedbacklist_item_jiange"></li>
+
+    <li style="padding:5px 10px 5px 10px">{$list.question} </li>
+
+
+
+  </ul>
+  <?smarty:/foreach?>
+ 
+ 
+  </div>
+
+  <form method="post"  action="redit.php">
+<div class="feedback_box">
+<ul>
+<li style="float:left;height:20px;text-align:right;width:60px">回復人：</li>
+<li style="float:left;"><input type="text" name="fb_truename"  id="fb_truename" maxlength="30" size="15" class="tb" readonly value="{$tname}"></li>
+
+<li style="float:left;height:20px;text-align:right;width:60px"></li>
+<li style="float:left;"></li>
+
+<li style="float:left;height:20px;text-align:right;width:60px"></li>
+<li style="float:left;"></li>
+<li style="clear:both;height:2px;line-height:0px;font-size:1px;"></li>
+
+<li style="float:left;text-align:right;width:55px;height:60px;margin:30px 0 0 0">回復：</li>
+<li style="float:left;padding:5px 0 5px 0">&nbsp;<textarea  id="fb_content"  name="fb_content"  Cols="62" rows="5" style="border:1px solid #cccccc;border-color:#000000 #cccccc #cccccc #000000;"  onblur="if(this.value.length>250)this.value=this.value.substr(0,250)"></textarea> 
+</li>
+<li style="clear:both;height:2px;line-height:0px;font-size:1px;"></li>
+
+
+<li style="clear:both;height:2px;line-height:0px;font-size:1px;text-align:left;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="提交" class="bt"  name="submitvalue"/>&nbsp;
+<input type="hidden" value="{$list.question_no}" name="qsno"/></li>
+<input type="reset" value="重写" class="bt" /></li>
+</li>
+</ul>
+</div>
+</form>
+
+
+
+</div>
+<?smarty:include file=footer.html?>		
+</div>
+	
+	
+</body>
+</html>

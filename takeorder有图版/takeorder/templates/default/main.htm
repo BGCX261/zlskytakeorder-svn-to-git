@@ -1,0 +1,75 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Take Order</title>
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/smain.css" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/sbase.css" />
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="./css/smenu.css" />
+
+
+	<div class="table_tr_bgcolor">
+	<ul>
+	<li>{$rows[0].no}</li>
+	<li>{$rows[0].itemname}</li>
+	<li>{$rows[0].price}</li>
+	<li>{$rows[0].qty}</li>
+	<li>{$rows[0].disc}</li>
+	<li>{$rows[0].lineamt}</li>
+	<li>{$rows[0].tax}</li>
+	<li>{$rows[0].r}</li>
+	</tr>
+	<tr>
+	<li>123</li>
+	<li>123</li>
+	<li>123</li>
+	<li>123</li>
+	<li>123</li>
+	<li>123</li>
+	<li>123</li>
+	<li>123</li>
+	<ul>
+	</div>
+
+<form action="main.php" name="insertform" method="POST">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table_tr_bgcolor">
+	<tr class="title_bgcolor">
+	<td>
+	
+	<input type='button' name='delete' value='{$rows[0].delete}' height="40" style="WIDTH: 100px"></td>
+	<td width="60px" height="30px" colspan="4"><input type='input' name='search' value='' size='60'></td>
+	</tr>
+	<tr>
+	<td><input type='input' name='customerno' id='customerno' value='' height="40" style="WIDTH: 100px"><input type='button' name='getcustomerno' value='{$rows[0].customeerno}' size="20" style="WIDTH: 100px" onclick="javascript:sendcustomer();"></td>
+	<td width="60px" height="30px"><input type='button' name='t7' value='7' size="20" style="WIDTH: 60px;height:30px;"></td>
+	<td width="60px" height="30px"><input type='button' name='t8' value='8' size="20" style="WIDTH: 60px;height:30px;"></td>
+	<td width="60px" height="30px"><input type='button' name='t9' value='9' size="20" style="WIDTH: 60px;height:30px;"></td>
+	<td width="60px" height="30px"><input type='button' name='ta' value='/' size="20" style="WIDTH: 60px;height:30px;"></td>
+	</tr>
+	<tr>
+	<td><input type='button' name='remark' value='{$rows[0].remark}' size="20" style="WIDTH: 100px"></td>
+	<td width="60px" height="30px"><input type='button' name='t4' value='5' size="20" style="WIDTH: 60px;height:30px;"></td>
+	<td width="60px" height="30px"><input type='button' name='t5' value='5' size="20" style="WIDTH: 60px;height:30px;"></td>
+	<td width="60px" height="30px"><input type='button' name='t6' value='6' size="20" style="WIDTH: 60px;height:30px;"></td>
+	<td width="60px" height="30px"><input type='button' name='tce' value='CE' size="20" style="WIDTH: 60px;height:30px;"></td>
+	</tr>
+	<tr>
+	<td><input type='button' name='function' value='{$rows[0].function}' size="20" style="WIDTH: 100px"></td>
+	<td width="60px" height="30px"><input type='button' name='t1' value='1' size="20" style="WIDTH: 60px;height:30px;"></td>
+	<td width="60px" height="30px"><input type='button' name='t2' value='2' size="20" style="WIDTH: 60px;height:30px;"></td>
+	<td width="60px" height="30px"><input type='button' name='t3' value='3' size="20" style="WIDTH: 60px;height:30px;"></td>
+	<td width="60px" height="30px"><input type='button' name='tenter' value='ENTER' size="20" style="WIDTH: 60px;height:30px;"></td>
+	</tr>
+	<tr><td><input type='button' name='payment' value='{$rows[0].payment}' size="20" style="WIDTH: 100px"></td>
+	<td width="60px" height="30px"><input type='button' name='t0' value='0' size="20" style="WIDTH: 60px;height:30px;"></td>
+	<td width="60px" height="30px"><-</td><td width="60px" height="30px">.</td><td width="60px" height="30px"></td>
+	</tr>
+	</table>
+</form>
+</td>
+</tr>
+</table>
+
+<script language="javascript">
+function sendcustomer(){
+    window.open('customer.php','_blank');
+}
+</script>

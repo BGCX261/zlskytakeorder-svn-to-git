@@ -1,0 +1,40 @@
+<table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_tr_bgcolor">
+  <tr>
+    <td colspan="7" class="td_title">部门列表</td>
+  </tr>
+  <tr class="title_bgcolor">
+    <td width='5%'><strong>选择</strong></td>
+    <td><strong>部门名称</strong></td>
+	<td><strong>说明</strong></td>
+    <td><strong>最后更新</strong></td>
+	<td width='15%'><strong>操作</strong></td>
+  </tr>
+  <!--{section name="list" loop=$plist}-->
+  <tr class="td_style_mouse">
+    <td width='5%'>&nbsp;<input type="checkbox" name='ops[]' value='<!--{$plist[list].org_id}-->'></td>
+    <td><!--{$plist[list].name}--></td>
+	<td><!--{$plist[list].des}--></td>
+    <td><!--{$plist[list].updated_d}--></td>
+	<td width='15%'>
+	<!--{if $_rights.mod}-->
+	 <a href="<!--{url controller='Som' action='Modify' org_id=$plist[list].org_id}-->">编辑</a>
+	<!--{else}-->
+		--
+	<!--{/if}-->
+	</td>
+  </tr>
+  <!--{sectionelse}-->
+	<tr>
+		<td align='center' colspan='5'><b style='color:red'><!--{$nodata}--></b></td>
+	</tr>
+  <!--{/section}-->
+</table>
+<!--{if $plist}-->
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="td_bg_white">
+		<div style='float:right;padding:0px;'><!--{webcontrol type="pagernav" name="pagenav" pager=$pagerData controller="Som" action="Index" param=$param}--></div>
+		</td>
+	</tr>
+</table>
+<!--{/if}-->

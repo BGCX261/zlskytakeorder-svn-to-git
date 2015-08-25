@@ -1,0 +1,26 @@
+<table border="0" width="100%" cellspacing="0" cellpadding="0" >
+  <tr style="color:#FFF">
+    <td width="30%" align="center" valign="middle">Action</td>
+    <td width="30%" align="center" valign="middle">Append</td>
+    <td width="30%" align="center" valign="middle">execute</td>
+    <td width="20" rowspan="5" align="center" bgcolor="#4897c4"><?smarty:if isset($prew)?>
+      {$prew}
+      <?smarty:/if?>
+      <?smarty:if isset($next)?>
+      {$next}
+      <?smarty:/if?></td>
+  </tr>
+  <?smarty:if ($list)?>
+  <?smarty:foreach from=$list item=list?>
+      <tr align="center" valign="middle">
+        <td width="30%" >{$list.action}</td>
+        <td width="30%" >{$list.remark}</td>
+        <td width="30%" ><button onclick="delete_remark_list('{$list.k_id}')" style="width:50px; height:15px;">Delete</button></td>
+      </tr>
+  <?smarty:foreachelse?>
+  <tr>
+    <td colspan="3"></td>
+  </tr>
+  <?smarty:/foreach?>
+  <?smarty:/if?>
+</table>

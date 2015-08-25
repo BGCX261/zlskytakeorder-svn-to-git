@@ -1,0 +1,58 @@
+<form action="setitemclose.php" name="itemnum_form" id="itemnum_form" method="POST">
+<table width='450px;' align='center' border="1" cellspacing="0" cellpadding="0">
+
+	<tr class="title_bgcolor">
+    <td colspan="6">{$items.0.itemname}    <input type="text" id="selnum" name="selnum"   value="1" style="WIDTH: 60px;height:30px;"></td>
+	</tr>
+
+	<tr class="title_bgcolor">
+    <td width="16.6%"><input type='button' value="9" style="WIDTH: 60px;height:30px;" onclick="javascript:send(9);"></td>
+    <td width="16.6%"><input type='button' value='8' style="WIDTH: 60px;height:30px;" onclick="javascript:send(8);"></td>
+	<td width="16.6%"><input type='button' value='7' style="WIDTH: 60px;height:30px;" onclick="javascript:send(7);"></td>
+	</tr>
+<tr class="title_bgcolor">
+	<td width="16.6%"><input type='button' value='6' style="WIDTH: 60px;height:30px;" onclick="javascript:send(6);"></td>
+	<td width="16.6%"><input type='button' value='5' style="WIDTH: 60px;height:30px;" onclick="javascript:send(5);"></td>
+	<td width="16.6%"><input type='button' value='4' style="WIDTH: 60px;height:30px;" onclick="javascript:send(4);"></td>
+</tr>
+
+<tr class="title_bgcolor">
+    <td width="16.6%"><input type='button' value="3" style="WIDTH: 60px;height:30px;" onclick="javascript:send(3);"></td>
+    <td width="16.6%"><input type='button' value='2' style="WIDTH: 60px;height:30px;" onclick="javascript:send(2);"></td>
+	<td width="16.6%"><input type='button' value='1' style="WIDTH: 60px;height:30px;" onclick="javascript:send(1);"></td>
+</tr>
+	<tr class="title_bgcolor">
+	<td width="16.6%"><input type='button' value='0' style="WIDTH: 60px;height:30px;" onclick="javascript:send(0);"></td>
+	<td width="16.6%"><input type='button' value='Return' style="WIDTH: 60px;height:30px;" onclick="javascript:send_return();"></td>
+	<td width="16.6%"><input type='button' value='Enter' style="WIDTH: 60px;height:30px;" onclick="javascript:send_enter();">
+	
+	<input type='text' id='customize' name='customize' value='{$customize}'>
+	<input type='text' id='no' name='no' value='{$no}'>
+	<input type='text' id='itemid' name='itemid' value='{$items[0].id}'>
+	</td>
+	</tr>
+</table>
+</form>
+<script language="javascript">
+document.customer_form.customer_input.focus();   
+function send(id){
+
+    var a = document.getElementsByName("selnum")[0].value;
+	//if(document.getElementsByName("customer_input"))
+	var tmp = a+id;
+	document.getElementsByName("selnum")[0].value=tmp;
+}
+function getcustomer(){
+    var a = document.getElementsByName("customer_input")[0].value;
+    window.opener.document.insertform.customerno.value=a;
+	//document.window.parent.customerno[0].value = a;
+	window.close();
+}
+
+function send_return(){
+     document.getElementsByName("selnum")[0].value='';    
+}
+function send_enter(){
+     window.itemnum_form.submit();   
+}
+</script>

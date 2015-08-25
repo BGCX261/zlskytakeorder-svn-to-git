@@ -1,0 +1,105 @@
+.content{
+	width:570px; 
+	background:url(../../../img/App/Index/OrderSubmit/order_submit.jpg) no-repeat; 
+	margin:0 auto; 
+	height:1003px;
+	}
+	
+.meg{
+	width:424px; 
+	height:38px; 
+	top:76px; 
+	left:22px; 
+	position:relative; 
+	padding:20px 10px; 
+	line-height:20px;
+	}
+.meg span{
+	color:#ff0000;
+	font-weight:bold
+	}
+	
+.order{
+	width:502px;
+	height:700px; 
+	border:1px #ccc solid; 
+	overflow:auto; 
+	padding:0 10px; 
+	background:#fff;
+	left:22px;
+	top:85px; 
+	position:relative;
+	}
+	
+.order .tit{
+	height:30px; 
+	margin-top:15px;
+	}
+	
+.order .tit li{
+	font-size:14px;
+	font-weight:bold; 
+	line-height:30px;
+	}
+	
+.order .list{
+	border-top:1px dashed #ccc; 
+	overflow:hidden;
+	line-height:35px;
+	width:502px;
+	}
+	
+.order li{
+	height:35px; 
+	float:left; 
+	width:75px; 
+	text-align:center; 
+	font-family:Verdana, Arial, Helvetica, sans-serif; 
+	line-height:30px;
+	}
+	
+.order li.l2{text-align:left}
+.order li.long{width:170px; overflow:hidden; text-align:left;padding-left:10px;}
+.order span{
+	color:#990000;
+	font-weight:bold
+	}
+
+/*.del{
+	background:url(../../../img/App/Index/OrderSubmit/del_11.jpg) 10px 0px  no-repeat;
+	height:30px;
+	width:40px;
+	*margin-top:5px; 
+	}*/
+.order li.del {text-align: left; width: 85px;}
+.order li.del button{
+	background:url(../../../img/App/Index/Index/del_btn.gif) 0px 3px no-repeat;
+	height:30px; 
+	width:52px;
+	color:#fff;
+	text-align:30px;
+	font-size:14px;
+	}	
+.sub1{
+	height:40px; 
+	border-top:1px #ccc dashed; 
+	line-height:30px; 
+	text-align:right;
+	}
+.sub2{	
+	background:url(../../../img/App/Index/OrderSubmit/list_sub_27.jpg) no-repeat;
+	height:54px;
+	width:171px;}	
+.sub1 span{padding-right:20px;}	
+
+.sub3{
+	margin-right:20px;
+	background:url(../../../img/App/Index/OrderSubmit/return_03.jpg) no-repeat;
+	height:54px;
+	width:171px;
+	}
+.order .list input{border:1px solid #ccc; height:20px; line-height:20px; width:30px; font-size:14px; font-weight:bold; text-align:center;margin-top:4px;}	
+.order .list a{background:url(../../../img/App/Index/OrderSubmit/more.gif) 0 8px no-repeat; width:41px; height:20px; display:block; float:right;*margin-top:-32px;}
+.detail{width:400px; padding:0 20px;}
+.detail ul{ border-width:0;clear:left;}
+.detail ul li{text-align:left;margin:0 10px;font-size:12px; line-height:20px; height:20px;}

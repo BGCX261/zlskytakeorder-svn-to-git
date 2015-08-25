@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* CSS Document */
+select{
+	padding:2px;
+	border:1px solid #333;
+}
+
+body,td,th {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background:#FFF;
+	width:95%;
+}
+a:link {
+	color: #000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000;
+}
+a:active {
+	text-decoration: none;
+	color: #000;
+}
+a {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+input{
+	background:#D9F2FF;
+	border:1px solid #0080C0;
+	width:auto;
+	height:auto;
+	font-size:11px;}
+.input_mouseover{
+	background:#0080C0;
+	border:1px solid #000;
+	font-size:11px;}
+
+	
+	
+	
+	
+.onmouseover{
+	float:left;
+	margin:5px;
+	width:210px;
+	height:90px;
+	background:#0080C0;
+	cursor:pointer;
+	color:#FFF}
+
+
+
+/*tv_station*/
+.station{
+	height:auto;
+	background:#FFF;
+	margin:100px auto;
+}
+.tv_station{
+	width:90%;
+	height:180px;
+	/*
+	border-left:2px solid #333;
+	border-right:2px solid #333;
+	background:#eee;
+	*/}
+.tv_station .tv_station_parameter{
+	border:1px solid #0080C0;
+	height:35px;
+	margin:5px;
+	padding:5px;
+}
+.tv_station .tv_station_intro{
+	margin:0px 5px 5px 5px;
+	padding:3px 3px 3px 3px;
+	border:1px solid #D9F2FF;}
+	
+.tv_station .tv_station_close{
+	margin:3px;
+	}
+.tv_station input{
+	width:20px;
+	height:20px;}
+/*
+.tv_station .edit_radio{
+	width:10px;
+	height:10px;
+}
+*/

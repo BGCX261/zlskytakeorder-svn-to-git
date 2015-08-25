@@ -1,0 +1,39 @@
+<table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_tr_bgcolor">
+  <tr>
+    <td colspan="7" class="td_title">设备列表</td>
+  </tr>
+  <tr class="title_bgcolor">
+    <td width='5%'><strong>选择</strong></td>
+    <td width="21%"><strong>设备名称</strong></td>
+	<td width="30%"><strong>TS-AGC IP地址</strong></td>
+    <td width="18%"><strong>TS-AGC IP端口</strong></td>
+	<td width='26%'><strong>操作</strong></td>
+  </tr>
+  <!--{section name="list" loop=$plist}-->
+  <tr class="td_style_mouse">
+    <td width='5%'>&nbsp;<input type="checkbox" name='serial[]' value='<!--{$plist[list].serial}-->'></td>
+    <td><!--{$plist[list].devname}--></td>
+	<td><!--{$plist[list].ipaddr}--></td>
+    <td><!--{$plist[list].ipport}--></td>
+	<td width='26%'>
+	 <a href="<!--{url controller='socket' action='Modify' serial=$plist[list].serial}-->">编辑</a>
+     <a href="<!--{url controller='socket' action='updatedevinfo' serial=$plist[list].serial socket_C='socket' socket_A='index'}-->">同步设备</a>
+     <!--<a href="<!--{url controller='socket' action='addchninfo' serial=$plist[list].serial}-->">添加频道</a>-->
+     <!--<a href="<!--{url controller='socket' action='ResumeDefault' serial=$plist[list].serial}-->">恢复出厂值</a>-->
+	</td>
+  </tr>
+  <!--{sectionelse}-->
+	<tr>
+		<td align='center' colspan='5'><b style='color:red'><!--{$nodata}--></b></td>
+	</tr>
+  <!--{/section}-->
+</table>
+<!--{if $plist}-->
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="td_bg_white">
+		<div style='float:right;padding:0px;'><!--{webcontrol type="pagernav" name="pagenav" pager=$pagerData controller="socket" action="Index" param=$param}--></div>
+		</td>
+	</tr>
+</table>
+<!--{/if}-->

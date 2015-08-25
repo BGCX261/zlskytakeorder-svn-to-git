@@ -1,0 +1,27 @@
+<!--{include file='header.htm'}-->
+<!--{include file='nav.htm'}-->
+<form name='test' id='test' method="post" action='<!--{url controller='Role' action='DoAssign'}-->'>
+	<input type="hidden" name="role" id="role" value="<!--{$role}-->" />
+ <table width="100%"  border="0" cellpadding="4" cellspacing="1" bgcolor="#A5D0F1">
+      <tr>
+          <td colspan="2" bgcolor="#E5F9FF">
+		  			<span class="STYLE2"><b>为角色 <span style="color:#FF0000"><!--{$role}--></span> 设置权限</b></span></td>
+        </tr>
+         <!--{section name=i loop=$prems}-->
+       <tr>
+         <td style="padding:10px;border:1px #FFFFFF solid;">
+							<input type="checkBox" style="margin:5px;" name="prems[]" id="<!--{$prems[i].controller}-->" value="<!--{$prems[i].controller}-->" <!--{if $prems[i].sys}-->checked="checked" disabled="disabled"<!--{/if}--> <!--{if $prems[i].checked}-->checked="checked" <!--{/if}--> /><!--{$prems[i].des}--> <br />
+								<!--{section name=j loop=$prems[i].actions}-->
+								&nbsp;&nbsp;<input type="checkBox" style="margin:5px;" name="prems[]" id="<!--{$prems[i].controller}-->_<!--{$prems[i].actions[j].action}-->" value="<!--{$prems[i].controller}-->_<!--{$prems[i].actions[j].action}-->"  <!--{if $prems[i].actions[j].sys}-->checked="checked" disabled="disabled"<!--{/if}--> <!--{if $prems[i].actions[j].checked}-->checked="checked" <!--{/if}--> /><!--{$prems[i].actions[j].des}--> 
+								<!--{/section}-->
+					</td>
+       </tr>
+       <!--{/section}-->
+       <tr>
+         <td style="padding:10px;text-align:center;width:200px;">
+          	<input type="submit" name="submit" id="submit" value="确定" />
+					</td>
+       </tr>  
+    </table>
+</form>
+<!--{include file='footer.htm'}-->

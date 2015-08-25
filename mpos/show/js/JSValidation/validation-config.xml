@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE validation-config SYSTEM "validation-config.dtd">
+<validation-config lang="auto">
+
+	<form id="toplogin" show-error="alert" show-type="all">
+		<field name="name" display-name="卡号">
+			<depend name="required" />
+			<depend name="legalchar" />
+		</field>
+		<field name="password" display-name="密码">
+			<depend name="required" />
+			<depend name="legalchar" />
+		</field>
+		<field name="yzm" display-name="验证码">
+			<depend name="required" />
+		</field>
+	</form>
+	
+</validation-config>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rbac>
+	<controller name="Demo" des="测试Demo" allow="RBAC_EVERYONE">
+  </controller>
+  <controller name="Default" des="系统登陆" sys='1' allow="RBAC_EVERYONE">
+		<action name="Admin" des="进入管理" allow="RBAC_HAS_ROLE"/>
+  	<action name="Menu" des="管理菜单" allow="RBAC_HAS_ROLE"/>
+  	<action name="Info" des="管理首页" allow="RBAC_HAS_ROLE" />
+  </controller>
+  <controller name="Customer" des="客户管理" sys='2' allow="super,normal">
+	<action name="Index" des="客户列表" allow="super,normal"/>
+  	<action name="Add" des="添加客户" allow="super,normal"/>
+  	<action name="Edit" des="编辑客户" allow="super"/>
+  	<action name="UpDo" linkto='Edit' des="执行编辑" allow=""/>
+  	<action name="AddDo" des="执行添加" linkto="Add" allow="super,normal"/>
+  	<action name="Del" des="删除客户" allow="super,normal"/>
+  </controller>
+  <controller name="Issue" des="问题管理" allow="RBAC_EVERYONE">
+  </controller>
+  <controller name="Sort" des="问题分类" allow="RBAC_EVERYONE">
+  </controller>
+  <controller name="User" des="用户管理" allow="RBAC_HAS_ROLE">
+		<action name="AddUser" des="添加用户" allow="User"/>
+  	<action name="SaveUser" des="保存用户" allow="User"/>
+  	<action name="ListUser" des="用户列表" allow="User"/>
+  	<action name="UpdatePassword" des="修改密码" allow="User"/>
+  	<action name="EditUser" des="编辑用户" allow="User"/>
+  	<action name="DelUser" des="删除用户" allow="User"/>
+  </controller>
+  <controller name="Role" des="角色管理" allow="user">
+  </controller>
+</rbac>

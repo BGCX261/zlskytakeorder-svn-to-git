@@ -1,0 +1,42 @@
+<table width="100%"  border="0" align="center" cellpadding="1" cellspacing="1" class="table_tr_bgcolor">
+  <tr>
+    <td colspan="7" class="td_title">会员卡列表</td>
+  </tr>
+  <tr class="title_bgcolor">
+    <td width='5%'><strong>选择</strong></td>
+    <td><strong>卡号</strong></td>
+	  <td><strong>密码</strong></td>
+    <td><strong>创建时间</strong></td>
+    <td><strong>激活时间</strong></td>
+	<td width='15%'><strong>操作</strong></td>
+  </tr>
+  <!--{section name="list" loop=$plist}-->
+  <tr class="td_style_mouse">
+    <td width='5%'>&nbsp;<input type="checkbox" name='ops[]' value='<!--{$plist[list].card_no}-->'></td>
+    <td><!--{$plist[list].card_no}--></td>
+	  <td><!--{$plist[list].password}--></td>
+    <td><!--{$plist[list].create_time}--></td>
+    <td><!--{$plist[list].start_time}--></td>
+	<td width='15%'>
+	<!--{if $_rights.mod}-->
+	 <!--a href="<{url controller='Hyk' action='Modify' org_id=$plist[list].card_no}>">编辑</a-->
+	<!--{else}-->
+		--
+	<!--{/if}-->
+	</td>
+  </tr>
+  <!--{sectionelse}-->
+	<tr>
+		<td align='center' colspan='5'><b style='color:red'><!--{$nodata}--></b></td>
+	</tr>
+  <!--{/section}-->
+</table>
+<!--{if $plist}-->
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td class="td_bg_white">
+		<div style='float:right;padding:0px;'><!--{webcontrol type="pagernav" name="pagenav" pager=$pagerData controller="Hyk" action="Index" param=$param}--></div>
+		</td>
+	</tr>
+</table>
+<!--{/if}-->

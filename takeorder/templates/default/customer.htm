@@ -1,0 +1,56 @@
+<form action="main.php" name="customer_form" id="customer_form" method="POST">
+<table width='510' align='center' border="1">
+<tr>
+<td>
+    <table width='300px' align='center' border="1">
+	<tr height="40px;"><td>please input customer no</td></tr>
+	<tr height="60px;"><td><input type='input' name='customer_input' id='customer_input' value='{$customerno}' size='30' readonly="true"> <input type="button" name="search_button" value="search" onclick="javascript:window.location='customer_search.php'"></td></tr>
+	<tr height="40px;"><td align="center">
+	<input type="button" name="customer_button_ok" value="(F1) OK" style="WIDTH: 80px;height:30px;" onclick="javascript:getcustomer();">        <input type="button" name="customer_button_exit" value="(Esc) Exit" style="WIDTH: 80px;height:30px;" onclick="javascript:window.close();">
+	</td></tr>
+	</table>
+</td>
+
+<td>
+    <table width='160px' align='center' border="1">
+	<tr>
+	<td width="60px" height="30px"><input type='button' name='t7' value='7' size="20" style="WIDTH: 50px;height:40px;" onclick="javascript:send(7);"></td>
+	<td width="60px" height="30px"><input type='button' name='t8' value='8' size="20" style="WIDTH: 50px;height:40px;" onclick="javascript:send(8);"></td>
+	<td width="60px" height="30px"><input type='button' name='t9' value='9' size="20" style="WIDTH: 50px;height:40px;" onclick="javascript:send(9);"></td>
+	</tr>
+	<tr>
+	<td width="60px" height="30px"><input type='button' name='t4' value='4' size="20" style="WIDTH: 50px;height:40px;" onclick="javascript:send(4);"></td>
+	<td width="60px" height="30px"><input type='button' name='t5' value='5' size="20" style="WIDTH: 50px;height:40px;" onclick="javascript:send(5);"></td>
+	<td width="60px" height="30px"><input type='button' name='t6' value='6' size="20" style="WIDTH: 50px;height:40px;" onclick="javascript:send(6);"></td>
+	</tr>
+	<tr>
+	<td width="60px" height="30px"><input type='button' name='t1' value='1' size="20" style="WIDTH: 50px;height:40px;" onclick="javascript:send(1);"></td>
+	<td width="60px" height="30px"><input type='button' name='t2' value='2' size="20" style="WIDTH: 50px;height:40px;" onclick="javascript:send(2);"></td>
+	<td width="60px" height="30px"><input type='button' name='t3' value='3' size="20" style="WIDTH: 50px;height:40px;" onclick="javascript:send(3);"></td>
+	</tr>
+	<tr>
+	<td width="60px" height="30px"><input type='button' name='t0' value='0' size="20" style="WIDTH: 50px;height:40px;" onclick="javascript:send(0);"></td>
+	<td width="60px" height="30px"><input type='button' name='te' value='<=' size="20" style="WIDTH: 50px;height:40px;" onclick=""></td>
+	<td width="60px" height="30px"><input type='button' name='tp' value='.' size="20" style="WIDTH: 50px;height:40px;" onclick="javascript:send('.');"></td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+</form>
+<script language="javascript">
+document.customer_form.customer_input.focus();   
+function send(id){
+    var a = document.getElementsByName("customer_input")[0].value;
+	//if(document.getElementsByName("customer_input"))
+	var tmp = a+id;
+	document.getElementsByName("customer_input")[0].value=tmp;
+}
+function getcustomer(){
+    var a = document.getElementsByName("customer_input")[0].value;
+    window.opener.document.insertform.customerno.value=a;
+	//document.window.parent.customerno[0].value = a;
+	window.close();
+}
+
+</script>

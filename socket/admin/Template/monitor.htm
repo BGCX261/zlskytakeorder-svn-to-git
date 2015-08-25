@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="./Public/css/monitoring.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+<div class="lv_1" align="center"><font color="#0066CC" size="+1" style="font-family:Arial, Helvetica, sans-serif"><b>TS-AGC整体节目信息</b></font></div>
+<div class="lv_1">
+	<span class="lv_1_title">所有频道:&nbsp;<span style="background:#06C; color:#FFF; padding:2px;">节目名称 | 音量</span></span><br />
+    <!--{foreach from=$allchninfo item=allchninfo}-->
+	<div class="lv_2"><div class="lv_2_content"><font style="width:60%; display:inline-block"><!--{$allchninfo.prgname|truncate:6}--></font>&nbsp;|&nbsp;<font style="width:40%"><!--{$allchninfo.gain}--></font></div></div>
+    <!--{/foreach}-->
+     <div style="clear:both"></div>
+</div>
+
+
+    <div class="lv_1" style="width:31%; float:left">
+        <span class="lv_1_title" >AGC关闭的频道:</span><br />
+        <!--{foreach from=$AGCchninfo item=AGCchninfo}-->
+        <div class="lv_2" style="width:30%"><div class="lv_2_content"><!--{$AGCchninfo.prgname|truncate:6}--></div></div>
+        <!--{/foreach}-->
+    </div>
+    
+    <div class="lv_1" style="width:31%; float:left">
+        <span class="lv_1_title">静音状态开启的频道:</span><br />
+        <!--{foreach from=$mutestatchninfo item=mutestatchninfo}-->
+        <div class="lv_2" style="width:30%"><div class="lv_2_content"><!--{$mutestatchninfo.prgname|truncate:6}--></div></div>
+        <!--{/foreach}-->
+    </div>
+    
+    
+    <div class="lv_1" style="width:31%; float:left">
+        <span class="lv_1_title">旁通状态开启的频道:</span><br />
+        <!--{foreach from=$passstatchninfo item=passstatchninfo}-->
+        <div class="lv_2" style="width:30%"><div class="lv_2_content"><!--{$passstatchninfo.prgname|truncate:6}--></div></div>
+        <!--{/foreach}-->
+    </div>
+
+
+
+
+</body>
+</html>

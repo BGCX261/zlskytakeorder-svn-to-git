@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{font-family:Verdana, Arial, Helvetica, sans-serif; background:#f4ebd9; font-size:14px;}
+ul,li{list-style:none;}
+body,td,th,tr,div,ul,li,br,span,input,img,button,iframe{
+	margin:0;
+	padding:0;
+	}
+
+button,input{border:0px;}	

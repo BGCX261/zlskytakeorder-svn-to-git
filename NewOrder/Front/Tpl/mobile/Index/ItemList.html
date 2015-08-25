@@ -1,0 +1,53 @@
+<script language="javascript" src="<!--{$__JS__}-->/Libs/jquery.js"></script>
+<link href="<!--{$__CSS__}-->/App/Default.css" rel="stylesheet" type="text/css" />
+<link href="<!--{$__CSS__}-->/App/Index/ItemList.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+function addItem(itemNo){
+	itemName=$("#itemName_"+itemNo).val();
+	price=$("#price_"+itemNo).val();
+	num=$("#num_"+itemNo).val();
+	if(isNaN(num)){
+		alert("<!--{$errorNumMsg}-->");
+		$("#num_"+itemNo).val(parseInt(1));
+		return false;
+	}
+	$.ajax({
+		url:	"<!--{$addItemURL}-->",
+		async:	false,
+		cache:		false,
+		data:	{itemNo:itemNo,itemName:itemName,price:price,num:num},
+		type:	"GET"
+	});
+	parent.selectedItemMenu.location.reload();
+}
+</script>
+<script>
+    function listbg(){
+		document.getElementById('list1').style.background="#dfdfdf";
+		document.getElementById('list2').style.background="#dfdfdf";
+		document.getElementById('list3').style.background="#dfdfdf";
+		document.getElementById('list4').style.background="#dfdfdf";
+		}
+</script>
+<body>   
+    <div class="box">
+    <!--{foreach from=$list item=list}-->
+    <ul>
+        <li>
+            <ul style="overflow:hidden; background:#fff;" id="list1">
+                <li class="s1"><!--{$list.item_name|truncate:23}--></li>
+                <li class="s3"><!--{$list.price}--></li>
+                <li class="s2">
+                    <input style="text-align:center" type="text" id="num_<!--{$list.item_no}-->" value="1" onBlur="if(this.value.length == 0) this.value='1';" onClick="if(this.value == '1') this.value='';"/>
+                    <input type="hidden" id="item_no" value="<!--{$list.item_no}-->" />
+                    <input type="hidden" id="itemName_<!--{$list.item_no}-->" value="<!--{$list.item_name}-->" />
+                    <input type="hidden" id="price_<!--{$list.item_no}-->" value="<!--{$list.price}-->" />
+                </li>
+                <li class="s4" onClick="listbg()"><button class="add" onClick="addItem('<!--{$list.item_no}-->')"></button></li>
+            </ul>
+        </li>
+    </ul>
+    <!--{foreachelse}-->
+    <!--{/foreach}-->
+    </div>
+</body>
